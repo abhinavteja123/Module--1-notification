@@ -1,85 +1,85 @@
 {
-  "updatedAt": "2026-06-23T17:50:19.661Z",
-  "totalItems": 2836,
-  "newItems": 38,
+  "updatedAt": "2026-06-23T17:54:45.328Z",
+  "totalItems": 2925,
+  "newItems": 10,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 30,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T17:49:52.561Z"
-    },
-    "Devpost Hackathons": {
-      "count": 9,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-23T17:49:52.629Z"
+      "ts": "2026-06-23T17:54:27.215Z"
     },
     "Arbeitnow Job Board": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T17:49:52.709Z"
+      "ts": "2026-06-23T17:54:27.367Z"
+    },
+    "Devpost Hackathons": {
+      "count": 9,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-23T17:54:27.391Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T17:49:53.030Z"
+      "ts": "2026-06-23T17:54:27.623Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T17:49:53.109Z"
+      "ts": "2026-06-23T17:54:27.853Z"
     },
     "We Work Remotely Jobs": {
       "count": 0,
       "ok": false,
       "error": "Entity expansion limit exceeded: 1120 > 1000",
-      "ts": "2026-06-23T17:49:53.580Z"
+      "ts": "2026-06-23T17:54:28.575Z"
     },
     "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T17:49:53.981Z"
+      "ts": "2026-06-23T17:54:28.814Z"
     },
     "Jobicy Remote Jobs": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T17:49:53.994Z"
+      "ts": "2026-06-23T17:54:28.946Z"
     },
     "Internshala Internships": {
       "count": 0,
-      "ok": false,
-      "error": "Request failed with status code 401",
-      "ts": "2026-06-23T17:49:54.033Z"
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-23T17:54:28.946Z"
     },
     "Naukri Fresher Jobs": {
       "count": 0,
-      "ok": false,
-      "error": "Request failed with status code 401",
-      "ts": "2026-06-23T17:49:54.039Z"
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-23T17:54:28.946Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 28,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T17:49:54.369Z"
+      "ts": "2026-06-23T17:54:29.105Z"
     },
     "Unstop Hackathons": {
       "count": 18,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T17:50:01.163Z"
+      "ts": "2026-06-23T17:54:37.416Z"
     },
     "Devfolio Hackathons": {
-      "count": 0,
-      "ok": false,
-      "error": "timeout of 15000ms exceeded",
-      "ts": "2026-06-23T17:50:07.449Z"
+      "count": 26,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-23T17:54:40.419Z"
     }
   }
 }

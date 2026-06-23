@@ -1,85 +1,85 @@
 {
-  "updatedAt": "2026-06-23T17:54:45.328Z",
-  "totalItems": 2925,
-  "newItems": 10,
+  "updatedAt": "2026-06-23T18:19:45.359Z",
+  "totalItems": 3025,
+  "newItems": 106,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 30,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T17:54:27.215Z"
-    },
-    "Arbeitnow Job Board": {
-      "count": 100,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-23T17:54:27.367Z"
+      "ts": "2026-06-23T18:19:20.351Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T17:54:27.391Z"
+      "ts": "2026-06-23T18:19:20.380Z"
     },
-    "The Muse Jobs": {
-      "count": 20,
+    "Arbeitnow Job Board": {
+      "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T17:54:27.623Z"
+      "ts": "2026-06-23T18:19:20.504Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T17:54:27.853Z"
+      "ts": "2026-06-23T18:19:20.872Z"
     },
-    "We Work Remotely Jobs": {
-      "count": 0,
-      "ok": false,
-      "error": "Entity expansion limit exceeded: 1120 > 1000",
-      "ts": "2026-06-23T17:54:28.575Z"
-    },
-    "Authentic Jobs": {
-      "count": 10,
+    "The Muse Jobs": {
+      "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T17:54:28.814Z"
+      "ts": "2026-06-23T18:19:20.953Z"
     },
     "Jobicy Remote Jobs": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T17:54:28.946Z"
+      "ts": "2026-06-23T18:19:20.967Z"
+    },
+    "Authentic Jobs": {
+      "count": 10,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-23T18:19:21.349Z"
+    },
+    "We Work Remotely Jobs": {
+      "count": 100,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-23T18:19:21.506Z"
     },
     "Internshala Internships": {
       "count": 0,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T17:54:28.946Z"
+      "ts": "2026-06-23T18:19:21.506Z"
     },
     "Naukri Fresher Jobs": {
       "count": 0,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T17:54:28.946Z"
+      "ts": "2026-06-23T18:19:21.506Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 28,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T17:54:29.105Z"
+      "ts": "2026-06-23T18:19:21.905Z"
     },
     "Unstop Hackathons": {
       "count": 18,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T17:54:37.416Z"
+      "ts": "2026-06-23T18:19:29.528Z"
     },
     "Devfolio Hackathons": {
       "count": 26,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T17:54:40.419Z"
+      "ts": "2026-06-23T18:19:39.056Z"
     }
   }
 }

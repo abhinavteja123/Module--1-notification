@@ -50,38 +50,11 @@
     "vercel",
     "resend",
     "posthog",
-    "appwrite",
-    "cal.com",
     "inngest",
-    "liveblocks",
-    "dub",
-    "formbricks",
-    "typebot",
-    "activepieces",
-    "directus",
     "nango",
-    "loops",
-    "june",
-    "koala",
-    "chatwoot",
     "plane",
     "twenty",
     "svix",
-    "trigger",
     "commonroom"
-  ],
-  "workable": [
-    "bending-spoons",
-    "revolut",
-    "taxfix",
-    "hack-the-box",
-    "persado"
-  ],
-  "recruitee": [
-    "adyen",
-    "mollie",
-    "bynder",
-    "testgorilla",
-    "messagebird"
   ]
 }

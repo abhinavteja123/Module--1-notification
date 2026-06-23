@@ -53,6 +53,7 @@ async function scrapeAPI(config) {
       location: j.candidate_required_location || 'Remote',
       tags: (j.tags || []).slice(0, 4),
       is_remote: true,
+      description: stripHtml(j.description || '').slice(0, 300),
     })).filter(r => r.title && r.link);
   }
 
@@ -66,6 +67,7 @@ async function scrapeAPI(config) {
       location: j.location || 'Remote',
       tags: (j.tags || []).slice(0, 4),
       is_remote: !!j.remote,
+      description: stripHtml(j.description || '').slice(0, 300),
     })).filter(r => r.title && r.link);
   }
 
@@ -81,6 +83,7 @@ async function scrapeAPI(config) {
         location: j.location || 'Remote',
         tags: (j.tags || []).slice(0, 4),
         is_remote: true,
+        description: stripHtml(j.description || '').slice(0, 300),
       }));
   }
 
@@ -93,6 +96,7 @@ async function scrapeAPI(config) {
       link: j.refs?.landing_page,
       location: (j.locations || []).map(l => l.name).join(', ') || 'Flexible',
       tags: (j.categories || []).map(c => c.name).slice(0, 3),
+      description: stripHtml(j.contents || '').slice(0, 300),
     })).filter(r => r.title && r.link);
   }
 

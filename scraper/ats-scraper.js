@@ -84,7 +84,7 @@ async function scrapeATSCompany(company, ats) {
       org: capitalize(company.replace(/-/g, ' ')),
       link: j.careers_url || `https://${company}.recruitee.com/o/${j.slug}`,
       location: j.city ? `${j.city}, ${j.country || ''}`.trim().replace(/,$/, '') : 'Remote',
-      description: '',
+      description: (j.description || '').replace(/<[^>]+>/g, '').trim().slice(0, 300),
       deadline: null,
     }));
   } else {

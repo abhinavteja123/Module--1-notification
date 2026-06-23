@@ -484,7 +484,7 @@ function render() {
     const isItemNew = isNew(it);
     const timeAgo = it.firstSeenAt ? getTimeAgo(it.firstSeenAt) : '';
     const loc = it.location && it.location !== 'Unknown' ? it.location.split(',')[0].trim() : '';
-    const desc = (it.description || '').trim();
+    const desc = (it.description || it.summary || '').trim();
     const deadlineHtml = formatDeadline(it.deadline);
 
     return `<div class="card ${isItemNew ? 'is-new' : ''}" style="animation-delay:${Math.min(i * 20, 300)}ms">

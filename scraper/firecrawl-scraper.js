@@ -91,11 +91,9 @@ const PARSERS = {
  * @returns {Array<{title, org, link, location, type, source, india, deadline, stipend, description}>}
  */
 async function scrapeWithFirecrawl(config) {
-  const apiKey = process.env.FIRECRAWL_API_KEY;
-  if (!apiKey) {
-    console.log(`  (Firecrawl skipped for ${config.name}: no FIRECRAWL_API_KEY set)`);
-    return [];
-  }
+  const apiKey = process.env.FIRECRAWL_API_KEY || '';
+  // Keyless mode works for scrape/extract (rate-limited per IP).
+  // GitHub Actions gets a fresh IP each run, so 1x/day scrapes work without a key.
 
   const schemaKey = config.firecrawlSchema || config.name.toLowerCase().replace(/\s+\S+/g, '').trim();
   const schema = SCHEMAS[schemaKey];

@@ -11,15 +11,15 @@ const BATCH = 20;
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 async function callGroq(batch) {
-  const compact = batch.map((it, i) => ({
-    i, type: it.type, title: it.title, org: it.org, location: it.location, tags: it.tags,
+  const compact = batch.map(it => ({
+    id: it.id, type: it.type, title: it.title, org: it.org, location: it.location, tags: it.tags,
   }));
 
   const sys = 'You enrich job/internship/hackathon listings for Indian B.Tech students. ' +
-    'Return ONLY JSON: {"items":[{"i":number,"summary":string,"skills":string[],"score":number}]}. ' +
+    'Return ONLY JSON: {"items":[{"id":string,"summary":string,"skills":string[],"score":number}]}. ' +
     'summary: max 14 words, plain, student-facing. skills: up to 5 tech skills implied by the role. ' +
     'score: 0-100 fit for a B.Tech CS/IT student (entry-level + tech-relevant = high).';
-  const user = 'Enrich these. Keep the same "i" index for each:\n' + JSON.stringify(compact);
+  const user = 'Enrich these. Return the same "id" string for each:\n' + JSON.stringify(compact);
 
   const res = await fetch(ENDPOINT, {
     method: 'POST',
@@ -57,9 +57,10 @@ async function enrichNewItems(items) {
     const batch = todo.slice(i, i + BATCH);
     try {
       const enriched = await callGroq(batch);
+      const byId = Object.fromEntries(batch.map(it => [it.id, it]));
       for (const e of enriched) {
-        const target = batch[e.i];
-        if (!target) continue;
+        const target = byId[e.id];
+        if (!target) { console.log(`  Groq returned unknown id ${e.id} — skipped`); continue; }
         if (e.summary) target.summary = e.summary;
         if (Array.isArray(e.skills) && e.skills.length) target.skills = e.skills.slice(0, 5);
         if (typeof e.score === 'number') target.score = Math.max(0, Math.min(100, Math.round(e.score)));

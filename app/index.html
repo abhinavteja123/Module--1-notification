@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'none'" />
 <title>OpportunityHub — Hackathons · Internships · Jobs</title>
 <meta name="description" content="Real-time student opportunities aggregated from Devfolio, Unstop, Internshala, HackerEarth, Devpost, and 500+ company career pages. Auto-refreshes every 6 hours." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -242,6 +243,17 @@ select:focus, .filter-btn:hover { border-color: var(--accent); }
   display: flex; align-items: center; justify-content: space-between;
   margin-top: auto; padding-top: 4px;
 }
+.card-desc {
+  font-size: 13px; color: var(--text-secondary);
+  line-height: 1.5;
+  display: -webkit-box; -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical; overflow: hidden;
+}
+.card-deadline {
+  font-size: 12px; font-weight: 600;
+  color: var(--amber);
+}
+.card-deadline.expired { color: var(--rose); }
 .card-time {
   font-size: 11px; color: var(--text-muted);
 }
@@ -472,6 +484,8 @@ function render() {
     const isItemNew = isNew(it);
     const timeAgo = it.firstSeenAt ? getTimeAgo(it.firstSeenAt) : '';
     const loc = it.location && it.location !== 'Unknown' ? it.location.split(',')[0].trim() : '';
+    const desc = (it.description || '').trim();
+    const deadlineHtml = formatDeadline(it.deadline);
 
     return `<div class="card ${isItemNew ? 'is-new' : ''}" style="animation-delay:${Math.min(i * 20, 300)}ms">
       <div class="card-top">
@@ -488,10 +502,12 @@ function render() {
         ${it.india ? '<span class="badge india">🇮🇳 India</span>' : ''}
         ${it.stipend ? `<span class="badge">💰 ${esc(it.stipend)}</span>` : ''}
       </div>
+      ${desc ? `<div class="card-desc">${esc(desc)}</div>` : ''}
+      ${deadlineHtml}
       <div class="card-actions">
         <span class="card-time">${timeAgo}</span>
-        <a class="view-btn" href="${esc(it.link)}" target="_blank" rel="noopener"
-           onclick="markSeen('${esc(it.id)}')">View →</a>
+        <a class="view-btn" href="${safeUrl(it.link)}" target="_blank" rel="noopener noreferrer"
+           data-id="${esc(it.id)}">View →</a>
       </div>
     </div>`;
   }).join('');
@@ -501,6 +517,26 @@ function render() {
 function esc(s) {
   return String(s ?? '').replace(/[&<>"']/g, c =>
     ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'": '&#39;' }[c]));
+}
+
+function safeUrl(u) {
+  // Block javascript:, data:, vbscript: and other non-http(s) schemes
+  if (typeof u !== 'string') return '#';
+  const trimmed = u.trim();
+  return /^https?:\/\//i.test(trimmed) ? esc(trimmed) : '#';
+}
+
+function formatDeadline(deadline) {
+  if (!deadline) return '';
+  // deadline may be ISO date, date string like "Jun 30, 2025", or range text
+  const parsed = new Date(deadline);
+  if (isNaN(parsed.getTime())) {
+    // Raw string (e.g. "May 15 – Jun 30, 2025") — show as-is
+    return `<div class="card-deadline">⏰ ${esc(String(deadline))}</div>`;
+  }
+  const expired = parsed < new Date();
+  const label = parsed.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+  return `<div class="card-deadline${expired ? ' expired' : ''}">⏰ ${expired ? 'Closed' : 'Deadline'}: ${label}</div>`;
 }
 
 function getTimeAgo(dateStr) {
@@ -513,7 +549,11 @@ function getTimeAgo(dateStr) {
   return `${days}d ago`;
 }
 
-window.markSeen = function(id) { seen.add(id); saveSeen(); render(); };
+// Delegated click — no inline onclick, prevents XSS via double-decoded HTML entities
+document.getElementById('grid').addEventListener('click', e => {
+  const btn = e.target.closest('.view-btn');
+  if (btn?.dataset.id) { seen.add(btn.dataset.id); saveSeen(); render(); }
+});
 
 /* ── Event listeners ── */
 document.getElementById('tabs').addEventListener('click', e => {

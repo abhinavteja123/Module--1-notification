@@ -1,61 +1,37 @@
 [
   {
+    "name": "Devpost Hackathons",
+    "url": "https://devpost.com/api/hackathons?page=1",
+    "type": "hackathon",
+    "scraper": "api",
+    "apiFormat": "devpost"
+  },
+  {
+    "name": "DoraHacks Hackathons",
+    "url": "https://api.dorahacks.io/api/v2/hackathons?page=1&limit=30",
+    "type": "hackathon",
+    "scraper": "api",
+    "apiFormat": "dorahacks"
+  },
+  {
+    "name": "Devfolio Hackathons",
+    "url": "https://api.devfolio.co/api/hackathons",
+    "type": "hackathon",
+    "scraper": "api",
+    "apiFormat": "devfolio"
+  },
+  {
     "name": "HackerEarth Hackathons",
     "url": "https://www.hackerearth.com/challenges/hackathon/",
     "type": "hackathon",
     "scraper": "cheerio",
+    "enabled": false,
     "selectors": {
       "card": ".challenge-card",
       "title": ".challenge-list-title",
       "org": ".challenge-name",
       "link": "a.challenge-card-link"
     }
-  },
-  {
-    "name": "Internshala Internships",
-    "url": "https://internshala.com/internships",
-    "type": "internship",
-    "scraper": "cheerio",
-    "parseMode": "jsonld",
-    "selectors": {
-      "card": ".individual_internship",
-      "title": ".profile",
-      "org": ".company_name",
-      "link": "a.view_detail_button",
-      "stipend": ".stipend",
-      "deadline": ".deadline"
-    }
-  },
-  {
-    "name": "Devfolio Hackathons",
-    "url": "https://devfolio.co/hackathons",
-    "type": "hackathon",
-    "scraper": "playwright",
-    "selectors": {
-      "card": "[class*='CompactHackathonCard'], [class*='HackathonCard'], a[href*='/hackathons/']",
-      "title": "h3, [class*='title'], [class*='name']",
-      "org": "[class*='organizer'], [class*='org']",
-      "link": "a[href]"
-    }
-  },
-  {
-    "name": "Unstop Hackathons",
-    "url": "https://unstop.com/hackathons",
-    "type": "hackathon",
-    "scraper": "playwright",
-    "selectors": {
-      "card": "a.item[itemprop='itemListElement']",
-      "title": "h3[itemprop='name'], h3.double-wrap, h3",
-      "org": "p.single-wrap",
-      "link": "a[href]"
-    }
-  },
-  {
-    "name": "Devpost Hackathons",
-    "url": "https://devpost.com/api/hackathons",
-    "type": "hackathon",
-    "scraper": "api",
-    "apiFormat": "devpost"
   },
   {
     "name": "Remotive Remote Jobs",
@@ -91,5 +67,58 @@
     "type": "job",
     "scraper": "api",
     "apiFormat": "jobicy"
+  },
+  {
+    "name": "We Work Remotely Jobs",
+    "url": "https://weworkremotely.com/feed.rss",
+    "type": "job",
+    "scraper": "rss"
+  },
+  {
+    "name": "Authentic Jobs",
+    "url": "https://www.authenticjobs.com/feed/",
+    "type": "job",
+    "scraper": "rss"
+  },
+  {
+    "name": "Outreachy Fellowships",
+    "url": "https://www.outreachy.org/api/v2/positions/",
+    "type": "internship",
+    "scraper": "api",
+    "apiFormat": "outreachy"
+  },
+  {
+    "name": "LFX Mentorship Programs",
+    "url": "https://api.mentorship.lfx.linuxfoundation.org/v1/programs?limit=100&status=active",
+    "type": "internship",
+    "scraper": "api",
+    "apiFormat": "lfx"
+  },
+  {
+    "name": "Internshala Internships",
+    "url": "https://internshala.com/internships",
+    "type": "internship",
+    "scraper": "cheerio",
+    "enabled": false,
+    "selectors": {
+      "card": ".individual_internship",
+      "title": ".profile",
+      "org": ".company_name",
+      "link": "a.view_detail_button",
+      "stipend": ".stipend",
+      "deadline": ".deadline"
+    }
+  },
+  {
+    "name": "Unstop Hackathons",
+    "url": "https://unstop.com/hackathons",
+    "type": "hackathon",
+    "scraper": "playwright",
+    "selectors": {
+      "card": "a.item[itemprop='itemListElement']",
+      "title": "h3[itemprop='name'], h3.double-wrap, h3",
+      "org": "p.single-wrap",
+      "link": "a[href]"
+    }
   }
 ]

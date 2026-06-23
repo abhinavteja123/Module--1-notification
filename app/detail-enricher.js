@@ -14,7 +14,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 // Jina Reader: any URL -> clean text. Free, no key for low volume.
 async function fetchPageText(url) {
-  const res = await fetch('https://r.jina.ai/' + url, {
+  const res = await fetch('https://r.jina.ai/' + encodeURIComponent(url), {
     headers: { ...UA, 'X-Return-Format': 'text' },
     signal: AbortSignal.timeout(20000),
   });

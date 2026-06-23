@@ -1,6 +1,7 @@
 // api-scraper.js
-// Fetches from free, public JSON APIs (no scraping, no keys needed).
-// Sources: Devpost, Remotive, Arbeitnow, RemoteOK, The Muse, Jobicy.
+// Handles all free public JSON APIs — no selectors, no scraping, no blocking risk.
+// Sources: Devpost, DoraHacks, Devfolio, Remotive, Arbeitnow, RemoteOK,
+//          The Muse, Jobicy, Outreachy, LFX Mentorship.
 
 const axios = require('axios');
 
@@ -8,6 +9,10 @@ const UA = { 'User-Agent': 'student-notify/1.0 (+personal project)' };
 
 function isIntern(title = '') {
   return /\b(intern|internship|trainee|apprentice)\b/i.test(title);
+}
+
+function stripHtml(str = '') {
+  return str.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').trim();
 }
 
 /**
@@ -100,10 +105,72 @@ async function scrapeAPI(config) {
       link: j.url,
       location: j.jobGeo || 'Remote',
       tags: Array.isArray(j.jobIndustry) ? j.jobIndustry.slice(0, 3) : [],
+      deadline: null,
+      description: stripHtml(j.jobDescription || '').slice(0, 300),
     })).filter(r => r.title && r.link);
   }
 
-  console.log(`    ⚠ Unknown apiFormat: ${config.apiFormat}`);
+  // ---- DoraHacks ----
+  if (config.apiFormat === 'dorahacks') {
+    const list = data.data?.hackathons || data.hackathons || data.data || [];
+    return (Array.isArray(list) ? list : []).map(h => tag({
+      type: 'hackathon',
+      title: h.title || h.name || '',
+      org: h.organization?.name || h.organizer || 'DoraHacks',
+      link: h.url || (h.id ? `https://dorahacks.io/hackathon/${h.id}` : ''),
+      location: h.location || 'Online',
+      tags: (h.tags || []).slice(0, 4),
+      deadline: h.end_time || h.deadline || null,
+      description: stripHtml(h.description || '').slice(0, 300),
+    })).filter(r => r.title && r.link);
+  }
+
+  // ---- Devfolio (undocumented public API — graceful if shape changes) ----
+  if (config.apiFormat === 'devfolio') {
+    const list = data.hackathons || data.data || (Array.isArray(data) ? data : []);
+    return list.map(h => tag({
+      type: 'hackathon',
+      title: h.name || h.title || '',
+      org: h.team?.name || h.organization || 'Devfolio',
+      link: h.url || (h.slug ? `https://devfolio.co/hackathons/${h.slug}` : ''),
+      location: h.city || (h.is_online ? 'Online' : 'India'),
+      tags: (h.themes || h.tags || []).slice(0, 4),
+      deadline: h.ends_at || h.submission_deadline || null,
+      description: stripHtml(h.description || '').slice(0, 300),
+    })).filter(r => r.title && r.link);
+  }
+
+  // ---- Outreachy ----
+  if (config.apiFormat === 'outreachy') {
+    const list = data.results || (Array.isArray(data) ? data : []);
+    return list.map(p => tag({
+      type: 'internship',
+      title: p.project_name || p.title || '',
+      org: p.community?.name || 'Outreachy',
+      link: p.url || p.project_url || 'https://www.outreachy.org',
+      location: 'Remote',
+      tags: (p.skills || []).slice(0, 4).map(s => s.skill || s),
+      deadline: p.intern_selection_deadline || p.deadline || null,
+      description: p.short_description || '',
+    })).filter(r => r.title && r.link);
+  }
+
+  // ---- LFX Mentorship ----
+  if (config.apiFormat === 'lfx') {
+    const list = data.data || (Array.isArray(data) ? data : []);
+    return list.map(p => tag({
+      type: 'internship',
+      title: p.name || '',
+      org: 'Linux Foundation (LFX)',
+      link: p.programUrl || 'https://mentorship.lfx.linuxfoundation.org',
+      location: 'Remote',
+      tags: [],
+      deadline: p.terms?.[0]?.applicationDeadline || null,
+      description: stripHtml(p.description || '').slice(0, 300),
+    })).filter(r => r.title && r.link);
+  }
+
+  console.log(`    unknown apiFormat: ${config.apiFormat}`);
   return [];
 }
 

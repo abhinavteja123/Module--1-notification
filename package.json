@@ -11,12 +11,14 @@
   },
   "dependencies": {
     "axios": "^1.7.9",
+    "axios-retry": "^4.5.0",
     "cheerio": "^1.0.0",
     "fast-xml-parser": "^4.5.1",
     "p-limit": "^3.1.0",
     "user-agents": "^1.1.349"
   },
   "optionalDependencies": {
+    "linkedin-jobs-api": "^1.1.2",
     "playwright": "^1.49.1"
   },
   "engines": {

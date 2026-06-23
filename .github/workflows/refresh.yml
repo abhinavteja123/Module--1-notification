@@ -12,7 +12,7 @@ permissions:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
 
     steps:
       - name: Checkout repository
@@ -46,7 +46,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add app/data.js app/seen-ids.json
+          git add app/data.js app/seen-ids.json app/sources-health.json
           # Only commit if there are changes
-          git diff --cached --quiet || git commit -m "🔄 Auto-refresh opportunities [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+          git diff --cached --quiet || git commit -m "chore: auto-refresh opportunities [$(date -u '+%Y-%m-%d %H:%M UTC')]"
           git push

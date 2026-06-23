@@ -118,7 +118,9 @@
       "card": "a.item[itemprop='itemListElement']",
       "title": "h3[itemprop='name'], h3.double-wrap, h3",
       "org": "p.single-wrap",
-      "link": "a[href]"
+      "link": "a[href]",
+      "description": ".tagline, .desc, p.description, p.double-wrap",
+      "deadline": "meta[itemprop='endDate'], [itemprop='endDate'], .end-date, .deadline-date"
     }
   }
 ]

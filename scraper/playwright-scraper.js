@@ -110,14 +110,39 @@ async function scrapeWithPlaywright(config) {
           link = linkEl.href || linkEl.getAttribute('href') || '';
         }
 
-        return { title, org, link };
+        // Extract description (optional)
+        let description = '';
+        if (s.description) {
+          for (const ds of s.description.split(',').map(x => x.trim())) {
+            const el = card.querySelector(ds);
+            if (el && el.textContent.trim()) {
+              description = el.textContent.trim().slice(0, 300);
+              break;
+            }
+          }
+        }
+
+        // Extract deadline (optional) — supports content/datetime attrs or text
+        let deadline = null;
+        if (s.deadline) {
+          for (const ds of s.deadline.split(',').map(x => x.trim())) {
+            const el = card.querySelector(ds);
+            if (el) {
+              const val = el.getAttribute('content') || el.getAttribute('datetime') || el.textContent.trim();
+              if (val) { deadline = val; break; }
+            }
+          }
+        }
+
+        return { title, org, link, description, deadline };
       }).filter(r => r.title && r.link);
     }, sel);
 
     return results.map(r => ({
       ...r,
-      // Normalize relative URLs
       link: r.link.startsWith('http') ? r.link : new URL(r.link, config.url).href,
+      description: r.description || undefined,
+      deadline: r.deadline || undefined,
       type: config.type,
       source: config.name,
     }));

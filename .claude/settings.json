@@ -4,7 +4,9 @@
       "WebSearch",
       "Bash(cat)",
       "Read(//tmp/**)",
-      "WebFetch(domain:apify.com)"
+      "WebFetch(domain:apify.com)",
+      "Bash(gh workflow *)",
+      "Bash(gh run *)"
     ]
   }
 }

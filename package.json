@@ -13,6 +13,7 @@
     "axios": "^1.7.9",
     "axios-retry": "^4.5.0",
     "cheerio": "^1.0.0",
+    "dotenv": "^17.4.2",
     "fast-xml-parser": "^4.5.1",
     "p-limit": "^3.1.0",
     "user-agents": "^1.1.349"

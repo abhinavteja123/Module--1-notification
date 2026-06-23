@@ -1,9 +1,10 @@
 // api-scraper.js
 // Handles all free public JSON APIs — no selectors, no scraping, no blocking risk.
 // Sources: Devpost, DoraHacks, Devfolio, Remotive, Arbeitnow, RemoteOK,
-//          The Muse, Jobicy, Outreachy, LFX Mentorship.
+//          The Muse, Jobicy, Outreachy, LFX Mentorship, HN Jobs.
 
 const axios = require('axios');
+const pLimit = require('p-limit');
 
 const UA = { 'User-Agent': 'student-notify/1.0 (+personal project)' };
 
@@ -174,6 +175,40 @@ async function scrapeAPI(config) {
       deadline: p.terms?.[0]?.applicationDeadline || null,
       description: stripHtml(p.description || '').slice(0, 300),
     })).filter(r => r.title && r.link);
+  }
+
+  // ---- Hacker News Jobs (YC startups — official Firebase API) ----
+  if (config.apiFormat === 'hn') {
+    const ids = (Array.isArray(data) ? data : []).slice(0, 30);
+    const limit = pLimit(5);
+    const items = await Promise.all(
+      ids.map(id => limit(() =>
+        axios.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json`, { timeout: 8000, headers: UA })
+          .then(r => r.data)
+          .catch(() => null)
+      ))
+    );
+    return items
+      .filter(it => it && it.title && it.url)
+      .map(it => {
+        // Title format: "Company (YC W23) Is Hiring Role" or "Company Is Hiring Role"
+        const companyMatch = it.title.match(/^(.+?)\s+(?:\(YC\s+\w+\)\s+)?[Ii]s [Hh]iring/);
+        const org = companyMatch ? companyMatch[1].trim() : it.by || 'YC Startup';
+        const roleMatch = it.title.match(/[Ii]s [Hh]iring\s+(?:a\s+|an\s+)?(.+)$/);
+        const title = roleMatch ? roleMatch[1].trim() : it.title;
+        return tag({
+          type: isIntern(title) ? 'internship' : 'job',
+          title,
+          org,
+          link: it.url,
+          location: 'Remote / USA',
+          tags: [],
+          description: stripHtml(it.text || '').slice(0, 300),
+          deadline: null,
+          postedAt: it.time ? new Date(it.time * 1000).toISOString() : null,
+        });
+      })
+      .filter(r => r.title && r.link);
   }
 
   console.log(`    unknown apiFormat: ${config.apiFormat}`);

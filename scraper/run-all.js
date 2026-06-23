@@ -6,6 +6,9 @@
 //   node scraper/run-all.js              # full run, writes app/data.js
 //   node scraper/run-all.js --dry-run    # fetch + log, no file writes
 
+// Load .env for local dev (no-op in CI where secrets are injected via GitHub Secrets)
+try { require('dotenv').config(); } catch { /* dotenv optional */ }
+
 const fs = require('fs');
 const path = require('path');
 const pLimit = require('p-limit');

@@ -11,7 +11,8 @@
     "url": "https://api.dorahacks.io/api/v2/hackathons?page=1&limit=30",
     "type": "hackathon",
     "scraper": "api",
-    "apiFormat": "dorahacks"
+    "apiFormat": "dorahacks",
+    "enabled": false
   },
   {
     "name": "Devfolio Hackathons",
@@ -25,6 +26,7 @@
     "url": "https://www.hackerearth.com/challenges/hackathon/",
     "type": "hackathon",
     "scraper": "cheerio",
+    "enabled": false,
     "selectors": {
       "card": ".challenge-card",
       "title": ".challenge-list-title",
@@ -69,7 +71,7 @@
   },
   {
     "name": "We Work Remotely Jobs",
-    "url": "https://weworkremotely.com/feed.rss",
+    "url": "https://weworkremotely.com/remote-jobs.rss",
     "type": "job",
     "scraper": "rss"
   },
@@ -84,14 +86,23 @@
     "url": "https://www.outreachy.org/api/v2/positions/",
     "type": "internship",
     "scraper": "api",
-    "apiFormat": "outreachy"
+    "apiFormat": "outreachy",
+    "enabled": false
   },
   {
     "name": "LFX Mentorship Programs",
     "url": "https://api.mentorship.lfx.linuxfoundation.org/v1/programs?limit=100&status=active",
     "type": "internship",
     "scraper": "api",
-    "apiFormat": "lfx"
+    "apiFormat": "lfx",
+    "enabled": false
+  },
+  {
+    "name": "YC Startup Jobs (HN)",
+    "url": "https://hacker-news.firebaseio.com/v0/jobstories.json",
+    "type": "job",
+    "scraper": "api",
+    "apiFormat": "hn"
   },
   {
     "name": "Internshala Internships",

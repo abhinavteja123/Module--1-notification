@@ -1,6 +1,6 @@
 # Dependencies
 node_modules/
-
+.claude/
 # OS
 .DS_Store
 Thumbs.db

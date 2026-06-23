@@ -39,4 +39,5 @@ jobs:
           git add app/data.js app/seen-ids.json app/sources-health.json
           # Only commit if there are changes
           git diff --cached --quiet || git commit -m "chore: auto-refresh opportunities [$(date -u '+%Y-%m-%d %H:%M UTC')]"
+          git pull --rebase origin main
           git push

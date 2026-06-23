@@ -19,7 +19,8 @@
     "url": "https://api.devfolio.co/api/hackathons?per_page=20&page=1",
     "type": "hackathon",
     "scraper": "api",
-    "apiFormat": "devfolio"
+    "apiFormat": "devfolio",
+    "timeout": 30000
   },
   {
     "name": "HackerEarth Hackathons",

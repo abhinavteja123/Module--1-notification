@@ -24,6 +24,9 @@ async function scrapeRSS(config) {
   const parser = new XMLParser({
     ignoreAttributes: false,
     attributeNamePrefix: '@_',
+    processEntities: true,
+    htmlEntities: true,
+    entityExpansionLimit: 5000,
   });
   const parsed = parser.parse(data);
 

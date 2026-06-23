@@ -23,7 +23,7 @@ function stripHtml(str = '') {
  */
 async function scrapeAPI(config) {
   const { data } = await axios.get(config.url, {
-    timeout: 15000,
+    timeout: config.timeout || 15000,
     headers: UA,
   });
 

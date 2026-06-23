@@ -15,7 +15,7 @@
   },
   {
     "name": "Devfolio Hackathons",
-    "url": "https://api.devfolio.co/api/hackathons",
+    "url": "https://api.devfolio.co/api/hackathons?per_page=20&page=1",
     "type": "hackathon",
     "scraper": "api",
     "apiFormat": "devfolio"
@@ -25,7 +25,6 @@
     "url": "https://www.hackerearth.com/challenges/hackathon/",
     "type": "hackathon",
     "scraper": "cheerio",
-    "enabled": false,
     "selectors": {
       "card": ".challenge-card",
       "title": ".challenge-list-title",
@@ -96,18 +95,19 @@
   },
   {
     "name": "Internshala Internships",
-    "url": "https://internshala.com/internships",
+    "url": "https://internshala.com/internships/computer-science-internship/",
     "type": "internship",
-    "scraper": "cheerio",
-    "enabled": false,
-    "selectors": {
-      "card": ".individual_internship",
-      "title": ".profile",
-      "org": ".company_name",
-      "link": "a.view_detail_button",
-      "stipend": ".stipend",
-      "deadline": ".deadline"
-    }
+    "scraper": "firecrawl",
+    "firecrawlSchema": "internshala",
+    "waitFor": 2000
+  },
+  {
+    "name": "Naukri Fresher Jobs",
+    "url": "https://www.naukri.com/fresher-jobs?k=software+developer+fresher&l=&experience=0",
+    "type": "job",
+    "scraper": "firecrawl",
+    "firecrawlSchema": "naukri",
+    "waitFor": 3000
   },
   {
     "name": "Unstop Hackathons",

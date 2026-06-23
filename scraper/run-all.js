@@ -10,17 +10,19 @@ const fs = require('fs');
 const path = require('path');
 const pLimit = require('p-limit');
 
-const { scrapeWithCheerio }   = require('./cheerio-scraper');
+const { scrapeWithCheerio }    = require('./cheerio-scraper');
 const { scrapeWithPlaywright } = require('./playwright-scraper');
 const { scrapeRSS }            = require('./rss-scraper');
 const { scrapeAPI }            = require('./api-scraper');
 const { scrapeAllATS }         = require('./ats-scraper');
 const { scrapeLinkedIn }       = require('./linkedin-scraper');
+const { scrapeWithFirecrawl }  = require('./firecrawl-scraper');
 
 const targets    = require('./configs/targets.json');
 const companies  = require('./configs/companies.json');
 
-const DRY_RUN = process.argv.includes('--dry-run');
+const DRY_RUN  = process.argv.includes('--dry-run');
+const API_ONLY = process.argv.includes('--api-only'); // skip playwright/cheerio/firecrawl scrapers
 const limit = pLimit(3); // max 3 concurrent scrapers
 
 // ---- Relevance tagging (from existing MVP) ----
@@ -45,7 +47,14 @@ function recordHealth(name, count, error = null) {
 
 // ---- Scraper dispatcher ----
 
+const HEAVY_SCRAPERS = new Set(['cheerio', 'playwright', 'firecrawl']);
+
 async function runScraper(config) {
+  // --api-only: skip web scrapers, run only api/rss/ats sources
+  if (API_ONLY && HEAVY_SCRAPERS.has(config.scraper)) {
+    console.log(`  [SKIP]  ${config.name} (api-only mode)`);
+    return [];
+  }
   const start = Date.now();
   console.log(`  [START] ${config.name}`);
   try {
@@ -55,6 +64,7 @@ async function runScraper(config) {
       case 'playwright': raw = await scrapeWithPlaywright(config); break;
       case 'rss':        raw = await scrapeRSS(config); break;
       case 'api':        raw = await scrapeAPI(config); break;
+      case 'firecrawl':  raw = await scrapeWithFirecrawl(config); break;
       default:
         console.log(`    ⚠ Unknown scraper type: ${config.scraper}`);
     }

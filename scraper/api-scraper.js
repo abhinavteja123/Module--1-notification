@@ -131,7 +131,7 @@ async function scrapeAPI(config) {
 
   // ---- Devfolio (undocumented public API — graceful if shape changes) ----
   if (config.apiFormat === 'devfolio') {
-    const list = data.hackathons || data.data || (Array.isArray(data) ? data : []);
+    const list = data.result || data.hackathons || data.data || (Array.isArray(data) ? data : []);
     return list.map(h => tag({
       type: 'hackathon',
       title: h.name || h.title || '',

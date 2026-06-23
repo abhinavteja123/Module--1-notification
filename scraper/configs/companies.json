@@ -41,7 +41,9 @@
     "temporal",
     "razorpay",
     "freshworks",
-    "browserstack"
+    "browserstack",
+    "groww",
+    "phonepe"
   ],
   "lever": [
     "shopify",
@@ -83,7 +85,9 @@
     "astronomer",
     "prefect-technologies",
     "netlify",
-    "hasura"
+    "hasura",
+    "cred",
+    "meesho"
   ],
   "ashby": [
     "linear",

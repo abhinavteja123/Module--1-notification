@@ -4,7 +4,8 @@
 const axios = require('axios');
 const { XMLParser } = require('fast-xml-parser');
 
-const UA = { 'User-Agent': 'student-notify/1.0 (+personal project)' };
+// Some RSS hosts (e.g. We Work Remotely) reject bot UAs — use browser-like one
+const RSS_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36';
 
 /**
  * Scrape an RSS or Atom feed.
@@ -14,7 +15,10 @@ const UA = { 'User-Agent': 'student-notify/1.0 (+personal project)' };
 async function scrapeRSS(config) {
   const { data } = await axios.get(config.url, {
     timeout: 10000,
-    headers: { ...UA, 'Accept': 'application/rss+xml, application/atom+xml, application/xml, text/xml' },
+    headers: {
+      'User-Agent': RSS_UA,
+      'Accept': 'application/rss+xml, application/atom+xml, application/xml, text/xml, */*',
+    },
   });
 
   const parser = new XMLParser({

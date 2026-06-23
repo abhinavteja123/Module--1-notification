@@ -131,16 +131,18 @@ async function scrapeAPI(config) {
 
   // ---- Devfolio (undocumented public API — graceful if shape changes) ----
   if (config.apiFormat === 'devfolio') {
-    const list = data.result || data.hackathons || data.data || (Array.isArray(data) ? data : []);
+    const now = Date.now();
+    const list = (data.result || data.hackathons || data.data || (Array.isArray(data) ? data : []))
+      .filter(h => !h.ends_at || new Date(h.ends_at).getTime() > now);
     return list.map(h => tag({
       type: 'hackathon',
       title: h.name || h.title || '',
       org: h.team?.name || h.organization || 'Devfolio',
-      link: h.url || (h.slug ? `https://devfolio.co/hackathons/${h.slug}` : ''),
+      link: h.url || (h.slug ? `https://${h.slug}.devfolio.co` : ''),
       location: h.city || (h.is_online ? 'Online' : 'India'),
       tags: (h.themes || h.tags || []).slice(0, 4),
       deadline: h.ends_at || h.submission_deadline || null,
-      description: stripHtml(h.description || '').slice(0, 300),
+      description: stripHtml(h.desc || h.tagline || '').slice(0, 300),
     })).filter(r => r.title && r.link);
   }
 

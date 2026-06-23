@@ -1,0 +1,85 @@
+{
+  "updatedAt": "2026-06-23T12:56:44.263Z",
+  "totalItems": 2726,
+  "newItems": 1975,
+  "sources": {
+    "Devpost Hackathons": {
+      "count": 9,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-23T12:56:30.141Z"
+    },
+    "Remotive Remote Jobs": {
+      "count": 30,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-23T12:56:30.251Z"
+    },
+    "Arbeitnow Job Board": {
+      "count": 100,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-23T12:56:30.352Z"
+    },
+    "Devfolio Hackathons": {
+      "count": 0,
+      "ok": false,
+      "error": "Request failed with status code 422",
+      "ts": "2026-06-23T12:56:30.746Z"
+    },
+    "RemoteOK Jobs": {
+      "count": 100,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-23T12:56:31.067Z"
+    },
+    "Jobicy Remote Jobs": {
+      "count": 50,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-23T12:56:31.127Z"
+    },
+    "The Muse Jobs": {
+      "count": 20,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-23T12:56:31.169Z"
+    },
+    "We Work Remotely Jobs": {
+      "count": 0,
+      "ok": false,
+      "error": "Request failed with status code 406",
+      "ts": "2026-06-23T12:56:31.296Z"
+    },
+    "DoraHacks Hackathons": {
+      "count": 0,
+      "ok": false,
+      "error": "getaddrinfo ENOTFOUND api.dorahacks.io",
+      "ts": "2026-06-23T12:56:31.300Z"
+    },
+    "Authentic Jobs": {
+      "count": 10,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-23T12:56:31.566Z"
+    },
+    "Outreachy Fellowships": {
+      "count": 0,
+      "ok": false,
+      "error": "Request failed with status code 404",
+      "ts": "2026-06-23T12:56:31.583Z"
+    },
+    "LFX Mentorship Programs": {
+      "count": 0,
+      "ok": false,
+      "error": "Request failed with status code 404",
+      "ts": "2026-06-23T12:56:31.884Z"
+    },
+    "Unstop Hackathons": {
+      "count": 18,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-23T12:56:39.312Z"
+    }
+  }
+}

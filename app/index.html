@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>OpportunityHub — Hackathons · Internships · Jobs</title>
+<meta name="description" content="Real-time student opportunities aggregated from Devfolio, Unstop, Internshala, HackerEarth, Devpost, and 500+ company career pages. Auto-refreshes every 6 hours." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg: #0b0d11;
+  --surface: #12151c;
+  --card: #171b25;
+  --card-hover: #1d2230;
+  --border: #252a37;
+  --border-light: #2f3547;
+  --text: #e8eaf0;
+  --text-secondary: #8b93a7;
+  --text-muted: #5e667a;
+  --accent: #7c5cff;
+  --accent-glow: rgba(124, 92, 255, 0.15);
+  --accent-soft: #6a4de6;
+  --green: #10b981;
+  --amber: #f59e0b;
+  --rose: #f43f5e;
+  --blue: #3b82f6;
+  --cyan: #06b6d4;
+  --pink: #ec4899;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --transition: 200ms cubic-bezier(.4,0,.2,1);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* ── Animated background ── */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: -1;
+  background:
+    radial-gradient(ellipse 600px 400px at 20% 10%, rgba(124,92,255,.08), transparent),
+    radial-gradient(ellipse 500px 350px at 80% 80%, rgba(6,182,212,.06), transparent);
+}
+
+/* ── Header ── */
+.header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(11,13,17,.85);
+  backdrop-filter: blur(16px) saturate(1.8);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 16px 20px;
+}
+.header-top {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.logo {
+  font-size: 20px; font-weight: 800;
+  background: linear-gradient(135deg, var(--accent), var(--cyan));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+.logo span { font-weight: 400; opacity: .7; }
+.header-meta {
+  margin-left: auto;
+  display: flex; align-items: center; gap: 12px;
+  font-size: 12px; color: var(--text-muted);
+}
+.live-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--green);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(16,185,129,.4); }
+  50% { box-shadow: 0 0 0 6px rgba(16,185,129,0); }
+}
+.stat-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px; border-radius: 999px;
+  background: var(--card); border: 1px solid var(--border);
+  font-size: 12px; font-weight: 600;
+}
+.stat-pill .num { color: var(--accent); }
+
+/* ── Filter bar ── */
+.filters {
+  display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; align-items: center;
+}
+.search-box {
+  flex: 1; min-width: 200px; position: relative;
+}
+.search-box input {
+  width: 100%;
+  font: inherit; font-size: 14px;
+  background: var(--card); color: var(--text);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 10px 14px 10px 38px;
+  outline: none; transition: border-color var(--transition);
+}
+.search-box input:focus { border-color: var(--accent); }
+.search-box::before {
+  content: '🔍'; position: absolute; left: 12px; top: 50%;
+  transform: translateY(-50%); font-size: 14px; pointer-events: none;
+}
+select, .filter-btn {
+  font: inherit; font-size: 13px; font-weight: 500;
+  background: var(--card); color: var(--text);
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 9px 14px; cursor: pointer;
+  outline: none; transition: all var(--transition);
+  appearance: none;
+}
+select { padding-right: 30px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238b93a7'%3E%3Cpath d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; }
+select:focus, .filter-btn:hover { border-color: var(--accent); }
+.filter-btn.active {
+  background: var(--accent); border-color: var(--accent); color: #fff;
+}
+
+/* ── Tabs ── */
+.tabs {
+  display: flex; gap: 4px; margin-top: 12px;
+  background: var(--surface); border-radius: var(--radius);
+  padding: 4px; border: 1px solid var(--border);
+  overflow-x: auto;
+}
+.tab {
+  padding: 8px 18px; border-radius: var(--radius-sm);
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  color: var(--text-secondary); transition: all var(--transition);
+  white-space: nowrap; border: none; background: none;
+}
+.tab:hover { color: var(--text); background: rgba(255,255,255,.04); }
+.tab.active {
+  background: var(--accent); color: #fff;
+  box-shadow: 0 2px 8px rgba(124,92,255,.3);
+}
+.tab .count {
+  font-size: 11px; opacity: .7; margin-left: 4px;
+  font-weight: 400;
+}
+
+/* ── Main ── */
+.main {
+  max-width: 1200px; margin: 0 auto;
+  padding: 20px 20px 80px;
+}
+.results-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 16px; gap: 12px; flex-wrap: wrap;
+}
+.results-count { font-size: 14px; color: var(--text-secondary); }
+.results-count strong { color: var(--text); }
+.sort-row { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-muted); }
+
+/* ── Cards ── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 12px;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  transition: all var(--transition);
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; gap: 12px;
+  animation: fadeUp .3s ease both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.card:hover {
+  border-color: var(--border-light);
+  background: var(--card-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+.card.is-new::before {
+  content: 'NEW';
+  position: absolute; top: 12px; right: -24px;
+  background: var(--accent);
+  color: #fff; font-size: 10px; font-weight: 700;
+  padding: 2px 28px;
+  transform: rotate(45deg);
+  letter-spacing: .5px;
+}
+.card-top {
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.card-icon {
+  width: 42px; height: 42px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.card-icon.hackathon { background: rgba(124,92,255,.15); }
+.card-icon.internship { background: rgba(16,185,129,.15); }
+.card-icon.job { background: rgba(59,130,246,.15); }
+.card-body { flex: 1; min-width: 0; }
+.card-title {
+  font-size: 15px; font-weight: 700;
+  line-height: 1.3;
+  display: -webkit-box; -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; overflow: hidden;
+}
+.card-org {
+  font-size: 13px; color: var(--text-secondary);
+  margin-top: 2px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.card-meta {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px;
+}
+.badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 11px; font-weight: 500;
+  padding: 3px 8px; border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+.badge.source {
+  border-color: rgba(124,92,255,.3);
+  color: #a78bfa; background: rgba(124,92,255,.08);
+}
+.badge.location { border-color: rgba(6,182,212,.3); color: #67e8f9; }
+.badge.remote { border-color: rgba(16,185,129,.3); color: #6ee7b7; background: rgba(16,185,129,.08); }
+.badge.india { border-color: rgba(245,158,11,.3); color: #fbbf24; }
+.card-actions {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: auto; padding-top: 4px;
+}
+.card-time {
+  font-size: 11px; color: var(--text-muted);
+}
+.view-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  text-decoration: none; color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+  padding: 7px 16px; border-radius: var(--radius-sm);
+  font-size: 13px; font-weight: 600;
+  transition: all var(--transition);
+  box-shadow: 0 2px 8px rgba(124,92,255,.2);
+}
+.view-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(124,92,255,.35);
+}
+
+/* ── Empty state ── */
+.empty {
+  text-align: center; padding: 80px 20px;
+  color: var(--text-muted);
+}
+.empty-icon { font-size: 48px; margin-bottom: 16px; }
+.empty h3 { color: var(--text-secondary); margin-bottom: 8px; }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .card-grid { grid-template-columns: 1fr; }
+  .header-meta { margin-left: 0; width: 100%; justify-content: flex-start; }
+  .filters { flex-direction: column; }
+  .search-box { min-width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="header-top">
+      <div class="logo">OpportunityHub <span>by StudentNotify</span></div>
+      <div class="header-meta">
+        <span class="live-dot"></span>
+        <span id="updateTime">Loading...</span>
+        <span class="stat-pill"><span class="num" id="totalCount">0</span> listings</span>
+        <span class="stat-pill" style="border-color:rgba(16,185,129,.3)"><span class="num" style="color:var(--green)" id="newCount">0</span> new</span>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters">
+      <div class="search-box">
+        <input type="text" id="search" placeholder="Search titles, companies, skills..." autocomplete="off" />
+      </div>
+      <select id="sourceFilter">
+        <option value="all">All Sources</option>
+      </select>
+      <select id="locationFilter">
+        <option value="all">All Locations</option>
+      </select>
+      <button class="filter-btn" id="btechBtn">🎓 B.Tech</button>
+      <button class="filter-btn" id="indiaBtn">🇮🇳 India</button>
+      <button class="filter-btn" id="remoteBtn">🏠 Remote</button>
+      <button class="filter-btn" id="newOnlyBtn">✨ New Only</button>
+      <button class="filter-btn" id="seenBtn" style="margin-left:auto">✓ Mark All Seen</button>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs" id="tabs"></div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="results-bar">
+    <div class="results-count" id="resultsInfo"></div>
+    <div class="sort-row">
+      Sort:
+      <select id="sortBy">
+        <option value="newest">Newest First</option>
+        <option value="alpha">A → Z</option>
+        <option value="source">By Source</option>
+      </select>
+    </div>
+  </div>
+  <div class="card-grid" id="grid"></div>
+</div>
+
+<script src="data.js"></script>
+<script>
+/* ── Constants ── */
+const ICONS = { hackathon: '🏆', internship: '🎓', job: '💼' };
+const TABS = ['all', 'hackathon', 'internship', 'job'];
+const LABELS = { all: 'All', hackathon: 'Hackathons', internship: 'Internships', job: 'Jobs' };
+const items = window.OPPORTUNITIES || [];
+
+/* ── State ── */
+let state = {
+  tab: 'all',
+  search: '',
+  source: 'all',
+  location: 'all',
+  btech: false,
+  india: false,
+  remote: false,
+  newOnly: false,
+  sort: 'newest',
+};
+
+/* ── Seen tracking ── */
+const seen = new Set(JSON.parse(localStorage.getItem('seenIds') || '[]'));
+function saveSeen() { localStorage.setItem('seenIds', JSON.stringify([...seen])); }
+function isNew(it) { return !seen.has(it.id); }
+
+/* ── Populate filter dropdowns ── */
+function buildDropdowns() {
+  const sources = new Set();
+  const locations = new Set();
+  items.forEach(it => {
+    if (it.source) sources.add(it.source);
+    if (it.location && it.location !== 'Unknown' && it.location !== 'Flexible') {
+      // Simplify location for dropdown
+      const loc = it.location.split(',')[0].trim();
+      if (loc.length > 2 && loc.length < 40) locations.add(loc);
+    }
+  });
+
+  const srcSelect = document.getElementById('sourceFilter');
+  [...sources].sort().forEach(s => {
+    const o = document.createElement('option');
+    o.value = s; o.textContent = s;
+    srcSelect.appendChild(o);
+  });
+
+  const locSelect = document.getElementById('locationFilter');
+  const topLocs = [...locations].sort().slice(0, 30);
+  topLocs.forEach(l => {
+    const o = document.createElement('option');
+    o.value = l; o.textContent = l;
+    locSelect.appendChild(o);
+  });
+}
+
+/* ── Filtering ── */
+function getFiltered() {
+  return items.filter(it => {
+    if (state.tab !== 'all' && it.type !== state.tab) return false;
+    if (state.btech && !it.btech) return false;
+    if (state.india && !it.india) return false;
+    if (state.remote && !it.is_remote) return false;
+    if (state.newOnly && !isNew(it)) return false;
+    if (state.source !== 'all' && it.source !== state.source) return false;
+    if (state.location !== 'all') {
+      const loc = (it.location || '').toLowerCase();
+      if (!loc.includes(state.location.toLowerCase())) return false;
+    }
+    if (state.search) {
+      const q = state.search.toLowerCase();
+      const hay = [it.title, it.org, it.source, it.location, ...(it.tags || [])].join(' ').toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+}
+
+function sortItems(list) {
+  const copy = [...list];
+  if (state.sort === 'newest') {
+    copy.sort((a, b) => new Date(b.firstSeenAt || 0) - new Date(a.firstSeenAt || 0));
+  } else if (state.sort === 'alpha') {
+    copy.sort((a, b) => a.title.localeCompare(b.title));
+  } else if (state.sort === 'source') {
+    copy.sort((a, b) => (a.source || '').localeCompare(b.source || ''));
+  }
+  return copy;
+}
+
+/* ── Rendering ── */
+function render() {
+  // Header stats
+  const newCount = items.filter(isNew).length;
+  document.getElementById('totalCount').textContent = items.length;
+  document.getElementById('newCount').textContent = newCount;
+
+  const when = window.GENERATED_AT ? new Date(window.GENERATED_AT).toLocaleString() : 'unknown';
+  document.getElementById('updateTime').textContent = `Updated ${when}`;
+
+  // Tabs
+  const tabsEl = document.getElementById('tabs');
+  tabsEl.innerHTML = TABS.map(t => {
+    const n = t === 'all' ? items.length : items.filter(i => i.type === t).length;
+    return `<button class="tab ${t === state.tab ? 'active' : ''}" data-tab="${t}">
+      ${LABELS[t]}<span class="count">(${n})</span>
+    </button>`;
+  }).join('');
+
+  // Toggle button states
+  document.getElementById('btechBtn').classList.toggle('active', state.btech);
+  document.getElementById('indiaBtn').classList.toggle('active', state.india);
+  document.getElementById('remoteBtn').classList.toggle('active', state.remote);
+  document.getElementById('newOnlyBtn').classList.toggle('active', state.newOnly);
+
+  // Filtered + sorted list
+  const filtered = sortItems(getFiltered());
+
+  document.getElementById('resultsInfo').innerHTML =
+    `Showing <strong>${filtered.length}</strong> of ${items.length} opportunities`;
+
+  const grid = document.getElementById('grid');
+
+  if (!items.length) {
+    grid.innerHTML = `<div class="empty" style="grid-column:1/-1">
+      <div class="empty-icon">📡</div>
+      <h3>No data yet</h3>
+      <p>Run <code>node scraper/run-all.js</code> to fetch opportunities</p>
+    </div>`;
+    return;
+  }
+
+  if (!filtered.length) {
+    grid.innerHTML = `<div class="empty" style="grid-column:1/-1">
+      <div class="empty-icon">🔍</div>
+      <h3>No matches</h3>
+      <p>Try adjusting your filters or search term</p>
+    </div>`;
+    return;
+  }
+
+  grid.innerHTML = filtered.map((it, i) => {
+    const isItemNew = isNew(it);
+    const timeAgo = it.firstSeenAt ? getTimeAgo(it.firstSeenAt) : '';
+    const loc = it.location && it.location !== 'Unknown' ? it.location.split(',')[0].trim() : '';
+
+    return `<div class="card ${isItemNew ? 'is-new' : ''}" style="animation-delay:${Math.min(i * 20, 300)}ms">
+      <div class="card-top">
+        <div class="card-icon ${it.type}">${ICONS[it.type] || '🔔'}</div>
+        <div class="card-body">
+          <div class="card-title">${esc(it.title)}</div>
+          <div class="card-org">${esc(it.org || it.source)}</div>
+        </div>
+      </div>
+      <div class="card-meta">
+        <span class="badge source">${esc(it.source)}</span>
+        ${loc ? `<span class="badge location">📍 ${esc(loc)}</span>` : ''}
+        ${it.is_remote ? '<span class="badge remote">🏠 Remote</span>' : ''}
+        ${it.india ? '<span class="badge india">🇮🇳 India</span>' : ''}
+        ${it.stipend ? `<span class="badge">💰 ${esc(it.stipend)}</span>` : ''}
+      </div>
+      <div class="card-actions">
+        <span class="card-time">${timeAgo}</span>
+        <a class="view-btn" href="${esc(it.link)}" target="_blank" rel="noopener"
+           onclick="markSeen('${esc(it.id)}')">View →</a>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+/* ── Helpers ── */
+function esc(s) {
+  return String(s ?? '').replace(/[&<>"']/g, c =>
+    ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'": '&#39;' }[c]));
+}
+
+function getTimeAgo(dateStr) {
+  const diff = Date.now() - new Date(dateStr).getTime();
+  const mins = Math.floor(diff / 60000);
+  if (mins < 60) return `${mins}m ago`;
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24) return `${hrs}h ago`;
+  const days = Math.floor(hrs / 24);
+  return `${days}d ago`;
+}
+
+window.markSeen = function(id) { seen.add(id); saveSeen(); render(); };
+
+/* ── Event listeners ── */
+document.getElementById('tabs').addEventListener('click', e => {
+  const btn = e.target.closest('.tab');
+  if (btn) { state.tab = btn.dataset.tab; render(); }
+});
+
+document.getElementById('search').addEventListener('input', e => {
+  state.search = e.target.value.trim(); render();
+});
+
+document.getElementById('sourceFilter').addEventListener('change', e => {
+  state.source = e.target.value; render();
+});
+
+document.getElementById('locationFilter').addEventListener('change', e => {
+  state.location = e.target.value; render();
+});
+
+document.getElementById('sortBy').addEventListener('change', e => {
+  state.sort = e.target.value; render();
+});
+
+document.getElementById('btechBtn').addEventListener('click', () => {
+  state.btech = !state.btech; render();
+});
+document.getElementById('indiaBtn').addEventListener('click', () => {
+  state.india = !state.india; render();
+});
+document.getElementById('remoteBtn').addEventListener('click', () => {
+  state.remote = !state.remote; render();
+});
+document.getElementById('newOnlyBtn').addEventListener('click', () => {
+  state.newOnly = !state.newOnly; render();
+});
+document.getElementById('seenBtn').addEventListener('click', () => {
+  items.forEach(it => seen.add(it.id));
+  saveSeen(); render();
+});
+
+/* ── Init ── */
+buildDropdowns();
+render();
+</script>
+</body>
+</html>

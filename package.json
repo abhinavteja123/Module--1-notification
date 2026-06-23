@@ -1,0 +1,25 @@
+{
+  "name": "student-notification-platform",
+  "version": "1.0.0",
+  "description": "Scraper engine for student hackathons, internships, and jobs",
+  "private": true,
+  "scripts": {
+    "scrape": "node scraper/run-all.js",
+    "scrape:dry": "node scraper/run-all.js --dry-run",
+    "test:scrapers": "node scraper/test-scrapers.js --all",
+    "fetch": "node app/fetch-opportunities.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cheerio": "^1.0.0",
+    "fast-xml-parser": "^4.5.1",
+    "p-limit": "^3.1.0",
+    "user-agents": "^1.1.349"
+  },
+  "optionalDependencies": {
+    "playwright": "^1.49.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

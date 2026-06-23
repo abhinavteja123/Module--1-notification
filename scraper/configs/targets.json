@@ -1,0 +1,95 @@
+[
+  {
+    "name": "HackerEarth Hackathons",
+    "url": "https://www.hackerearth.com/challenges/hackathon/",
+    "type": "hackathon",
+    "scraper": "cheerio",
+    "selectors": {
+      "card": ".challenge-card",
+      "title": ".challenge-list-title",
+      "org": ".challenge-name",
+      "link": "a.challenge-card-link"
+    }
+  },
+  {
+    "name": "Internshala Internships",
+    "url": "https://internshala.com/internships",
+    "type": "internship",
+    "scraper": "cheerio",
+    "parseMode": "jsonld",
+    "selectors": {
+      "card": ".individual_internship",
+      "title": ".profile",
+      "org": ".company_name",
+      "link": "a.view_detail_button",
+      "stipend": ".stipend",
+      "deadline": ".deadline"
+    }
+  },
+  {
+    "name": "Devfolio Hackathons",
+    "url": "https://devfolio.co/hackathons",
+    "type": "hackathon",
+    "scraper": "playwright",
+    "selectors": {
+      "card": "[class*='CompactHackathonCard'], [class*='HackathonCard'], a[href*='/hackathons/']",
+      "title": "h3, [class*='title'], [class*='name']",
+      "org": "[class*='organizer'], [class*='org']",
+      "link": "a[href]"
+    }
+  },
+  {
+    "name": "Unstop Hackathons",
+    "url": "https://unstop.com/hackathons",
+    "type": "hackathon",
+    "scraper": "playwright",
+    "selectors": {
+      "card": "a.item[itemprop='itemListElement']",
+      "title": "h3[itemprop='name'], h3.double-wrap, h3",
+      "org": "p.single-wrap",
+      "link": "a[href]"
+    }
+  },
+  {
+    "name": "Devpost Hackathons",
+    "url": "https://devpost.com/api/hackathons",
+    "type": "hackathon",
+    "scraper": "api",
+    "apiFormat": "devpost"
+  },
+  {
+    "name": "Remotive Remote Jobs",
+    "url": "https://remotive.com/api/remote-jobs?category=software-dev&limit=100",
+    "type": "job",
+    "scraper": "api",
+    "apiFormat": "remotive"
+  },
+  {
+    "name": "Arbeitnow Job Board",
+    "url": "https://www.arbeitnow.com/api/job-board-api",
+    "type": "job",
+    "scraper": "api",
+    "apiFormat": "arbeitnow"
+  },
+  {
+    "name": "RemoteOK Jobs",
+    "url": "https://remoteok.com/api",
+    "type": "job",
+    "scraper": "api",
+    "apiFormat": "remoteok"
+  },
+  {
+    "name": "The Muse Jobs",
+    "url": "https://www.themuse.com/api/public/jobs?category=Software%20Engineering&category=Data%20Science&category=Computer%20and%20IT&level=Entry%20Level&level=Internship&page=1",
+    "type": "job",
+    "scraper": "api",
+    "apiFormat": "themuse"
+  },
+  {
+    "name": "Jobicy Remote Jobs",
+    "url": "https://jobicy.com/api/v2/remote-jobs?count=50&tag=dev",
+    "type": "job",
+    "scraper": "api",
+    "apiFormat": "jobicy"
+  }
+]

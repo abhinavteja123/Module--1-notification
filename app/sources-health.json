@@ -1,103 +1,85 @@
 {
-  "updatedAt": "2026-06-23T16:43:05.257Z",
-  "totalItems": 3866,
-  "newItems": 1007,
+  "updatedAt": "2026-06-23T17:50:19.661Z",
+  "totalItems": 2836,
+  "newItems": 38,
   "sources": {
-    "Devpost Hackathons": {
-      "count": 9,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-23T16:42:48.747Z"
-    },
-    "HackerEarth Hackathons": {
-      "count": 0,
-      "ok": false,
-      "error": "Request failed with status code 403",
-      "ts": "2026-06-23T16:42:49.583Z"
-    },
     "Remotive Remote Jobs": {
       "count": 30,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T16:42:49.729Z"
+      "ts": "2026-06-23T17:49:52.561Z"
+    },
+    "Devpost Hackathons": {
+      "count": 9,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-23T17:49:52.629Z"
     },
     "Arbeitnow Job Board": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T16:42:49.880Z"
-    },
-    "DoraHacks Hackathons": {
-      "count": 0,
-      "ok": false,
-      "error": "getaddrinfo ENOTFOUND api.dorahacks.io",
-      "ts": "2026-06-23T16:42:50.154Z"
+      "ts": "2026-06-23T17:49:52.709Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T16:42:50.457Z"
+      "ts": "2026-06-23T17:49:53.030Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T16:42:50.637Z"
-    },
-    "Jobicy Remote Jobs": {
-      "count": 50,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-23T16:42:50.688Z"
+      "ts": "2026-06-23T17:49:53.109Z"
     },
     "We Work Remotely Jobs": {
       "count": 0,
       "ok": false,
-      "error": "Request failed with status code 406",
-      "ts": "2026-06-23T16:42:50.782Z"
-    },
-    "Outreachy Fellowships": {
-      "count": 0,
-      "ok": false,
-      "error": "Request failed with status code 404",
-      "ts": "2026-06-23T16:42:50.982Z"
+      "error": "Entity expansion limit exceeded: 1120 > 1000",
+      "ts": "2026-06-23T17:49:53.580Z"
     },
     "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T16:42:51.038Z"
+      "ts": "2026-06-23T17:49:53.981Z"
+    },
+    "Jobicy Remote Jobs": {
+      "count": 50,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-23T17:49:53.994Z"
     },
     "Internshala Internships": {
       "count": 0,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-23T16:42:51.038Z"
+      "ok": false,
+      "error": "Request failed with status code 401",
+      "ts": "2026-06-23T17:49:54.033Z"
     },
     "Naukri Fresher Jobs": {
       "count": 0,
+      "ok": false,
+      "error": "Request failed with status code 401",
+      "ts": "2026-06-23T17:49:54.039Z"
+    },
+    "YC Startup Jobs (HN)": {
+      "count": 28,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T16:42:51.038Z"
-    },
-    "LFX Mentorship Programs": {
-      "count": 0,
-      "ok": false,
-      "error": "Request failed with status code 404",
-      "ts": "2026-06-23T16:42:51.323Z"
+      "ts": "2026-06-23T17:49:54.369Z"
     },
     "Unstop Hackathons": {
       "count": 18,
       "ok": true,
       "error": null,
-      "ts": "2026-06-23T16:42:58.359Z"
+      "ts": "2026-06-23T17:50:01.163Z"
     },
     "Devfolio Hackathons": {
-      "count": 1000,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-23T16:43:00.193Z"
+      "count": 0,
+      "ok": false,
+      "error": "timeout of 15000ms exceeded",
+      "ts": "2026-06-23T17:50:07.449Z"
     }
   }
 }

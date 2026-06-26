@@ -1,109 +1,67 @@
 {
-  "updatedAt": "2026-06-26T06:10:34.308Z",
-  "totalItems": 7950,
-  "newItems": 3115,
+  "updatedAt": "2026-06-26T08:47:17.945Z",
+  "totalItems": 7894,
+  "newItems": 38,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 32,
       "ok": true,
       "error": null,
-      "ts": "2026-06-26T06:08:32.203Z"
+      "ts": "2026-06-26T08:46:45.214Z"
     },
     "Arbeitnow Job Board": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-06-26T06:08:32.308Z"
+      "ts": "2026-06-26T08:46:45.305Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-06-26T06:08:32.494Z"
+      "ts": "2026-06-26T08:46:45.379Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-06-26T06:08:32.846Z"
-    },
-    "Jobicy Remote Jobs": {
-      "count": 50,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-26T06:08:32.968Z"
+      "ts": "2026-06-26T08:46:45.844Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-06-26T06:08:33.629Z"
+      "ts": "2026-06-26T08:46:45.910Z"
     },
     "We Work Remotely Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-06-26T06:08:33.737Z"
+      "ts": "2026-06-26T08:46:46.812Z"
+    },
+    "Jobicy Remote Jobs": {
+      "count": 50,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-26T08:46:47.266Z"
     },
     "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-06-26T06:08:33.870Z"
+      "ts": "2026-06-26T08:46:47.411Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 29,
       "ok": true,
       "error": null,
-      "ts": "2026-06-26T06:08:34.370Z"
+      "ts": "2026-06-26T08:46:47.753Z"
     },
     "Devfolio Hackathons": {
       "count": 28,
       "ok": true,
       "error": null,
-      "ts": "2026-06-26T06:08:45.817Z"
-    },
-    "Unstop Open Source & Research": {
-      "count": 18,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-26T06:08:53.126Z"
-    },
-    "Naukri Fresher Jobs": {
-      "count": 10,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-26T06:09:28.417Z"
-    },
-    "Season of Docs": {
-      "count": 35,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-26T06:09:31.678Z"
-    },
-    "MLH Fellowship": {
-      "count": 0,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-26T06:09:33.481Z"
-    },
-    "Unstop Hackathons": {
-      "count": 18,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-26T06:09:40.626Z"
-    },
-    "GSoC Organizations": {
-      "count": 0,
-      "ok": false,
-      "error": "timeout of 60000ms exceeded",
-      "ts": "2026-06-26T06:09:53.151Z"
-    },
-    "Season of Docs": {
-      "count": 0,
-      "ok": false,
-      "error": "timeout of 60000ms exceeded",
-      "ts": "2026-06-26T06:10:31.686Z"
+      "ts": "2026-06-26T08:47:12.746Z"
     }
   }
 }

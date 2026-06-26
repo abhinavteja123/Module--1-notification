@@ -32,13 +32,30 @@ const limit = pLimit(3); // max 3 concurrent scrapers
 
 const TECH_RE = /\b(software|developer|engineer(ing)?|sde|programmer|backend|back[- ]?end|frontend|front[- ]?end|full[- ]?stack|web|mobile|android|ios|data|machine learning|\bml\b|\bai\b|deep learning|devops|cloud|computer|\bit\b|qa|test|security|cyber|blockchain|embedded|firmware|python|java(script)?|react|node|golang|\bc\+\+|database|sql|api|platform|systems?|technical|tech)\b/i;
 
+const BBA_RE = /\b(marketing|sales|business\s*development|finance|operations|human\s*resources|\bhr\b|product\s*manager|program\s*manager|account\s*manager|customer\s*success|growth\s*hacker|revenue|strategy|consulting|brand|content\s*(writer|creator|marketer)|social\s*media|copywriter|mba|digital\s*marketing|seo|sem|e-?commerce|supply\s*chain|procurement|merchandising)\b/i;
+
 const INDIA_RE = /\b(india|indian|bengaluru|bangalore|mumbai|delhi|new delhi|hyderabad|pune|chennai|gurgaon|gurugram|noida|kolkata|ahmedabad|jaipur|coimbatore|kochi|chandigarh|remote[- ]?india)\b/i;
 
 function isBtech(title = '', tags = []) {
   return TECH_RE.test(title) || (tags || []).some(t => TECH_RE.test(t));
 }
+function isBBA(title = '', tags = []) {
+  return BBA_RE.test(title) || (tags || []).some(t => BBA_RE.test(t));
+}
 function isIndia(location = '') {
   return INDIA_RE.test(location);
+}
+function scoreItem(item) {
+  let s = 0;
+  if (item.india)                  s += 2;
+  if (item.btech)                  s += 2;
+  if (item.is_remote)              s += 1;
+  if (item.isNew)                  s += 3;
+  if (item.type === 'internship')  s += 2;
+  if (item.type === 'opensource')  s += 2;
+  if (item.type === 'hackathon')   s += 1;
+  if (item.deadline && new Date(item.deadline) > new Date()) s += 1;
+  return s;
 }
 
 // ---- Source health tracking ----
@@ -140,6 +157,7 @@ async function main() {
     item.id = key;
     item.btech = item.type === 'hackathon' ? true : isBtech(item.title, item.tags);
     item.india = isIndia(item.location || '');
+    item.bba   = isBBA(item.title, item.tags);
 
     if (firstSeen[key]) {
       item.firstSeenAt = firstSeen[key];
@@ -149,6 +167,7 @@ async function main() {
       newItems.push(item);
     }
 
+    item.score = scoreItem(item);
     unique.push(item);
   }
 

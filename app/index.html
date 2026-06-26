@@ -313,7 +313,11 @@ select:focus, .filter-btn:hover { border-color: var(--accent); }
       <select id="locationFilter">
         <option value="all">All Locations</option>
       </select>
-      <button class="filter-btn" id="btechBtn">🎓 B.Tech</button>
+      <select id="degreeFilter">
+        <option value="all">🎓 All Degrees</option>
+        <option value="btech">B.Tech / BE</option>
+        <option value="bba">BBA / MBA</option>
+      </select>
       <button class="filter-btn" id="indiaBtn">🇮🇳 India</button>
       <button class="filter-btn" id="remoteBtn">🏠 Remote</button>
       <button class="filter-btn" id="newOnlyBtn">✨ New Only</button>
@@ -332,6 +336,7 @@ select:focus, .filter-btn:hover { border-color: var(--accent); }
       Sort:
       <select id="sortBy">
         <option value="newest">Newest First</option>
+        <option value="relevance">Relevance</option>
         <option value="alpha">A → Z</option>
         <option value="source">By Source</option>
       </select>
@@ -343,9 +348,9 @@ select:focus, .filter-btn:hover { border-color: var(--accent); }
 <script src="data.js"></script>
 <script>
 /* ── Constants ── */
-const ICONS = { hackathon: '🏆', internship: '🎓', job: '💼' };
-const TABS = ['all', 'hackathon', 'internship', 'job'];
-const LABELS = { all: 'All', hackathon: 'Hackathons', internship: 'Internships', job: 'Jobs' };
+const ICONS = { hackathon: '🏆', internship: '🎓', job: '💼', opensource: '🌐' };
+const TABS = ['all', 'hackathon', 'internship', 'job', 'opensource'];
+const LABELS = { all: 'All', hackathon: 'Hackathons', internship: 'Internships', job: 'Jobs', opensource: 'Open Source' };
 const items = window.OPPORTUNITIES || [];
 
 /* ── State ── */
@@ -354,7 +359,7 @@ let state = {
   search: '',
   source: 'all',
   location: 'all',
-  btech: false,
+  degree: 'all',
   india: false,
   remote: false,
   newOnly: false,
@@ -399,7 +404,8 @@ function buildDropdowns() {
 function getFiltered() {
   return items.filter(it => {
     if (state.tab !== 'all' && it.type !== state.tab) return false;
-    if (state.btech && !it.btech) return false;
+    if (state.degree === 'btech' && !it.btech) return false;
+    if (state.degree === 'bba' && !it.bba) return false;
     if (state.india && !it.india) return false;
     if (state.remote && !it.is_remote) return false;
     if (state.newOnly && !isNew(it)) return false;
@@ -421,6 +427,8 @@ function sortItems(list) {
   const copy = [...list];
   if (state.sort === 'newest') {
     copy.sort((a, b) => new Date(b.firstSeenAt || 0) - new Date(a.firstSeenAt || 0));
+  } else if (state.sort === 'relevance') {
+    copy.sort((a, b) => (b.score || 0) - (a.score || 0));
   } else if (state.sort === 'alpha') {
     copy.sort((a, b) => a.title.localeCompare(b.title));
   } else if (state.sort === 'source') {
@@ -448,8 +456,8 @@ function render() {
     </button>`;
   }).join('');
 
-  // Toggle button states
-  document.getElementById('btechBtn').classList.toggle('active', state.btech);
+  // Sync degree dropdown
+  document.getElementById('degreeFilter').value = state.degree;
   document.getElementById('indiaBtn').classList.toggle('active', state.india);
   document.getElementById('remoteBtn').classList.toggle('active', state.remote);
   document.getElementById('newOnlyBtn').classList.toggle('active', state.newOnly);
@@ -577,8 +585,8 @@ document.getElementById('sortBy').addEventListener('change', e => {
   state.sort = e.target.value; render();
 });
 
-document.getElementById('btechBtn').addEventListener('click', () => {
-  state.btech = !state.btech; render();
+document.getElementById('degreeFilter').addEventListener('change', e => {
+  state.degree = e.target.value; render();
 });
 document.getElementById('indiaBtn').addEventListener('click', () => {
   state.india = !state.india; render();

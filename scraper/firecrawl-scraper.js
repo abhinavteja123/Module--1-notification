@@ -39,13 +39,71 @@ const SCHEMAS = {
         items: {
           type: 'object',
           properties: {
-            title:    { type: 'string', description: 'Job title' },
-            org:      { type: 'string', description: 'Company name' },
-            link:     { type: 'string', description: 'Job detail page URL' },
-            location: { type: 'string', description: 'City' },
+            title:      { type: 'string', description: 'Job title' },
+            org:        { type: 'string', description: 'Company name' },
+            link:       { type: 'string', description: 'Job detail page URL' },
+            location:   { type: 'string', description: 'City' },
             experience: { type: 'string', description: 'Required experience (e.g. Fresher, 0-1 yrs)' },
           },
           required: ['title', 'org'],
+        },
+      },
+    },
+  },
+
+  gsoc: {
+    type: 'object',
+    properties: {
+      organizations: {
+        type: 'array',
+        items: {
+          type: 'object',
+          properties: {
+            name:         { type: 'string', description: 'Organization name' },
+            description:  { type: 'string', description: 'Short description' },
+            url:          { type: 'string', description: 'Organization GSoC page or website URL' },
+            technologies: { type: 'string', description: 'Technologies / languages used' },
+          },
+          required: ['name'],
+        },
+      },
+    },
+  },
+
+  mlh: {
+    type: 'object',
+    properties: {
+      programs: {
+        type: 'array',
+        items: {
+          type: 'object',
+          properties: {
+            title:       { type: 'string', description: 'Program or batch name' },
+            description: { type: 'string', description: 'Program description' },
+            link:        { type: 'string', description: 'Application or info URL' },
+            deadline:    { type: 'string', description: 'Application deadline' },
+            stipend:     { type: 'string', description: 'Stipend or compensation if mentioned' },
+          },
+          required: ['title'],
+        },
+      },
+    },
+  },
+
+  seasondocs: {
+    type: 'object',
+    properties: {
+      organizations: {
+        type: 'array',
+        items: {
+          type: 'object',
+          properties: {
+            name:        { type: 'string', description: 'Organization name' },
+            description: { type: 'string', description: 'Project description' },
+            url:         { type: 'string', description: 'Organization or project URL' },
+            stipend:     { type: 'string', description: 'Stipend amount if listed' },
+          },
+          required: ['name'],
         },
       },
     },
@@ -82,6 +140,58 @@ const PARSERS = {
       india:    true,
       description: it.experience ? `Experience: ${it.experience}` : '',
     })).filter(r => r.title && r.link);
+  },
+
+  gsoc: (data, config) => {
+    const list = data?.organizations || [];
+    return list.map(it => ({
+      title:       `GSoC 2025 — ${it.name}`,
+      org:         it.name || 'GSoC',
+      link:        it.url || 'https://summerofcode.withgoogle.com',
+      location:    'Remote',
+      type:        'opensource',
+      source:      config.name,
+      is_remote:   true,
+      btech:       true,
+      stipend:     'Stipend provided',
+      description: it.description || '',
+      tags:        it.technologies ? [it.technologies] : [],
+      deadline:    null,
+    })).filter(r => r.org && r.link);
+  },
+
+  mlh: (data, config) => {
+    const list = data?.programs || [];
+    return list.map(it => ({
+      title:       it.title || '',
+      org:         'MLH Fellowship',
+      link:        it.link || 'https://fellowship.mlh.io',
+      location:    'Remote',
+      type:        'opensource',
+      source:      config.name,
+      is_remote:   true,
+      btech:       true,
+      description: it.description || '',
+      stipend:     it.stipend || null,
+      deadline:    it.deadline || null,
+    })).filter(r => r.title && r.link);
+  },
+
+  seasondocs: (data, config) => {
+    const list = data?.organizations || [];
+    return list.map(it => ({
+      title:       `Season of Docs — ${it.name}`,
+      org:         it.name || 'Season of Docs',
+      link:        it.url || 'https://developers.google.com/season-of-docs',
+      location:    'Remote',
+      type:        'opensource',
+      source:      config.name,
+      is_remote:   true,
+      btech:       true,
+      stipend:     it.stipend || 'Stipend provided',
+      description: it.description || '',
+      deadline:    null,
+    })).filter(r => r.org && r.link);
   },
 };
 

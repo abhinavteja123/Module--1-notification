@@ -122,6 +122,44 @@
     "waitFor": 3000
   },
   {
+    "name": "Unstop Open Source & Research",
+    "url": "https://unstop.com/competitions?opptype=all&sector=open-source",
+    "type": "opensource",
+    "scraper": "playwright",
+    "selectors": {
+      "card": "a.item[itemprop='itemListElement']",
+      "title": "h3[itemprop='name'], h3.double-wrap, h3",
+      "org": "p.single-wrap",
+      "link": "a[href]",
+      "description": ".tagline, .desc, p.description, p.double-wrap",
+      "deadline": "meta[itemprop='endDate'], [itemprop='endDate'], .end-date, .deadline-date"
+    }
+  },
+  {
+    "name": "GSoC Organizations",
+    "url": "https://summerofcode.withgoogle.com/programs/2025/organizations",
+    "type": "opensource",
+    "scraper": "firecrawl",
+    "firecrawlSchema": "gsoc",
+    "waitFor": 3000
+  },
+  {
+    "name": "MLH Fellowship",
+    "url": "https://fellowship.mlh.io/programs",
+    "type": "opensource",
+    "scraper": "firecrawl",
+    "firecrawlSchema": "mlh",
+    "waitFor": 2000
+  },
+  {
+    "name": "Season of Docs",
+    "url": "https://developers.google.com/season-of-docs/docs/participants",
+    "type": "opensource",
+    "scraper": "firecrawl",
+    "firecrawlSchema": "seasondocs",
+    "waitFor": 2000
+  },
+  {
     "name": "Unstop Hackathons",
     "url": "https://unstop.com/hackathons",
     "type": "hackathon",

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin — OpportunityHub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg: #0b0d11; --surface: #12151c; --card: #171b25; --card-hover: #1d2230;
+  --border: #252a37; --border-light: #2f3547;
+  --text: #e8eaf0; --text-secondary: #8b93a7; --text-muted: #5e667a;
+  --accent: #7c5cff; --accent-soft: #6a4de6;
+  --green: #10b981; --amber: #f59e0b; --rose: #f43f5e;
+  --radius: 12px; --radius-sm: 8px; --transition: 200ms cubic-bezier(.4,0,.2,1);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; min-height: 100vh; }
+body::before {
+  content: ''; position: fixed; inset: 0; z-index: -1;
+  background: radial-gradient(ellipse 600px 400px at 20% 10%, rgba(124,92,255,.08), transparent),
+              radial-gradient(ellipse 500px 350px at 80% 80%, rgba(6,182,212,.06), transparent);
+}
+
+.header { position: sticky; top: 0; z-index: 50; background: rgba(11,13,17,.9); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+.header-inner { max-width: 960px; margin: 0 auto; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.logo { font-size: 18px; font-weight: 800; background: linear-gradient(135deg, var(--accent), #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.back-link { font-size: 13px; color: var(--text-secondary); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: var(--radius-sm); transition: all var(--transition); }
+.back-link:hover { border-color: var(--accent); color: var(--text); }
+
+.main { max-width: 960px; margin: 0 auto; padding: 28px 20px 80px; }
+h2 { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+h3 { font-size: 16px; font-weight: 600; margin-bottom: 14px; color: var(--text-secondary); }
+
+.form-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 32px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-full { grid-column: 1 / -1; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+label { font-size: 12px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: .5px; }
+input[type=text], input[type=url], input[type=date], select, textarea {
+  font: inherit; font-size: 14px; background: var(--surface); color: var(--text);
+  border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 9px 12px;
+  outline: none; transition: border-color var(--transition); width: 100%;
+}
+input:focus, select:focus, textarea:focus { border-color: var(--accent); }
+textarea { resize: vertical; min-height: 72px; }
+select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238b93a7'%3E%3Cpath d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; padding-right: 30px; }
+
+.checks { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; padding: 4px 0; }
+.check-label { display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; user-select: none; }
+.check-label input[type=checkbox] { width: 16px; height: 16px; accent-color: var(--accent); cursor: pointer; }
+
+.btn-row { display: flex; gap: 10px; margin-top: 20px; justify-content: flex-end; }
+.btn { font: inherit; font-size: 13px; font-weight: 600; padding: 9px 20px; border-radius: var(--radius-sm); border: none; cursor: pointer; transition: all var(--transition); }
+.btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent-soft)); color: #fff; box-shadow: 0 2px 8px rgba(124,92,255,.25); }
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(124,92,255,.4); }
+.btn-secondary { background: var(--surface); color: var(--text-secondary); border: 1px solid var(--border); }
+.btn-secondary:hover { border-color: var(--accent); color: var(--text); }
+.btn-danger { background: rgba(244,63,94,.1); color: var(--rose); border: 1px solid rgba(244,63,94,.25); font-size: 12px; padding: 5px 12px; }
+.btn-danger:hover { background: rgba(244,63,94,.2); }
+
+.toast { position: fixed; bottom: 24px; right: 24px; background: var(--green); color: #fff; padding: 12px 20px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 600; opacity: 0; transform: translateY(8px); transition: all .3s; pointer-events: none; z-index: 100; }
+.toast.show { opacity: 1; transform: translateY(0); }
+
+.listings-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.count-badge { font-size: 12px; font-weight: 600; padding: 3px 10px; background: var(--card); border: 1px solid var(--border); border-radius: 999px; color: var(--accent); }
+.listing-row { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 8px; display: flex; align-items: flex-start; gap: 12px; transition: border-color var(--transition); }
+.listing-row:hover { border-color: var(--border-light); }
+.listing-info { flex: 1; min-width: 0; }
+.listing-title { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.listing-meta { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
+.type-badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; margin-right: 6px; }
+.type-hackathon  { background: rgba(124,92,255,.15); color: #a78bfa; }
+.type-internship { background: rgba(16,185,129,.15); color: #6ee7b7; }
+.type-job        { background: rgba(59,130,246,.15);  color: #93c5fd; }
+.type-opensource { background: rgba(6,182,212,.15);   color: #67e8f9; }
+.empty-state { text-align: center; padding: 40px 20px; color: var(--text-muted); font-size: 14px; }
+
+@media (max-width: 640px) { .form-grid { grid-template-columns: 1fr; } }
+
+/* ── Auth overlay ── */
+.auth-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: var(--bg);
+  display: flex; align-items: center; justify-content: center;
+}
+.auth-box {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 40px 36px; width: 100%; max-width: 380px;
+  display: flex; flex-direction: column; gap: 20px;
+  box-shadow: 0 24px 64px rgba(0,0,0,.5);
+}
+.auth-logo { font-size: 22px; font-weight: 800; background: linear-gradient(135deg,var(--accent),#06b6d4); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.auth-title { font-size: 15px; color: var(--text-secondary); margin-top: -10px; }
+.auth-field { display: flex; flex-direction: column; gap: 8px; }
+.auth-field input {
+  font: inherit; font-size: 15px; background: var(--surface); color: var(--text);
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 11px 14px; outline: none; transition: border-color var(--transition); letter-spacing: .05em;
+}
+.auth-field input:focus { border-color: var(--accent); }
+.auth-field input.shake { animation: shake .35s ease; border-color: var(--rose); }
+@keyframes shake {
+  0%,100%{transform:translateX(0)} 20%,60%{transform:translateX(-6px)} 40%,80%{transform:translateX(6px)}
+}
+.auth-error { font-size: 13px; color: var(--rose); min-height: 18px; }
+.auth-btn {
+  font: inherit; font-size: 14px; font-weight: 700;
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+  color: #fff; border: none; border-radius: var(--radius-sm); padding: 12px;
+  cursor: pointer; transition: all var(--transition);
+  box-shadow: 0 2px 12px rgba(124,92,255,.3);
+}
+.auth-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(124,92,255,.45); }
+</style>
+</head>
+<body>
+
+<!-- Auth overlay — hidden after correct password -->
+<div class="auth-overlay" id="authOverlay">
+  <div class="auth-box">
+    <div class="auth-logo">OpportunityHub</div>
+    <div class="auth-title">Admin access only</div>
+    <div class="auth-field">
+      <input type="password" id="authInput" placeholder="Enter password" autocomplete="current-password" />
+      <div class="auth-error" id="authError"></div>
+    </div>
+    <button class="auth-btn" id="authBtn">Unlock →</button>
+  </div>
+</div>
+
+<div id="adminContent" style="display:none">
+<div class="header">
+  <div class="header-inner">
+    <div class="logo">OpportunityHub Admin</div>
+    <a class="back-link" href="index.html">← Back to Hub</a>
+  </div>
+</div>
+
+<div class="main">
+
+  <h2>Add Listing Manually</h2>
+  <div class="form-card">
+    <div class="form-grid">
+
+      <div class="field form-full">
+        <label>Title *</label>
+        <input type="text" id="f-title" placeholder="e.g. Software Engineer Intern — Summer 2025" />
+      </div>
+
+      <div class="field">
+        <label>Organization *</label>
+        <input type="text" id="f-org" placeholder="e.g. Google, IIT Bombay" />
+      </div>
+
+      <div class="field">
+        <label>Apply / Info URL *</label>
+        <input type="url" id="f-link" placeholder="https://..." />
+      </div>
+
+      <div class="field">
+        <label>Type *</label>
+        <select id="f-type">
+          <option value="">— Select type —</option>
+          <option value="internship">Internship</option>
+          <option value="job">Job</option>
+          <option value="hackathon">Hackathon</option>
+          <option value="opensource">Open Source</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Location *</label>
+        <input type="text" id="f-location" placeholder="e.g. Bangalore, Remote" />
+      </div>
+
+      <div class="field">
+        <label>Stipend / Prize *</label>
+        <input type="text" id="f-stipend" placeholder="e.g. ₹15,000/mo or Unpaid" />
+      </div>
+
+      <div class="field">
+        <label>Deadline *</label>
+        <input type="date" id="f-deadline" />
+      </div>
+
+      <div class="field">
+        <label>Tags *</label>
+        <input type="text" id="f-tags" placeholder="e.g. Python, Machine Learning, React" />
+      </div>
+
+      <div class="field form-full">
+        <label>Description *</label>
+        <textarea id="f-description" placeholder="Brief description of the opportunity"></textarea>
+      </div>
+
+      <div class="field form-full">
+        <label>Flags</label>
+        <div class="checks">
+          <label class="check-label"><input type="checkbox" id="f-remote" /> 🏠 Remote</label>
+          <label class="check-label"><input type="checkbox" id="f-india" checked /> 🇮🇳 India</label>
+          <label class="check-label"><input type="checkbox" id="f-btech" checked /> 🎓 B.Tech Relevant</label>
+          <label class="check-label"><input type="checkbox" id="f-bba" /> 📊 BBA / MBA</label>
+          <label class="check-label"><input type="checkbox" id="f-fresher" checked /> 🆕 Fresher Friendly</label>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="clearForm()">Clear</button>
+      <button class="btn btn-primary" onclick="addListing()">Add Listing →</button>
+    </div>
+  </div>
+
+  <!-- Existing manual listings -->
+  <div class="listings-header">
+    <h3>Manually Added Listings</h3>
+    <div style="display:flex;gap:10px;align-items:center">
+      <span class="count-badge" id="listingCount">0</span>
+      <button class="btn btn-danger" onclick="clearAll()">Clear All</button>
+    </div>
+  </div>
+  <div id="listingsList"></div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const STORAGE_KEY = 'manualListings';
+
+function getListings() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch { return []; }
+}
+function saveListings(list) { localStorage.setItem(STORAGE_KEY, JSON.stringify(list)); }
+
+function toast(msg, color) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.style.background = color || '#10b981';
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 2500);
+}
+
+function val(id) { return document.getElementById(id).value.trim(); }
+function chk(id) { return document.getElementById(id).checked; }
+
+function addListing() {
+  const title    = val('f-title');
+  const org      = val('f-org');
+  const link     = val('f-link');
+  const type     = val('f-type');
+  const location = val('f-location');
+  const stipend  = val('f-stipend');
+  const deadline = val('f-deadline');
+  const tags     = val('f-tags');
+  const desc     = val('f-description');
+
+  if (!title)    { toast('Title is required', '#f43f5e'); return; }
+  if (!org)      { toast('Organization is required', '#f43f5e'); return; }
+  if (!link)     { toast('Apply URL is required', '#f43f5e'); return; }
+  if (!/^https?:\/\//i.test(link)) { toast('URL must start with https://', '#f43f5e'); return; }
+  if (!type)     { toast('Select a type', '#f43f5e'); return; }
+  if (!location) { toast('Location is required', '#f43f5e'); return; }
+  if (!stipend)  { toast('Stipend / Prize is required', '#f43f5e'); return; }
+  if (!deadline) { toast('Deadline is required', '#f43f5e'); return; }
+  if (!tags)     { toast('At least one tag is required', '#f43f5e'); return; }
+  if (!desc)     { toast('Description is required', '#f43f5e'); return; }
+
+  const now  = new Date().toISOString();
+
+  const listing = {
+    id:          'manual-' + Date.now(),
+    title,
+    org,
+    link,
+    type,
+    location,
+    stipend,
+    deadline,
+    description: desc,
+    tags:        tags.split(',').map(t => t.trim()).filter(Boolean),
+    is_remote:   chk('f-remote'),
+    india:       chk('f-india'),
+    btech:       chk('f-btech') || type === 'hackathon',
+    bba:         chk('f-bba'),
+    fresher:     chk('f-fresher') || type === 'internship',
+    source:      'Manual Entry',
+    firstSeenAt: now,
+    isNew:       true,
+    score:       8,
+    _addedAt:    now,
+  };
+
+  const list = getListings();
+  list.unshift(listing);
+  saveListings(list);
+  clearForm();
+  renderListings();
+  toast('Listing added! Visible on main page immediately.');
+}
+
+function clearForm() {
+  ['f-title','f-org','f-link','f-location','f-stipend','f-tags','f-description']
+    .forEach(id => { document.getElementById(id).value = ''; });
+  document.getElementById('f-deadline').value = '';
+  document.getElementById('f-type').value = '';
+  document.getElementById('f-remote').checked  = false;
+  document.getElementById('f-india').checked   = true;
+  document.getElementById('f-btech').checked   = true;
+  document.getElementById('f-bba').checked     = false;
+  document.getElementById('f-fresher').checked = true;
+}
+
+function deleteListing(id) {
+  saveListings(getListings().filter(l => l.id !== id));
+  renderListings();
+  toast('Listing removed.', '#f59e0b');
+}
+
+function clearAll() {
+  if (!confirm('Delete ALL manually added listings?')) return;
+  saveListings([]);
+  renderListings();
+  toast('All manual listings cleared.', '#f59e0b');
+}
+
+function esc(s) {
+  return String(s ?? '').replace(/[&<>"']/g, c =>
+    ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
+}
+
+const TYPE_CLASS = { hackathon:'type-hackathon', internship:'type-internship', job:'type-job', opensource:'type-opensource' };
+
+function renderListings() {
+  const list = getListings();
+  document.getElementById('listingCount').textContent = list.length;
+  const el = document.getElementById('listingsList');
+  if (!list.length) {
+    el.innerHTML = '<div class="empty-state">No manual listings yet. Add one above.</div>';
+    return;
+  }
+  el.innerHTML = list.map(l => `
+    <div class="listing-row">
+      <div class="listing-info">
+        <div class="listing-title">
+          <span class="type-badge ${TYPE_CLASS[l.type] || 'type-job'}">${esc(l.type)}</span>${esc(l.title)}
+        </div>
+        <div class="listing-meta">
+          ${esc(l.org)} &nbsp;·&nbsp; ${esc(l.location)}
+          ${l.stipend  ? ' &nbsp;·&nbsp; 💰 ' + esc(l.stipend)  : ''}
+          ${l.deadline ? ' &nbsp;·&nbsp; ⏰ ' + esc(l.deadline) : ''}
+          &nbsp;·&nbsp; Added ${new Date(l._addedAt).toLocaleDateString('en-IN')}
+        </div>
+      </div>
+      <a href="${esc(l.link)}" target="_blank" rel="noopener noreferrer"
+         style="font-size:12px;color:var(--accent);text-decoration:none;white-space:nowrap;flex-shrink:0">View →</a>
+      <button class="btn btn-danger" onclick="deleteListing('${esc(l.id)}')">Delete</button>
+    </div>
+  `).join('');
+}
+
+renderListings();
+</script>
+</div><!-- /adminContent -->
+
+<script>
+// SHA-256 of the admin password — change by running:
+//   node -e "require('crypto').createHash('sha256').update('NEW_PASS').digest('hex')" | clip
+const HASH = '98a08cf460a2732e425d011a77516fc8f7e6a438a3946065b808f30e8985f497';
+
+async function sha256(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+}
+
+function unlock() {
+  document.getElementById('adminContent').style.display = 'block';
+  document.getElementById('authOverlay').style.display  = 'none';
+  sessionStorage.setItem('adminAuth', '1');
+}
+
+async function tryLogin() {
+  const input = document.getElementById('authInput');
+  const err   = document.getElementById('authError');
+  const h = await sha256(input.value);
+  if (h === HASH) {
+    unlock();
+  } else {
+    err.textContent = 'Wrong password.';
+    input.value = '';
+    input.classList.remove('shake');
+    void input.offsetWidth;
+    input.classList.add('shake');
+    input.addEventListener('animationend', () => input.classList.remove('shake'), { once: true });
+  }
+}
+
+// Already authenticated this session
+if (sessionStorage.getItem('adminAuth') === '1') unlock();
+
+document.getElementById('authBtn').addEventListener('click', tryLogin);
+document.getElementById('authInput').addEventListener('keydown', e => { if (e.key === 'Enter') tryLogin(); });
+</script>
+</body>
+</html>

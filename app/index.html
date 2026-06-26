@@ -5,286 +5,278 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'none'" />
 <title>OpportunityHub — Hackathons · Internships · Jobs</title>
-<meta name="description" content="Real-time student opportunities aggregated from Devfolio, Unstop, Internshala, HackerEarth, Devpost, and 500+ company career pages. Auto-refreshes every 6 hours." />
+<meta name="description" content="Real-time student opportunities aggregated from Devfolio, Unstop, Internshala, Devpost, and 100+ company career pages. Auto-refreshes every 6 hours." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800&display=swap" rel="stylesheet" />
 <style>
 :root {
-  --bg: #0b0d11;
-  --surface: #12151c;
-  --card: #171b25;
-  --card-hover: #1d2230;
-  --border: #252a37;
-  --border-light: #2f3547;
-  --text: #e8eaf0;
-  --text-secondary: #8b93a7;
-  --text-muted: #5e667a;
-  --accent: #7c5cff;
-  --accent-glow: rgba(124, 92, 255, 0.15);
-  --accent-soft: #6a4de6;
-  --green: #10b981;
-  --amber: #f59e0b;
-  --rose: #f43f5e;
-  --blue: #3b82f6;
-  --cyan: #06b6d4;
-  --pink: #ec4899;
-  --radius: 12px;
-  --radius-sm: 8px;
-  --transition: 200ms cubic-bezier(.4,0,.2,1);
+  --bg:           #090c12;
+  --surface:      #0f1219;
+  --card:         #13171f;
+  --card-hover:   #181d27;
+  --border:       #1e2330;
+  --border-light: #262d3d;
+  --text:         #e2e5ed;
+  --text-sub:     #8490a8;
+  --text-muted:   #525e78;
+  --accent:       #6d51f0;
+  --accent-dim:   #5b44cc;
+  --green:        #0ea472;
+  --amber:        #d97706;
+  --rose:         #e03050;
+  --blue:         #3b7de8;
+  --cyan:         #0891b2;
+  --radius:       10px;
+  --radius-sm:    6px;
+  --radius-xs:    4px;
+  --trans:        180ms cubic-bezier(.4,0,.2,1);
+
+  /* type accent colors */
+  --c-hackathon:  #6d51f0;
+  --c-internship: #0ea472;
+  --c-job:        #3b7de8;
+  --c-opensource: #0891b2;
 }
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.5;
-  min-height: 100vh;
+  background: var(--bg); color: var(--text);
+  line-height: 1.5; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
 }
-
-/* ── Animated background ── */
 body::before {
-  content: '';
-  position: fixed; inset: 0; z-index: -1;
+  content: ''; position: fixed; inset: 0; z-index: -1;
   background:
-    radial-gradient(ellipse 600px 400px at 20% 10%, rgba(124,92,255,.08), transparent),
-    radial-gradient(ellipse 500px 350px at 80% 80%, rgba(6,182,212,.06), transparent);
+    radial-gradient(ellipse 700px 450px at 15% 5%,  rgba(109,81,240,.06), transparent),
+    radial-gradient(ellipse 500px 400px at 85% 90%, rgba(8,145,178,.04), transparent);
 }
 
-/* ── Header ── */
+/* ─── Header ─── */
 .header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(11,13,17,.85);
-  backdrop-filter: blur(16px) saturate(1.8);
+  background: rgba(9,12,18,.92);
+  backdrop-filter: blur(18px) saturate(1.6);
   border-bottom: 1px solid var(--border);
 }
-.header-inner {
-  max-width: 1200px; margin: 0 auto;
-  padding: 16px 20px;
-}
-.header-top {
-  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
-}
-.logo {
-  font-size: 20px; font-weight: 800;
-  background: linear-gradient(135deg, var(--accent), var(--cyan));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  letter-spacing: -0.5px;
-}
-.logo span { font-weight: 400; opacity: .7; }
+.header-inner { max-width: 1240px; margin: 0 auto; padding: 14px 24px; }
+.header-top { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+
+.logo { font-size: 17px; font-weight: 800; letter-spacing: -0.4px; color: var(--text); }
+.logo-accent { color: var(--accent); }
+.logo-sub { font-size: 11px; font-weight: 500; color: var(--text-muted); margin-left: 8px; letter-spacing: 0; }
+
 .header-meta {
-  margin-left: auto;
-  display: flex; align-items: center; gap: 12px;
+  margin-left: auto; display: flex; align-items: center; gap: 10px;
   font-size: 12px; color: var(--text-muted);
 }
 .live-dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--green);
-  animation: pulse 2s infinite;
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--green); flex-shrink: 0;
+  animation: pulse 2.5s infinite;
 }
 @keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(16,185,129,.4); }
-  50% { box-shadow: 0 0 0 6px rgba(16,185,129,0); }
+  0%,100% { box-shadow: 0 0 0 0 rgba(14,164,114,.45); }
+  50%      { box-shadow: 0 0 0 5px rgba(14,164,114,0); }
 }
 .stat-pill {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 4px 10px; border-radius: 999px;
-  background: var(--card); border: 1px solid var(--border);
-  font-size: 12px; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 3px 10px; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--border);
+  font-size: 12px; font-weight: 600; color: var(--text-sub);
 }
-.stat-pill .num { color: var(--accent); }
+.stat-pill .num { color: var(--text); }
+.stat-pill.new-pill { border-color: rgba(14,164,114,.25); }
+.stat-pill.new-pill .num { color: var(--green); }
 
-/* ── Filter bar ── */
-.filters {
-  display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; align-items: center;
-}
-.search-box {
-  flex: 1; min-width: 200px; position: relative;
-}
-.search-box input {
-  width: 100%;
-  font: inherit; font-size: 14px;
-  background: var(--card); color: var(--text);
+/* ─── Filters ─── */
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; align-items: center; }
+.search-wrap { flex: 1; min-width: 220px; position: relative; }
+.search-wrap input {
+  width: 100%; font: inherit; font-size: 13.5px;
+  background: var(--surface); color: var(--text);
   border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 10px 14px 10px 38px;
-  outline: none; transition: border-color var(--transition);
+  padding: 9px 14px 9px 36px;
+  outline: none; transition: border-color var(--trans);
 }
-.search-box input:focus { border-color: var(--accent); }
-.search-box::before {
-  content: '🔍'; position: absolute; left: 12px; top: 50%;
-  transform: translateY(-50%); font-size: 14px; pointer-events: none;
+.search-wrap input::placeholder { color: var(--text-muted); }
+.search-wrap input:focus { border-color: var(--accent); }
+.search-wrap::before {
+  content: '';
+  position: absolute; left: 11px; top: 50%; transform: translateY(-50%);
+  width: 15px; height: 15px; pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='%23525e78' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat center;
 }
+
 select, .filter-btn {
   font: inherit; font-size: 13px; font-weight: 500;
-  background: var(--card); color: var(--text);
+  background: var(--surface); color: var(--text-sub);
   border: 1px solid var(--border); border-radius: var(--radius-sm);
-  padding: 9px 14px; cursor: pointer;
-  outline: none; transition: all var(--transition);
-  appearance: none;
+  padding: 8px 13px; cursor: pointer;
+  outline: none; transition: all var(--trans);
+  appearance: none; white-space: nowrap;
 }
-select { padding-right: 30px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238b93a7'%3E%3Cpath d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; }
-select:focus, .filter-btn:hover { border-color: var(--accent); }
+select {
+  padding-right: 28px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' fill='%23525e78'%3E%3Cpath d='M5.5 7.5L1 3h9z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 9px center;
+  background-color: var(--surface);
+}
+select:focus, .filter-btn:hover { border-color: var(--border-light); color: var(--text); }
 .filter-btn.active {
-  background: var(--accent); border-color: var(--accent); color: #fff;
+  background: rgba(109,81,240,.15); border-color: rgba(109,81,240,.5);
+  color: #a693ff; font-weight: 600;
 }
 
-/* ── Tabs ── */
+/* ─── Tabs ─── */
 .tabs {
-  display: flex; gap: 4px; margin-top: 12px;
+  display: flex; gap: 2px; margin-top: 10px;
   background: var(--surface); border-radius: var(--radius);
-  padding: 4px; border: 1px solid var(--border);
-  overflow-x: auto;
+  padding: 3px; border: 1px solid var(--border); overflow-x: auto;
 }
 .tab {
-  padding: 8px 18px; border-radius: var(--radius-sm);
-  font-size: 13px; font-weight: 600; cursor: pointer;
-  color: var(--text-secondary); transition: all var(--transition);
-  white-space: nowrap; border: none; background: none;
+  padding: 7px 16px; border-radius: var(--radius-sm);
+  font-size: 12.5px; font-weight: 600; cursor: pointer;
+  color: var(--text-muted); transition: all var(--trans);
+  white-space: nowrap; border: none; background: none; letter-spacing: .1px;
 }
-.tab:hover { color: var(--text); background: rgba(255,255,255,.04); }
-.tab.active {
-  background: var(--accent); color: #fff;
-  box-shadow: 0 2px 8px rgba(124,92,255,.3);
-}
-.tab .count {
-  font-size: 11px; opacity: .7; margin-left: 4px;
-  font-weight: 400;
-}
+.tab:hover { color: var(--text-sub); background: rgba(255,255,255,.03); }
+.tab.active { background: var(--accent); color: #fff; box-shadow: 0 1px 6px rgba(109,81,240,.4); }
+.tab .count { font-size: 11px; opacity: .65; margin-left: 5px; font-weight: 400; }
 
-/* ── Main ── */
-.main {
-  max-width: 1200px; margin: 0 auto;
-  padding: 20px 20px 80px;
-}
+/* ─── Main ─── */
+.main { max-width: 1240px; margin: 0 auto; padding: 20px 24px 80px; }
 .results-bar {
   display: flex; align-items: center; justify-content: space-between;
   margin-bottom: 16px; gap: 12px; flex-wrap: wrap;
 }
-.results-count { font-size: 14px; color: var(--text-secondary); }
-.results-count strong { color: var(--text); }
-.sort-row { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-muted); }
+.results-count { font-size: 13px; color: var(--text-muted); }
+.results-count strong { color: var(--text-sub); font-weight: 600; }
+.sort-row { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-muted); }
 
-/* ── Cards ── */
+/* ─── Card grid ─── */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 12px;
+  gap: 10px;
 }
 .card {
   background: var(--card);
   border: 1px solid var(--border);
+  border-left: 3px solid var(--border);
   border-radius: var(--radius);
-  padding: 18px;
-  transition: all var(--transition);
-  position: relative; overflow: hidden;
-  display: flex; flex-direction: column; gap: 12px;
-  animation: fadeUp .3s ease both;
+  padding: 16px 16px 14px;
+  transition: all var(--trans);
+  position: relative;
+  display: flex; flex-direction: column; gap: 10px;
+  animation: fadeUp .25s ease both;
 }
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 .card:hover {
   border-color: var(--border-light);
+  border-left-color: inherit;
   background: var(--card-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0,0,0,.22);
 }
-.card.is-new::before {
-  content: 'NEW';
-  position: absolute; top: 12px; right: -24px;
-  background: var(--accent);
-  color: #fff; font-size: 10px; font-weight: 700;
-  padding: 2px 28px;
-  transform: rotate(45deg);
-  letter-spacing: .5px;
+
+/* type accent borders */
+.card.type-hackathon  { border-left-color: var(--c-hackathon); }
+.card.type-internship { border-left-color: var(--c-internship); }
+.card.type-job        { border-left-color: var(--c-job); }
+.card.type-opensource { border-left-color: var(--c-opensource); }
+
+/* NEW badge */
+.new-tag {
+  position: absolute; top: 10px; right: 10px;
+  font-size: 9.5px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase;
+  color: var(--accent); background: rgba(109,81,240,.1);
+  border: 1px solid rgba(109,81,240,.25);
+  padding: 2px 7px; border-radius: var(--radius-xs);
 }
-.card-top {
-  display: flex; align-items: flex-start; gap: 12px;
+
+/* card structure */
+.card-header { display: flex; flex-direction: column; gap: 4px; }
+.type-tag {
+  font-size: 9.5px; font-weight: 700; letter-spacing: .7px; text-transform: uppercase;
+  display: inline-block; padding: 2px 7px; border-radius: var(--radius-xs);
+  width: fit-content; margin-bottom: 2px;
 }
-.card-icon {
-  width: 42px; height: 42px; border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 20px; flex-shrink: 0;
-}
-.card-icon.hackathon { background: rgba(124,92,255,.15); }
-.card-icon.internship { background: rgba(16,185,129,.15); }
-.card-icon.job { background: rgba(59,130,246,.15); }
-.card-body { flex: 1; min-width: 0; }
+.type-hackathon  .type-tag { color: #9d87ff; background: rgba(109,81,240,.1); }
+.type-internship .type-tag { color: #34d399; background: rgba(14,164,114,.1); }
+.type-job        .type-tag { color: #6ba3f5; background: rgba(59,126,232,.1); }
+.type-opensource .type-tag { color: #22d3ee; background: rgba(8,145,178,.1); }
+
 .card-title {
-  font-size: 15px; font-weight: 700;
-  line-height: 1.3;
-  display: -webkit-box; -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical; overflow: hidden;
+  font-size: 14.5px; font-weight: 700; line-height: 1.35; color: var(--text);
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
 .card-org {
-  font-size: 13px; color: var(--text-secondary);
-  margin-top: 2px;
+  font-size: 12.5px; color: var(--text-sub); font-weight: 500;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-.card-meta {
-  display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px;
-}
+
+/* badges */
+.card-meta { display: flex; flex-wrap: wrap; gap: 5px; }
 .badge {
-  display: inline-flex; align-items: center; gap: 4px;
+  display: inline-flex; align-items: center;
   font-size: 11px; font-weight: 500;
-  padding: 3px 8px; border-radius: 999px;
-  border: 1px solid var(--border);
-  color: var(--text-secondary);
+  padding: 2px 8px; border-radius: var(--radius-xs);
+  border: 1px solid var(--border); color: var(--text-muted);
+  letter-spacing: .1px;
 }
-.badge.source {
-  border-color: rgba(124,92,255,.3);
-  color: #a78bfa; background: rgba(124,92,255,.08);
+.badge.source   { border-color: rgba(109,81,240,.2); color: #9d87ff; background: rgba(109,81,240,.06); }
+.badge.location { color: var(--text-sub); }
+.badge.remote   { border-color: rgba(14,164,114,.2); color: #34d399; background: rgba(14,164,114,.06); }
+.badge.india    { border-color: rgba(217,119,6,.2);  color: #f59e0b; background: rgba(217,119,6,.06); }
+.badge.stipend  { border-color: rgba(59,126,232,.2); color: #6ba3f5; background: rgba(59,126,232,.06); }
+
+/* card body */
+.card-desc {
+  font-size: 12.5px; color: var(--text-muted); line-height: 1.55;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
-.badge.location { border-color: rgba(6,182,212,.3); color: #67e8f9; }
-.badge.remote { border-color: rgba(16,185,129,.3); color: #6ee7b7; background: rgba(16,185,129,.08); }
-.badge.india { border-color: rgba(245,158,11,.3); color: #fbbf24; }
+.card-deadline { font-size: 11.5px; font-weight: 600; color: var(--amber); }
+.card-deadline.expired { color: var(--rose); }
+
 .card-actions {
   display: flex; align-items: center; justify-content: space-between;
-  margin-top: auto; padding-top: 4px;
+  margin-top: auto; padding-top: 2px;
 }
-.card-desc {
-  font-size: 13px; color: var(--text-secondary);
-  line-height: 1.5;
-  display: -webkit-box; -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical; overflow: hidden;
-}
-.card-deadline {
-  font-size: 12px; font-weight: 600;
-  color: var(--amber);
-}
-.card-deadline.expired { color: var(--rose); }
-.card-time {
-  font-size: 11px; color: var(--text-muted);
-}
-.view-btn {
-  display: inline-flex; align-items: center; gap: 6px;
+.card-time { font-size: 11px; color: var(--text-muted); }
+.apply-btn {
+  display: inline-flex; align-items: center; gap: 5px;
   text-decoration: none; color: #fff;
-  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
-  padding: 7px 16px; border-radius: var(--radius-sm);
-  font-size: 13px; font-weight: 600;
-  transition: all var(--transition);
-  box-shadow: 0 2px 8px rgba(124,92,255,.2);
+  background: var(--accent);
+  padding: 6px 14px; border-radius: var(--radius-sm);
+  font-size: 12.5px; font-weight: 600; letter-spacing: .1px;
+  transition: all var(--trans);
 }
-.view-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(124,92,255,.35);
-}
+.apply-btn:hover { background: var(--accent-dim); transform: translateY(-1px); box-shadow: 0 3px 12px rgba(109,81,240,.35); }
 
-/* ── Empty state ── */
-.empty {
-  text-align: center; padding: 80px 20px;
-  color: var(--text-muted);
+/* ─── Empty states ─── */
+.empty { text-align: center; padding: 80px 20px; color: var(--text-muted); grid-column: 1/-1; }
+.empty-icon {
+  width: 48px; height: 48px; margin: 0 auto 16px;
+  border-radius: 50%; background: var(--surface); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
 }
-.empty-icon { font-size: 48px; margin-bottom: 16px; }
-.empty h3 { color: var(--text-secondary); margin-bottom: 8px; }
+.empty h3 { font-size: 15px; color: var(--text-sub); margin-bottom: 6px; }
+.empty p  { font-size: 13px; }
+.empty code { font-family: monospace; font-size: 12px; background: var(--surface); padding: 2px 6px; border-radius: 4px; border: 1px solid var(--border); }
 
-/* ── Responsive ── */
-@media (max-width: 640px) {
+/* ─── Responsive ─── */
+@media (max-width: 680px) {
   .card-grid { grid-template-columns: 1fr; }
-  .header-meta { margin-left: 0; width: 100%; justify-content: flex-start; }
+  .header-meta { margin-left: 0; width: 100%; }
   .filters { flex-direction: column; }
-  .search-box { min-width: 100%; }
+  .search-wrap { min-width: 100%; }
+  .header-inner { padding: 12px 16px; }
+  .main { padding: 16px 16px 60px; }
 }
 </style>
 </head>
@@ -293,38 +285,36 @@ select:focus, .filter-btn:hover { border-color: var(--accent); }
 <div class="header">
   <div class="header-inner">
     <div class="header-top">
-      <div class="logo">OpportunityHub <span>by StudentNotify</span></div>
+      <div class="logo">
+        Opportunity<span class="logo-accent">Hub</span>
+        <span class="logo-sub">Student opportunities · auto-updated</span>
+      </div>
       <div class="header-meta">
         <span class="live-dot"></span>
         <span id="updateTime">Loading...</span>
-        <span class="stat-pill"><span class="num" id="totalCount">0</span> listings</span>
-        <span class="stat-pill" style="border-color:rgba(16,185,129,.3)"><span class="num" style="color:var(--green)" id="newCount">0</span> new</span>
+        <span class="stat-pill"><span class="num" id="totalCount">0</span>&nbsp;listings</span>
+        <span class="stat-pill new-pill"><span class="num" id="newCount">0</span>&nbsp;new</span>
       </div>
     </div>
 
-    <!-- Filters -->
     <div class="filters">
-      <div class="search-box">
+      <div class="search-wrap">
         <input type="text" id="search" placeholder="Search titles, companies, skills..." autocomplete="off" />
       </div>
-      <select id="sourceFilter">
-        <option value="all">All Sources</option>
-      </select>
-      <select id="locationFilter">
-        <option value="all">All Locations</option>
-      </select>
+      <select id="sourceFilter"><option value="all">All Sources</option></select>
+      <select id="locationFilter"><option value="all">All Locations</option></select>
       <select id="degreeFilter">
-        <option value="all">🎓 All Degrees</option>
+        <option value="all">All Degrees</option>
         <option value="btech">B.Tech / BE</option>
         <option value="bba">BBA / MBA</option>
       </select>
-      <button class="filter-btn" id="indiaBtn">🇮🇳 India</button>
-      <button class="filter-btn" id="remoteBtn">🏠 Remote</button>
-      <button class="filter-btn" id="newOnlyBtn">✨ New Only</button>
-      <button class="filter-btn" id="seenBtn" style="margin-left:auto">✓ Mark All Seen</button>
+      <button class="filter-btn" id="indiaBtn">India</button>
+      <button class="filter-btn" id="remoteBtn">Remote</button>
+      <button class="filter-btn" id="fresherBtn">Freshers</button>
+      <button class="filter-btn" id="newOnlyBtn">New Only</button>
+      <button class="filter-btn" id="seenBtn" style="margin-left:auto">Mark All Seen</button>
     </div>
 
-    <!-- Tabs -->
     <div class="tabs" id="tabs"></div>
   </div>
 </div>
@@ -333,12 +323,12 @@ select:focus, .filter-btn:hover { border-color: var(--accent); }
   <div class="results-bar">
     <div class="results-count" id="resultsInfo"></div>
     <div class="sort-row">
-      Sort:
+      Sort by
       <select id="sortBy">
-        <option value="newest">Newest First</option>
+        <option value="newest">Newest</option>
         <option value="relevance">Relevance</option>
-        <option value="alpha">A → Z</option>
-        <option value="source">By Source</option>
+        <option value="alpha">A — Z</option>
+        <option value="source">Source</option>
       </select>
     </div>
   </div>
@@ -347,23 +337,25 @@ select:focus, .filter-btn:hover { border-color: var(--accent); }
 
 <script src="data.js"></script>
 <script>
+/* ── Fresher detection ── */
+const FRESHER_RE = /\b(fresher|fresh\s*graduate|entry[- ]?level|0[- ]?1\s*year|no\s*experience|new\s*grad|recent\s*graduate|campus\s*hire|graduate\s*trainee|trainee|junior|associate\s*(engineer|developer|sde)|intern(ship)?)\b/i;
+function isFresherItem(it) {
+  if (it.type === 'internship') return true;
+  if (it.fresher === true) return true;
+  return FRESHER_RE.test([it.title, it.description || it.summary || '', ...(it.tags || [])].join(' '));
+}
+
 /* ── Constants ── */
-const ICONS = { hackathon: '🏆', internship: '🎓', job: '💼', opensource: '🌐' };
-const TABS = ['all', 'hackathon', 'internship', 'job', 'opensource'];
+const TYPE_LABELS = { hackathon: 'Hackathon', internship: 'Internship', job: 'Job', opensource: 'Open Source' };
+const TABS   = ['all', 'hackathon', 'internship', 'job', 'opensource'];
 const LABELS = { all: 'All', hackathon: 'Hackathons', internship: 'Internships', job: 'Jobs', opensource: 'Open Source' };
-const items = window.OPPORTUNITIES || [];
+const _manual = (() => { try { return JSON.parse(localStorage.getItem('manualListings') || '[]'); } catch { return []; } })();
+const items = [..._manual, ...(window.OPPORTUNITIES || [])];
 
 /* ── State ── */
 let state = {
-  tab: 'all',
-  search: '',
-  source: 'all',
-  location: 'all',
-  degree: 'all',
-  india: false,
-  remote: false,
-  newOnly: false,
-  sort: 'newest',
+  tab: 'all', search: '', source: 'all', location: 'all',
+  degree: 'all', india: false, remote: false, fresher: false, newOnly: false, sort: 'newest',
 };
 
 /* ── Seen tracking ── */
@@ -371,33 +363,20 @@ const seen = new Set(JSON.parse(localStorage.getItem('seenIds') || '[]'));
 function saveSeen() { localStorage.setItem('seenIds', JSON.stringify([...seen])); }
 function isNew(it) { return !seen.has(it.id); }
 
-/* ── Populate filter dropdowns ── */
+/* ── Dropdowns ── */
 function buildDropdowns() {
-  const sources = new Set();
-  const locations = new Set();
+  const sources = new Set(), locations = new Set();
   items.forEach(it => {
     if (it.source) sources.add(it.source);
     if (it.location && it.location !== 'Unknown' && it.location !== 'Flexible') {
-      // Simplify location for dropdown
       const loc = it.location.split(',')[0].trim();
       if (loc.length > 2 && loc.length < 40) locations.add(loc);
     }
   });
-
-  const srcSelect = document.getElementById('sourceFilter');
-  [...sources].sort().forEach(s => {
-    const o = document.createElement('option');
-    o.value = s; o.textContent = s;
-    srcSelect.appendChild(o);
-  });
-
-  const locSelect = document.getElementById('locationFilter');
-  const topLocs = [...locations].sort().slice(0, 30);
-  topLocs.forEach(l => {
-    const o = document.createElement('option');
-    o.value = l; o.textContent = l;
-    locSelect.appendChild(o);
-  });
+  const srcSel = document.getElementById('sourceFilter');
+  [...sources].sort().forEach(s => { const o = document.createElement('option'); o.value = s; o.textContent = s; srcSel.appendChild(o); });
+  const locSel = document.getElementById('locationFilter');
+  [...locations].sort().slice(0, 30).forEach(l => { const o = document.createElement('option'); o.value = l; o.textContent = l; locSel.appendChild(o); });
 }
 
 /* ── Filtering ── */
@@ -405,17 +384,17 @@ function getFiltered() {
   return items.filter(it => {
     if (state.tab !== 'all' && it.type !== state.tab) return false;
     if (state.degree === 'btech' && !it.btech) return false;
-    if (state.degree === 'bba' && !it.bba) return false;
-    if (state.india && !it.india) return false;
-    if (state.remote && !it.is_remote) return false;
-    if (state.newOnly && !isNew(it)) return false;
+    if (state.degree === 'bba'   && !it.bba)   return false;
+    if (state.india   && !it.india)          return false;
+    if (state.remote  && !it.is_remote)      return false;
+    if (state.fresher && !isFresherItem(it)) return false;
+    if (state.newOnly && !isNew(it))         return false;
     if (state.source !== 'all' && it.source !== state.source) return false;
     if (state.location !== 'all') {
-      const loc = (it.location || '').toLowerCase();
-      if (!loc.includes(state.location.toLowerCase())) return false;
+      if (!(it.location || '').toLowerCase().includes(state.location.toLowerCase())) return false;
     }
     if (state.search) {
-      const q = state.search.toLowerCase();
+      const q   = state.search.toLowerCase();
       const hay = [it.title, it.org, it.source, it.location, ...(it.tags || [])].join(' ').toLowerCase();
       if (!hay.includes(q)) return false;
     }
@@ -425,54 +404,43 @@ function getFiltered() {
 
 function sortItems(list) {
   const copy = [...list];
-  if (state.sort === 'newest') {
-    copy.sort((a, b) => new Date(b.firstSeenAt || 0) - new Date(a.firstSeenAt || 0));
-  } else if (state.sort === 'relevance') {
-    copy.sort((a, b) => (b.score || 0) - (a.score || 0));
-  } else if (state.sort === 'alpha') {
-    copy.sort((a, b) => a.title.localeCompare(b.title));
-  } else if (state.sort === 'source') {
-    copy.sort((a, b) => (a.source || '').localeCompare(b.source || ''));
-  }
+  if (state.sort === 'newest')    copy.sort((a,b) => new Date(b.firstSeenAt||0) - new Date(a.firstSeenAt||0));
+  else if (state.sort === 'relevance') copy.sort((a,b) => (b.score||0) - (a.score||0));
+  else if (state.sort === 'alpha')     copy.sort((a,b) => a.title.localeCompare(b.title));
+  else if (state.sort === 'source')    copy.sort((a,b) => (a.source||'').localeCompare(b.source||''));
   return copy;
 }
 
-/* ── Rendering ── */
+/* ── Render ── */
 function render() {
-  // Header stats
-  const newCount = items.filter(isNew).length;
   document.getElementById('totalCount').textContent = items.length;
-  document.getElementById('newCount').textContent = newCount;
-
-  const when = window.GENERATED_AT ? new Date(window.GENERATED_AT).toLocaleString() : 'unknown';
+  document.getElementById('newCount').textContent   = items.filter(isNew).length;
+  const when = window.GENERATED_AT ? new Date(window.GENERATED_AT).toLocaleString('en-IN') : 'unknown';
   document.getElementById('updateTime').textContent = `Updated ${when}`;
 
-  // Tabs
   const tabsEl = document.getElementById('tabs');
   tabsEl.innerHTML = TABS.map(t => {
     const n = t === 'all' ? items.length : items.filter(i => i.type === t).length;
-    return `<button class="tab ${t === state.tab ? 'active' : ''}" data-tab="${t}">
-      ${LABELS[t]}<span class="count">(${n})</span>
-    </button>`;
+    return `<button class="tab ${t === state.tab ? 'active':''}" data-tab="${t}">${LABELS[t]}<span class="count">${n}</span></button>`;
   }).join('');
 
-  // Sync degree dropdown
   document.getElementById('degreeFilter').value = state.degree;
-  document.getElementById('indiaBtn').classList.toggle('active', state.india);
+  document.getElementById('indiaBtn').classList.toggle('active',  state.india);
   document.getElementById('remoteBtn').classList.toggle('active', state.remote);
-  document.getElementById('newOnlyBtn').classList.toggle('active', state.newOnly);
+  document.getElementById('fresherBtn').classList.toggle('active',state.fresher);
+  document.getElementById('newOnlyBtn').classList.toggle('active',state.newOnly);
 
-  // Filtered + sorted list
   const filtered = sortItems(getFiltered());
-
   document.getElementById('resultsInfo').innerHTML =
     `Showing <strong>${filtered.length}</strong> of ${items.length} opportunities`;
 
   const grid = document.getElementById('grid');
 
   if (!items.length) {
-    grid.innerHTML = `<div class="empty" style="grid-column:1/-1">
-      <div class="empty-icon">📡</div>
+    grid.innerHTML = `<div class="empty">
+      <div class="empty-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#525e78" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 10a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18L5 .18a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L5.91 8.09a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      </div>
       <h3>No data yet</h3>
       <p>Run <code>node scraper/run-all.js</code> to fetch opportunities</p>
     </div>`;
@@ -480,42 +448,44 @@ function render() {
   }
 
   if (!filtered.length) {
-    grid.innerHTML = `<div class="empty" style="grid-column:1/-1">
-      <div class="empty-icon">🔍</div>
-      <h3>No matches</h3>
+    grid.innerHTML = `<div class="empty">
+      <div class="empty-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#525e78" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </div>
+      <h3>No matches found</h3>
       <p>Try adjusting your filters or search term</p>
     </div>`;
     return;
   }
 
   grid.innerHTML = filtered.map((it, i) => {
-    const isItemNew = isNew(it);
-    const timeAgo = it.firstSeenAt ? getTimeAgo(it.firstSeenAt) : '';
-    const loc = it.location && it.location !== 'Unknown' ? it.location.split(',')[0].trim() : '';
-    const desc = (it.description || it.summary || '').trim();
-    const deadlineHtml = formatDeadline(it.deadline);
+    const itemNew  = isNew(it);
+    const timeAgo  = it.firstSeenAt ? getTimeAgo(it.firstSeenAt) : '';
+    const loc      = it.location && it.location !== 'Unknown' ? it.location.split(',')[0].trim() : '';
+    const desc     = (it.description || it.summary || '').trim();
+    const deadline = formatDeadline(it.deadline);
+    const typeLabel = TYPE_LABELS[it.type] || it.type;
 
-    return `<div class="card ${isItemNew ? 'is-new' : ''}" style="animation-delay:${Math.min(i * 20, 300)}ms">
-      <div class="card-top">
-        <div class="card-icon ${it.type}">${ICONS[it.type] || '🔔'}</div>
-        <div class="card-body">
-          <div class="card-title">${esc(it.title)}</div>
-          <div class="card-org">${esc(it.org || it.source)}</div>
-        </div>
+    return `<div class="card type-${esc(it.type)}" style="animation-delay:${Math.min(i*18,280)}ms">
+      ${itemNew ? '<span class="new-tag">New</span>' : ''}
+      <div class="card-header">
+        <span class="type-tag">${esc(typeLabel)}</span>
+        <div class="card-title">${esc(it.title)}</div>
+        <div class="card-org">${esc(it.org || it.source)}</div>
       </div>
       <div class="card-meta">
         <span class="badge source">${esc(it.source)}</span>
-        ${loc ? `<span class="badge location">📍 ${esc(loc)}</span>` : ''}
-        ${it.is_remote ? '<span class="badge remote">🏠 Remote</span>' : ''}
-        ${it.india ? '<span class="badge india">🇮🇳 India</span>' : ''}
-        ${it.stipend ? `<span class="badge">💰 ${esc(it.stipend)}</span>` : ''}
+        ${loc        ? `<span class="badge location">${esc(loc)}</span>` : ''}
+        ${it.is_remote ? '<span class="badge remote">Remote</span>' : ''}
+        ${it.india   ? '<span class="badge india">India</span>' : ''}
+        ${it.stipend ? `<span class="badge stipend">${esc(it.stipend)}</span>` : ''}
       </div>
       ${desc ? `<div class="card-desc">${esc(desc)}</div>` : ''}
-      ${deadlineHtml}
+      ${deadline}
       <div class="card-actions">
         <span class="card-time">${timeAgo}</span>
-        <a class="view-btn" href="${safeUrl(it.link)}" target="_blank" rel="noopener noreferrer"
-           data-id="${esc(it.id)}">View →</a>
+        <a class="apply-btn" href="${safeUrl(it.link)}" target="_blank" rel="noopener noreferrer"
+           data-id="${esc(it.id)}">Apply &#8594;</a>
       </div>
     </div>`;
   }).join('');
@@ -524,83 +494,52 @@ function render() {
 /* ── Helpers ── */
 function esc(s) {
   return String(s ?? '').replace(/[&<>"']/g, c =>
-    ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'": '&#39;' }[c]));
+    ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
 }
-
 function safeUrl(u) {
-  // Block javascript:, data:, vbscript: and other non-http(s) schemes
   if (typeof u !== 'string') return '#';
-  const trimmed = u.trim();
-  return /^https?:\/\//i.test(trimmed) ? esc(trimmed) : '#';
+  const t = u.trim();
+  return /^https?:\/\//i.test(t) ? esc(t) : '#';
 }
-
 function formatDeadline(deadline) {
   if (!deadline) return '';
-  // deadline may be ISO date, date string like "Jun 30, 2025", or range text
   const parsed = new Date(deadline);
-  if (isNaN(parsed.getTime())) {
-    // Raw string (e.g. "May 15 – Jun 30, 2025") — show as-is
-    return `<div class="card-deadline">⏰ ${esc(String(deadline))}</div>`;
-  }
+  if (isNaN(parsed.getTime()))
+    return `<div class="card-deadline">Closes: ${esc(String(deadline))}</div>`;
   const expired = parsed < new Date();
-  const label = parsed.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
-  return `<div class="card-deadline${expired ? ' expired' : ''}">⏰ ${expired ? 'Closed' : 'Deadline'}: ${label}</div>`;
+  const label = parsed.toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' });
+  return `<div class="card-deadline${expired?' expired':''}">
+    ${expired ? 'Closed' : 'Deadline'}: ${label}
+  </div>`;
 }
-
 function getTimeAgo(dateStr) {
   const diff = Date.now() - new Date(dateStr).getTime();
   const mins = Math.floor(diff / 60000);
-  if (mins < 60) return `${mins}m ago`;
+  if (mins < 60)  return `${mins}m ago`;
   const hrs = Math.floor(mins / 60);
-  if (hrs < 24) return `${hrs}h ago`;
-  const days = Math.floor(hrs / 24);
-  return `${days}d ago`;
+  if (hrs < 24)   return `${hrs}h ago`;
+  return `${Math.floor(hrs/24)}d ago`;
 }
 
-// Delegated click — no inline onclick, prevents XSS via double-decoded HTML entities
+/* ── Events ── */
 document.getElementById('grid').addEventListener('click', e => {
-  const btn = e.target.closest('.view-btn');
+  const btn = e.target.closest('.apply-btn');
   if (btn?.dataset.id) { seen.add(btn.dataset.id); saveSeen(); render(); }
 });
-
-/* ── Event listeners ── */
 document.getElementById('tabs').addEventListener('click', e => {
   const btn = e.target.closest('.tab');
   if (btn) { state.tab = btn.dataset.tab; render(); }
 });
-
-document.getElementById('search').addEventListener('input', e => {
-  state.search = e.target.value.trim(); render();
-});
-
-document.getElementById('sourceFilter').addEventListener('change', e => {
-  state.source = e.target.value; render();
-});
-
-document.getElementById('locationFilter').addEventListener('change', e => {
-  state.location = e.target.value; render();
-});
-
-document.getElementById('sortBy').addEventListener('change', e => {
-  state.sort = e.target.value; render();
-});
-
-document.getElementById('degreeFilter').addEventListener('change', e => {
-  state.degree = e.target.value; render();
-});
-document.getElementById('indiaBtn').addEventListener('click', () => {
-  state.india = !state.india; render();
-});
-document.getElementById('remoteBtn').addEventListener('click', () => {
-  state.remote = !state.remote; render();
-});
-document.getElementById('newOnlyBtn').addEventListener('click', () => {
-  state.newOnly = !state.newOnly; render();
-});
-document.getElementById('seenBtn').addEventListener('click', () => {
-  items.forEach(it => seen.add(it.id));
-  saveSeen(); render();
-});
+document.getElementById('search').addEventListener('input', e => { state.search = e.target.value.trim(); render(); });
+document.getElementById('sourceFilter').addEventListener('change',   e => { state.source   = e.target.value; render(); });
+document.getElementById('locationFilter').addEventListener('change', e => { state.location  = e.target.value; render(); });
+document.getElementById('degreeFilter').addEventListener('change',   e => { state.degree    = e.target.value; render(); });
+document.getElementById('sortBy').addEventListener('change',         e => { state.sort      = e.target.value; render(); });
+document.getElementById('indiaBtn').addEventListener('click',   () => { state.india   = !state.india;   render(); });
+document.getElementById('remoteBtn').addEventListener('click',  () => { state.remote  = !state.remote;  render(); });
+document.getElementById('fresherBtn').addEventListener('click', () => { state.fresher = !state.fresher; render(); });
+document.getElementById('newOnlyBtn').addEventListener('click', () => { state.newOnly = !state.newOnly; render(); });
+document.getElementById('seenBtn').addEventListener('click', () => { items.forEach(it => seen.add(it.id)); saveSeen(); render(); });
 
 /* ── Init ── */
 buildDropdowns();

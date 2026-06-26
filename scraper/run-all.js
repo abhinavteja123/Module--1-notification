@@ -34,6 +34,8 @@ const TECH_RE = /\b(software|developer|engineer(ing)?|sde|programmer|backend|bac
 
 const BBA_RE = /\b(marketing|sales|business\s*development|finance|operations|human\s*resources|\bhr\b|product\s*manager|program\s*manager|account\s*manager|customer\s*success|growth\s*hacker|revenue|strategy|consulting|brand|content\s*(writer|creator|marketer)|social\s*media|copywriter|mba|digital\s*marketing|seo|sem|e-?commerce|supply\s*chain|procurement|merchandising)\b/i;
 
+const FRESHER_RE = /\b(fresher|fresh\s*graduate|entry[- ]?level|0[- ]1\s*year|no\s*experience|new\s*grad|recent\s*graduate|campus\s*hire|graduate\s*trainee|trainee|junior|associate\s*engineer|junior\s*developer|junior\s*engineer|intern|internship)\b/i;
+
 const INDIA_RE = /\b(india|indian|bengaluru|bangalore|mumbai|delhi|new delhi|hyderabad|pune|chennai|gurgaon|gurugram|noida|kolkata|ahmedabad|jaipur|coimbatore|kochi|chandigarh|remote[- ]?india)\b/i;
 
 function isBtech(title = '', tags = []) {
@@ -41,6 +43,9 @@ function isBtech(title = '', tags = []) {
 }
 function isBBA(title = '', tags = []) {
   return BBA_RE.test(title) || (tags || []).some(t => BBA_RE.test(t));
+}
+function isFresher(title = '', description = '', tags = []) {
+  return FRESHER_RE.test([title, description, ...(tags || [])].join(' '));
 }
 function isIndia(location = '') {
   return INDIA_RE.test(location);
@@ -157,7 +162,8 @@ async function main() {
     item.id = key;
     item.btech = item.type === 'hackathon' ? true : isBtech(item.title, item.tags);
     item.india = isIndia(item.location || '');
-    item.bba   = isBBA(item.title, item.tags);
+    item.bba     = isBBA(item.title, item.tags);
+    item.fresher = item.type === 'internship' || isFresher(item.title, item.description || item.summary || '', item.tags);
 
     if (firstSeen[key]) {
       item.firstSeenAt = firstSeen[key];

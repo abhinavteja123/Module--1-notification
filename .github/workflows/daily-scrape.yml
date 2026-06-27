@@ -1,4 +1,4 @@
-name: Daily Deep Scrape (Internshala + HackerEarth + Unstop)
+name: Daily Deep Scrape (Internshala + Unstop + Firecrawl/Playwright)
 
 on:
   schedule:
@@ -37,7 +37,7 @@ jobs:
       - name: Install Playwright Chromium
         run: npx playwright install chromium --with-deps
 
-      - name: Run full scrape (includes Internshala, HackerEarth, Unstop)
+      - name: Run full scrape (includes Internshala, Unstop, Firecrawl/Playwright)
         run: node scraper/run-all.js
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}

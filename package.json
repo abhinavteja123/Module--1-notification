@@ -6,8 +6,7 @@
   "scripts": {
     "scrape": "node scraper/run-all.js",
     "scrape:dry": "node scraper/run-all.js --dry-run",
-    "test:scrapers": "node scraper/test-scrapers.js --all",
-    "fetch": "node app/fetch-opportunities.js"
+    "test:scrapers": "node scraper/test-scrapers.js --all"
   },
   "dependencies": {
     "axios": "^1.7.9",

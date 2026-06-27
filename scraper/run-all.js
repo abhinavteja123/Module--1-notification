@@ -161,9 +161,13 @@ async function main() {
 
     item.id = key;
     item.btech = item.type === 'hackathon' ? true : isBtech(item.title, item.tags);
-    item.india = isIndia(item.location || '');
+    item.india = isIndia([item.location, item.title, ...(item.tags || [])].join(' '));
     item.bba     = isBBA(item.title, item.tags);
     item.fresher = item.type === 'internship' || isFresher(item.title, item.description || item.summary || '', item.tags);
+    // Infer remote when the scraper didn't set it (most ATS sources don't).
+    if (item.is_remote === undefined) {
+      item.is_remote = /\b(remote|work\s*from\s*home|wfh|anywhere)\b/i.test([item.location, item.title].join(' '));
+    }
 
     if (firstSeen[key]) {
       item.firstSeenAt = firstSeen[key];

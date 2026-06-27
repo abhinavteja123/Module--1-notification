@@ -48,7 +48,7 @@ async function enrichNewItems(items) {
     console.log('  (Groq skipped: no GROQ_API_KEY set)');
     return items;
   }
-  // Skip items already enriched by the deep detail-enricher.
+  // Skip items that already have a summary.
   const todo = items.filter(it => !it.summary);
   if (!todo.length) return items;
 

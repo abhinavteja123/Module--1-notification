@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'none'" />
 <title>Admin — OpportunityHub</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -198,11 +199,11 @@ select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmln
       <div class="field form-full">
         <label>Flags</label>
         <div class="checks">
-          <label class="check-label"><input type="checkbox" id="f-remote" /> 🏠 Remote</label>
-          <label class="check-label"><input type="checkbox" id="f-india" checked /> 🇮🇳 India</label>
-          <label class="check-label"><input type="checkbox" id="f-btech" checked /> 🎓 B.Tech Relevant</label>
-          <label class="check-label"><input type="checkbox" id="f-bba" /> 📊 BBA / MBA</label>
-          <label class="check-label"><input type="checkbox" id="f-fresher" checked /> 🆕 Fresher Friendly</label>
+          <label class="check-label"><input type="checkbox" id="f-remote" /> Remote</label>
+          <label class="check-label"><input type="checkbox" id="f-india" checked /> India</label>
+          <label class="check-label"><input type="checkbox" id="f-btech" checked /> B.Tech Relevant</label>
+          <label class="check-label"><input type="checkbox" id="f-bba" /> BBA / MBA</label>
+          <label class="check-label"><input type="checkbox" id="f-fresher" checked /> Fresher Friendly</label>
         </div>
       </div>
 
@@ -350,8 +351,8 @@ function renderListings() {
         </div>
         <div class="listing-meta">
           ${esc(l.org)} &nbsp;·&nbsp; ${esc(l.location)}
-          ${l.stipend  ? ' &nbsp;·&nbsp; 💰 ' + esc(l.stipend)  : ''}
-          ${l.deadline ? ' &nbsp;·&nbsp; ⏰ ' + esc(l.deadline) : ''}
+          ${l.stipend  ? ' &nbsp;·&nbsp; ' + esc(l.stipend)  : ''}
+          ${l.deadline ? ' &nbsp;·&nbsp; Closes ' + esc(l.deadline) : ''}
           &nbsp;·&nbsp; Added ${new Date(l._addedAt).toLocaleDateString('en-IN')}
         </div>
       </div>

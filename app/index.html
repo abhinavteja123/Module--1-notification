@@ -350,7 +350,17 @@ const TYPE_LABELS = { hackathon: 'Hackathon', internship: 'Internship', job: 'Jo
 const TABS   = ['all', 'hackathon', 'internship', 'job', 'opensource'];
 const LABELS = { all: 'All', hackathon: 'Hackathons', internship: 'Internships', job: 'Jobs', opensource: 'Open Source' };
 const _manual = (() => { try { return JSON.parse(localStorage.getItem('manualListings') || '[]'); } catch { return []; } })();
-const items = [..._manual, ...(window.OPPORTUNITIES || [])];
+// Merge manual listings first, then feed — deduped by id so a manually-added
+// link that also exists in the feed shows only once (manual wins).
+const items = (() => {
+  const out = [], byId = new Set();
+  for (const it of [..._manual, ...(window.OPPORTUNITIES || [])]) {
+    if (!it || byId.has(it.id)) continue;
+    byId.add(it.id);
+    out.push(it);
+  }
+  return out;
+})();
 
 /* ── State ── */
 let state = {
@@ -361,7 +371,10 @@ let state = {
 /* ── Seen tracking ── */
 const seen = new Set(JSON.parse(localStorage.getItem('seenIds') || '[]'));
 function saveSeen() { localStorage.setItem('seenIds', JSON.stringify([...seen])); }
-function isNew(it) { return !seen.has(it.id); }
+// "New" = first appeared in the latest scrape run (scraper sets it.isNew) AND the
+// user hasn't opened/dismissed it yet. Without the isNew check every card would
+// read "New" on a first visit. Manual listings carry isNew:true.
+function isNew(it) { return it.isNew === true && !seen.has(it.id); }
 
 /* ── Dropdowns ── */
 function buildDropdowns() {
@@ -404,7 +417,9 @@ function getFiltered() {
 
 function sortItems(list) {
   const copy = [...list];
-  if (state.sort === 'newest')    copy.sort((a,b) => new Date(b.firstSeenAt||0) - new Date(a.firstSeenAt||0));
+  if (state.sort === 'newest')    copy.sort((a,b) =>
+    (new Date(b.firstSeenAt||0) - new Date(a.firstSeenAt||0)) ||
+    (new Date(b.postedAt||0)    - new Date(a.postedAt||0)));
   else if (state.sort === 'relevance') copy.sort((a,b) => (b.score||0) - (a.score||0));
   else if (state.sort === 'alpha')     copy.sort((a,b) => a.title.localeCompare(b.title));
   else if (state.sort === 'source')    copy.sort((a,b) => (a.source||'').localeCompare(b.source||''));

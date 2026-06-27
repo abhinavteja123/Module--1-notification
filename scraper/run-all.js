@@ -181,6 +181,41 @@ async function main() {
     unique.push(item);
   }
 
+  // 4b. Merge-forward: keep still-valid items from sources NOT scraped this run.
+  //     A --api-only refresh skips playwright/firecrawl (Unstop / GSoC / MLH /
+  //     Season of Docs), so without this the 6-hourly refresh wipes every
+  //     opensource + Unstop item the daily full run found. We only carry forward
+  //     items whose source produced nothing this run (skipped or failed) — if a
+  //     source ran successfully, its current list is the truth and dropped items
+  //     are correctly removed.
+  const PREV_DATA_PATH_MERGE = path.join(__dirname, '..', 'app', 'data.js');
+  let carriedForward = 0;
+  try {
+    const prevRaw = fs.readFileSync(PREV_DATA_PATH_MERGE, 'utf8');
+    const pm = prevRaw.match(/window\.OPPORTUNITIES\s*=\s*(\[[\s\S]*?\]);/);
+    if (pm) {
+      const prevItems = JSON.parse(pm[1]);
+      const sourcesThisRun = new Set(all.map(i => i.source).filter(Boolean));
+      const CARRY_MAX_AGE_MS = 45 * 24 * 60 * 60 * 1000; // don't resurrect very old items
+      const EXPIRED_GRACE_MS = 7  * 24 * 60 * 60 * 1000; // matches frontend expired-hide
+      for (const prev of prevItems) {
+        if (!prev.id || dedup.has(prev.id)) continue;       // already scraped fresh this run
+        if (sourcesThisRun.has(prev.source)) continue;      // its source ran → trust fresh list
+        if (prev.deadline) {
+          const d = Date.parse(prev.deadline);
+          if (!isNaN(d) && Date.now() - d > EXPIRED_GRACE_MS) continue; // long expired
+        }
+        const seenTs = Date.parse(prev.firstSeenAt);
+        if (!isNaN(seenTs) && Date.now() - seenTs > CARRY_MAX_AGE_MS) continue; // too stale
+        prev.isNew = false;
+        dedup.add(prev.id);
+        unique.push(prev);
+        carriedForward++;
+      }
+    }
+  } catch { /* no previous data.js — nothing to carry forward */ }
+  if (carriedForward) console.log(`  Carried forward ${carriedForward} items from sources not scraped this run.`);
+
   // 5. Optional: Groq enrichment for new items (if GROQ_API_KEY is set)
   if (process.env.GROQ_API_KEY && newItems.length > 0) {
     try {

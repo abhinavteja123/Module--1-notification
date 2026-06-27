@@ -395,6 +395,12 @@ function buildDropdowns() {
 /* ── Filtering ── */
 function getFiltered() {
   return items.filter(it => {
+    // Hide items whose deadline passed more than 7 days ago (grace window).
+    // Items with no deadline (most jobs) are never dropped here.
+    if (it.deadline) {
+      const d = new Date(it.deadline);
+      if (!isNaN(d.getTime()) && Date.now() - d.getTime() > 7 * 864e5) return false;
+    }
     if (state.tab !== 'all' && it.type !== state.tab) return false;
     if (state.degree === 'btech' && !it.btech) return false;
     if (state.degree === 'bba'   && !it.bba)   return false;

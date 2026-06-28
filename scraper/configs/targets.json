@@ -172,5 +172,62 @@
       "description": ".tagline, .desc, p.description, p.double-wrap",
       "deadline": "meta[itemprop='endDate'], [itemprop='endDate'], .end-date, .deadline-date"
     }
+  },
+  {
+    "name": "Unstop Internships",
+    "url": "https://unstop.com/internships",
+    "type": "internship",
+    "scraper": "jina",
+    "baseUrl": "https://unstop.com",
+    "india": true
+  },
+  {
+    "name": "Unstop Jobs",
+    "url": "https://unstop.com/jobs",
+    "type": "job",
+    "scraper": "jina",
+    "baseUrl": "https://unstop.com",
+    "india": true
+  },
+  {
+    "name": "Internshala Design Internships",
+    "url": "https://internshala.com/internships/design-internship/",
+    "type": "internship",
+    "scraper": "jina",
+    "baseUrl": "https://internshala.com",
+    "india": true
+  },
+  {
+    "name": "Internshala Data Science Internships",
+    "url": "https://internshala.com/internships/data-science-internship/",
+    "type": "internship",
+    "scraper": "jina",
+    "baseUrl": "https://internshala.com",
+    "india": true
+  },
+  {
+    "name": "Internshala Marketing Internships",
+    "url": "https://internshala.com/internships/marketing-internship/",
+    "type": "internship",
+    "scraper": "jina",
+    "baseUrl": "https://internshala.com",
+    "india": true
+  },
+  {
+    "name": "Wellfound Startup Jobs",
+    "url": "https://wellfound.com/role/software-engineer",
+    "type": "job",
+    "scraper": "jina",
+    "baseUrl": "https://wellfound.com",
+    "enabled": false
+  },
+  {
+    "name": "Glassdoor India Jobs",
+    "url": "https://www.glassdoor.co.in/Job/india-software-engineer-jobs-SRCH_IL.0,5_IN115_KO6,23.htm",
+    "type": "job",
+    "scraper": "jina",
+    "baseUrl": "https://www.glassdoor.co.in",
+    "india": true,
+    "enabled": false
   }
 ]

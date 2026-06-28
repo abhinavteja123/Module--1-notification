@@ -20,6 +20,7 @@ const { scrapeAPI }            = require('./api-scraper');
 const { scrapeAllATS }         = require('./ats-scraper');
 const { scrapeLinkedIn }       = require('./linkedin-scraper');
 const { scrapeWithFirecrawl }  = require('./firecrawl-scraper');
+const { scrapeWithJina }       = require('./jina-scraper');
 
 const targets    = require('./configs/targets.json');
 const companies  = require('./configs/companies.json');
@@ -72,7 +73,7 @@ function recordHealth(name, count, error = null) {
 
 // ---- Scraper dispatcher ----
 
-const HEAVY_SCRAPERS = new Set(['cheerio', 'playwright', 'firecrawl']);
+const HEAVY_SCRAPERS = new Set(['cheerio', 'playwright', 'firecrawl', 'jina']);
 
 async function runScraper(config) {
   // --api-only: skip web scrapers, run only api/rss/ats sources
@@ -90,6 +91,7 @@ async function runScraper(config) {
       case 'rss':        raw = await scrapeRSS(config); break;
       case 'api':        raw = await scrapeAPI(config); break;
       case 'firecrawl':  raw = await scrapeWithFirecrawl(config); break;
+      case 'jina':       raw = await scrapeWithJina(config); break;
       default:
         console.log(`    ⚠ Unknown scraper type: ${config.scraper}`);
     }

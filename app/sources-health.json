@@ -1,139 +1,139 @@
 {
-  "updatedAt": "2026-06-28T14:04:27.760Z",
-  "totalItems": 8132,
-  "newItems": 67,
+  "updatedAt": "2026-06-28T14:23:08.119Z",
+  "totalItems": 8186,
+  "newItems": 78,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 34,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T14:03:05.559Z"
+      "ts": "2026-06-28T14:19:52.347Z"
     },
     "Arbeitnow Job Board": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T14:03:05.643Z"
-    },
-    "Devpost Hackathons": {
-      "count": 9,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-28T14:03:05.648Z"
-    },
-    "The Muse Jobs": {
-      "count": 20,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-28T14:03:05.938Z"
-    },
-    "Jobicy Remote Jobs": {
-      "count": 50,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-28T14:03:06.058Z"
+      "ts": "2026-06-28T14:19:52.468Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T14:03:06.104Z"
+      "ts": "2026-06-28T14:19:52.844Z"
     },
-    "Authentic Jobs": {
-      "count": 10,
+    "The Muse Jobs": {
+      "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T14:03:06.288Z"
+      "ts": "2026-06-28T14:19:53.202Z"
+    },
+    "Jobicy Remote Jobs": {
+      "count": 50,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-28T14:19:53.857Z"
     },
     "We Work Remotely Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T14:03:06.539Z"
+      "ts": "2026-06-28T14:19:54.408Z"
+    },
+    "Authentic Jobs": {
+      "count": 10,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-28T14:19:54.579Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 29,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T14:03:06.641Z"
+      "ts": "2026-06-28T14:19:54.929Z"
+    },
+    "Devpost Hackathons": {
+      "count": 9,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-28T14:20:02.571Z"
     },
     "Devfolio Hackathons": {
       "count": 26,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T14:03:16.991Z"
+      "ts": "2026-06-28T14:20:04.871Z"
     },
     "Unstop Open Source & Research": {
       "count": 18,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T14:03:24.781Z"
+      "ts": "2026-06-28T14:20:11.084Z"
     },
     "Internshala Internships": {
-      "count": 22,
+      "count": 17,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T14:03:36.544Z"
+      "ts": "2026-06-28T14:20:11.608Z"
+    },
+    "Naukri Fresher Jobs": {
+      "count": 9,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-28T14:20:31.920Z"
     },
     "MLH Fellowship": {
       "count": 0,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T14:03:38.246Z"
-    },
-    "Naukri Fresher Jobs": {
-      "count": 14,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-28T14:03:45.395Z"
+      "ts": "2026-06-28T14:20:33.908Z"
     },
     "Unstop Hackathons": {
       "count": 18,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T14:03:52.466Z"
-    },
-    "Season of Docs": {
-      "count": 44,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-28T14:03:56.903Z"
+      "ts": "2026-06-28T14:20:40.119Z"
     },
     "Unstop Internships": {
-      "count": 18,
+      "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T14:04:02.724Z"
+      "ts": "2026-06-28T14:20:43.113Z"
     },
     "GSoC Organizations": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T14:04:12.062Z"
+      "ts": "2026-06-28T14:20:47.163Z"
     },
     "Unstop Jobs": {
-      "count": 0,
-      "ok": false,
-      "error": "Groq HTTP 413: {\"error\":{\"message\":\"Request too large for model `llama-3.1-8b-instant` in organization `org_01khdkaz4ef729jvwatm7rdsfz`",
-      "ts": "2026-06-28T14:04:12.502Z"
+      "count": 10,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-28T14:21:07.959Z"
+    },
+    "Season of Docs": {
+      "count": 106,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-28T14:21:12.292Z"
     },
     "Internshala Design Internships": {
-      "count": 0,
-      "ok": false,
-      "error": "Groq HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01khdkaz4ef729jvwatm7rdsfz",
-      "ts": "2026-06-28T14:04:14.702Z"
+      "count": 21,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-28T14:21:35.467Z"
     },
     "Internshala Data Science Internships": {
-      "count": 0,
-      "ok": false,
-      "error": "Groq HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01khdkaz4ef729jvwatm7rdsfz",
-      "ts": "2026-06-28T14:04:18.740Z"
+      "count": 5,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-28T14:22:39.616Z"
     },
     "Internshala Marketing Internships": {
-      "count": 0,
-      "ok": false,
-      "error": "Groq HTTP 429: {\"error\":{\"message\":\"Rate limit reached for model `llama-3.1-8b-instant` in organization `org_01khdkaz4ef729jvwatm7rdsfz",
-      "ts": "2026-06-28T14:04:20.984Z"
+      "count": 20,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-28T14:23:04.657Z"
     }
   }
 }

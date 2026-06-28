@@ -53,23 +53,44 @@ async function callGroq(sys, md) {
     throw err;
   }
   const data = await groqRes.json();
-  return JSON.parse(data.choices[0].message.content).items || [];
+  if (!data.choices?.length) throw new Error('Groq returned no choices');
+  const content = data.choices[0].message.content;
+  let parsed;
+  try {
+    parsed = JSON.parse(content);
+  } catch (err) {
+    console.log(`  [jina] Groq returned non-JSON — raw: ${(content || '').slice(0, 200)}`);
+    throw err;
+  }
+  if (!Array.isArray(parsed.items)) {
+    console.log(`  [jina] Groq response missing .items array (keys: ${Object.keys(parsed).join(',')}) — treating as empty`);
+    return [];
+  }
+  return parsed.items;
 }
 
 // Extract with self-healing: on 413 (request too large) halve the markdown and retry;
 // on 429 (rate limit) back off and retry. Up to 3 attempts, then give up.
 async function extract(sys, md0) {
   let md = md0;
+  let lastErr;
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
       return await callGroq(sys, md);
     } catch (err) {
-      if (err.status === 413 && md.length > 1500) { md = md.slice(0, Math.floor(md.length / 2)); continue; }
+      lastErr = err;
+      if (err.status === 413 && md.length > 1500) {
+        const half = Math.floor(md.length / 2);
+        console.log(`  [jina] Groq 413 — shrinking markdown ${md.length}→${half} chars (retry ${attempt + 1}/3)`);
+        md = md.slice(0, half);
+        continue;
+      }
       if (err.status === 429 && attempt < 2) { await sleep(20000 * (attempt + 1)); continue; }
       throw err;
     }
   }
-  return [];
+  // Exhausted retries — throw so run-all.js logs [FAIL] and records ok:false (not a silent empty source).
+  throw lastErr || new Error('Jina extraction exhausted retries');
 }
 
 /**
@@ -107,12 +128,13 @@ async function scrapeWithJina(config) {
   const items = await serialize(() => extract(sys, md));
 
   // 3. Normalize each extracted item to the standard listing shape.
-  return items.map(it => {
+  const base = config.baseUrl ? config.baseUrl.replace(/\/$/, '') : '';
+  const kept = items.map(it => {
     let link = it.link || '';
     if (link.startsWith('http')) {
       // keep as-is
-    } else if (config.baseUrl && link) {
-      link = config.baseUrl + (link.startsWith('/') ? link : '/' + link);
+    } else if (base && link) {
+      link = base + (link.startsWith('/') ? link : '/' + link);
     } else {
       link = '';
     }
@@ -130,6 +152,11 @@ async function scrapeWithJina(config) {
       description: '',
     };
   }).filter(r => r.title && r.link && r.link.startsWith('http'));
+
+  if (items.length > 0 && kept.length === 0) {
+    console.log(`  [jina] ${config.name}: extracted ${items.length} but kept 0 — check baseUrl config or absolute links`);
+  }
+  return kept;
 }
 
 module.exports = { scrapeWithJina };

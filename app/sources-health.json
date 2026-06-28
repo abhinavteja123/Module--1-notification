@@ -1,139 +1,67 @@
 {
-  "updatedAt": "2026-06-28T14:23:08.119Z",
-  "totalItems": 8186,
-  "newItems": 78,
+  "updatedAt": "2026-06-28T18:59:33.159Z",
+  "totalItems": 8189,
+  "newItems": 13,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 34,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T14:19:52.347Z"
+      "ts": "2026-06-28T18:59:15.370Z"
     },
     "Arbeitnow Job Board": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T14:19:52.468Z"
-    },
-    "RemoteOK Jobs": {
-      "count": 100,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-28T14:19:52.844Z"
-    },
-    "The Muse Jobs": {
-      "count": 20,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-28T14:19:53.202Z"
-    },
-    "Jobicy Remote Jobs": {
-      "count": 50,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-28T14:19:53.857Z"
-    },
-    "We Work Remotely Jobs": {
-      "count": 100,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-28T14:19:54.408Z"
-    },
-    "Authentic Jobs": {
-      "count": 10,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-28T14:19:54.579Z"
-    },
-    "YC Startup Jobs (HN)": {
-      "count": 29,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-28T14:19:54.929Z"
+      "ts": "2026-06-28T18:59:15.440Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T14:20:02.571Z"
+      "ts": "2026-06-28T18:59:15.663Z"
+    },
+    "RemoteOK Jobs": {
+      "count": 100,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-28T18:59:15.944Z"
+    },
+    "Jobicy Remote Jobs": {
+      "count": 50,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-28T18:59:16.000Z"
+    },
+    "The Muse Jobs": {
+      "count": 20,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-28T18:59:16.128Z"
+    },
+    "We Work Remotely Jobs": {
+      "count": 100,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-28T18:59:16.513Z"
+    },
+    "Authentic Jobs": {
+      "count": 10,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-28T18:59:16.520Z"
+    },
+    "YC Startup Jobs (HN)": {
+      "count": 29,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-28T18:59:17.140Z"
     },
     "Devfolio Hackathons": {
       "count": 26,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T14:20:04.871Z"
-    },
-    "Unstop Open Source & Research": {
-      "count": 18,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-28T14:20:11.084Z"
-    },
-    "Internshala Internships": {
-      "count": 17,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-28T14:20:11.608Z"
-    },
-    "Naukri Fresher Jobs": {
-      "count": 9,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-28T14:20:31.920Z"
-    },
-    "MLH Fellowship": {
-      "count": 0,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-28T14:20:33.908Z"
-    },
-    "Unstop Hackathons": {
-      "count": 18,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-28T14:20:40.119Z"
-    },
-    "Unstop Internships": {
-      "count": 10,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-28T14:20:43.113Z"
-    },
-    "GSoC Organizations": {
-      "count": 50,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-28T14:20:47.163Z"
-    },
-    "Unstop Jobs": {
-      "count": 10,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-28T14:21:07.959Z"
-    },
-    "Season of Docs": {
-      "count": 106,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-28T14:21:12.292Z"
-    },
-    "Internshala Design Internships": {
-      "count": 21,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-28T14:21:35.467Z"
-    },
-    "Internshala Data Science Internships": {
-      "count": 5,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-28T14:22:39.616Z"
-    },
-    "Internshala Marketing Internships": {
-      "count": 20,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-28T14:23:04.657Z"
+      "ts": "2026-06-28T18:59:29.218Z"
     }
   }
 }

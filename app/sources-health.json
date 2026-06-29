@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-06-28T18:59:33.159Z",
-  "totalItems": 8189,
+  "updatedAt": "2026-06-29T02:09:00.027Z",
+  "totalItems": 8190,
   "newItems": 13,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 34,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T18:59:15.370Z"
+      "ts": "2026-06-29T02:08:40.101Z"
     },
     "Arbeitnow Job Board": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T18:59:15.440Z"
+      "ts": "2026-06-29T02:08:40.167Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T18:59:15.663Z"
+      "ts": "2026-06-29T02:08:40.461Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T18:59:15.944Z"
-    },
-    "Jobicy Remote Jobs": {
-      "count": 50,
-      "ok": true,
-      "error": null,
-      "ts": "2026-06-28T18:59:16.000Z"
+      "ts": "2026-06-29T02:08:40.657Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T18:59:16.128Z"
+      "ts": "2026-06-29T02:08:40.853Z"
     },
     "We Work Remotely Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T18:59:16.513Z"
+      "ts": "2026-06-29T02:08:41.544Z"
+    },
+    "Jobicy Remote Jobs": {
+      "count": 50,
+      "ok": true,
+      "error": null,
+      "ts": "2026-06-29T02:08:41.682Z"
     },
     "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T18:59:16.520Z"
+      "ts": "2026-06-29T02:08:41.864Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 29,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T18:59:17.140Z"
+      "ts": "2026-06-29T02:08:42.304Z"
     },
     "Devfolio Hackathons": {
       "count": 26,
       "ok": true,
       "error": null,
-      "ts": "2026-06-28T18:59:29.218Z"
+      "ts": "2026-06-29T02:08:52.699Z"
     }
   }
 }

@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-07-01T09:26:02.397Z",
-  "totalItems": 8176,
-  "newItems": 57,
+  "updatedAt": "2026-07-01T14:02:46.581Z",
+  "totalItems": 8175,
+  "newItems": 66,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 31,
       "ok": true,
       "error": null,
-      "ts": "2026-07-01T09:25:36.794Z"
+      "ts": "2026-07-01T14:02:14.147Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-07-01T09:25:36.808Z"
+      "ts": "2026-07-01T14:02:14.224Z"
     },
     "Arbeitnow Job Board": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-01T09:25:36.869Z"
+      "ts": "2026-07-01T14:02:14.237Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-07-01T09:25:37.092Z"
+      "ts": "2026-07-01T14:02:14.557Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-01T09:25:37.242Z"
+      "ts": "2026-07-01T14:02:14.596Z"
     },
     "We Work Remotely Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-01T09:25:37.762Z"
+      "ts": "2026-07-01T14:02:15.154Z"
     },
     "Jobicy Remote Jobs": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-07-01T09:25:37.767Z"
-    },
-    "YC Startup Jobs (HN)": {
-      "count": 28,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-01T09:25:38.132Z"
+      "ts": "2026-07-01T14:02:15.311Z"
     },
     "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-07-01T09:25:40.554Z"
+      "ts": "2026-07-01T14:02:15.519Z"
+    },
+    "YC Startup Jobs (HN)": {
+      "count": 28,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-01T14:02:15.663Z"
     },
     "Devfolio Hackathons": {
       "count": 28,
       "ok": true,
       "error": null,
-      "ts": "2026-07-01T09:25:58.248Z"
+      "ts": "2026-07-01T14:02:33.554Z"
     }
   }
 }

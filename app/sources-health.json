@@ -1,67 +1,139 @@
 {
-  "updatedAt": "2026-07-06T01:55:48.766Z",
-  "totalItems": 8213,
-  "newItems": 28,
+  "updatedAt": "2026-07-06T06:27:37.788Z",
+  "totalItems": 8196,
+  "newItems": 31,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 30,
       "ok": true,
       "error": null,
-      "ts": "2026-07-06T01:55:29.826Z"
+      "ts": "2026-07-06T06:26:00.817Z"
     },
     "Arbeitnow Job Board": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-06T01:55:29.890Z"
+      "ts": "2026-07-06T06:26:01.010Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-07-06T01:55:30.114Z"
+      "ts": "2026-07-06T06:26:01.096Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-07-06T01:55:30.485Z"
+      "ts": "2026-07-06T06:26:01.473Z"
     },
     "Jobicy Remote Jobs": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-07-06T01:55:30.544Z"
+      "ts": "2026-07-06T06:26:01.522Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-06T01:55:30.590Z"
-    },
-    "Authentic Jobs": {
-      "count": 10,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-06T01:55:30.930Z"
+      "ts": "2026-07-06T06:26:01.797Z"
     },
     "We Work Remotely Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-06T01:55:31.084Z"
+      "ts": "2026-07-06T06:26:01.998Z"
+    },
+    "Authentic Jobs": {
+      "count": 10,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-06T06:26:02.103Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 28,
       "ok": true,
       "error": null,
-      "ts": "2026-07-06T01:55:31.576Z"
+      "ts": "2026-07-06T06:26:02.755Z"
     },
     "Devfolio Hackathons": {
       "count": 31,
       "ok": true,
       "error": null,
-      "ts": "2026-07-06T01:55:43.541Z"
+      "ts": "2026-07-06T06:26:13.066Z"
+    },
+    "Unstop Open Source & Research": {
+      "count": 18,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-06T06:26:21.561Z"
+    },
+    "Internshala Internships": {
+      "count": 10,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-06T06:26:25.775Z"
+    },
+    "MLH Fellowship": {
+      "count": 0,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-06T06:26:30.662Z"
+    },
+    "Naukri Fresher Jobs": {
+      "count": 10,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-06T06:26:36.747Z"
+    },
+    "Unstop Hackathons": {
+      "count": 18,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-06T06:26:43.853Z"
+    },
+    "Unstop Internships": {
+      "count": 0,
+      "ok": false,
+      "error": "Groq HTTP 401: {\"error\":{\"message\":\"Invalid API Key\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\"}}\n",
+      "ts": "2026-07-06T06:26:50.018Z"
+    },
+    "Unstop Jobs": {
+      "count": 0,
+      "ok": false,
+      "error": "Groq HTTP 401: {\"error\":{\"message\":\"Invalid API Key\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\"}}\n",
+      "ts": "2026-07-06T06:26:54.357Z"
+    },
+    "Internshala Design Internships": {
+      "count": 0,
+      "ok": false,
+      "error": "Groq HTTP 401: {\"error\":{\"message\":\"Invalid API Key\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\"}}\n",
+      "ts": "2026-07-06T06:26:59.421Z"
+    },
+    "Internshala Data Science Internships": {
+      "count": 0,
+      "ok": false,
+      "error": "Groq HTTP 401: {\"error\":{\"message\":\"Invalid API Key\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\"}}\n",
+      "ts": "2026-07-06T06:27:05.563Z"
+    },
+    "GSoC Organizations": {
+      "count": 50,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-06T06:27:06.413Z"
+    },
+    "Internshala Marketing Internships": {
+      "count": 0,
+      "ok": false,
+      "error": "Groq HTTP 401: {\"error\":{\"message\":\"Invalid API Key\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\"}}\n",
+      "ts": "2026-07-06T06:27:12.444Z"
+    },
+    "Season of Docs": {
+      "count": 0,
+      "ok": false,
+      "error": "timeout of 60000ms exceeded",
+      "ts": "2026-07-06T06:27:30.681Z"
     }
   }
 }

@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-07-11T07:30:04.106Z",
-  "totalItems": 8276,
-  "newItems": 13,
+  "updatedAt": "2026-07-11T12:47:44.852Z",
+  "totalItems": 8286,
+  "newItems": 37,
   "sources": {
     "Remotive Remote Jobs": {
-      "count": 30,
+      "count": 41,
       "ok": true,
       "error": null,
-      "ts": "2026-07-11T07:29:30.180Z"
-    },
-    "Arbeitnow Job Board": {
-      "count": 100,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-11T07:29:30.237Z"
+      "ts": "2026-07-11T12:47:29.700Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-07-11T07:29:30.546Z"
+      "ts": "2026-07-11T12:47:29.706Z"
+    },
+    "Arbeitnow Job Board": {
+      "count": 100,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-11T12:47:29.838Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-07-11T07:29:30.956Z"
-    },
-    "Jobicy Remote Jobs": {
-      "count": 50,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-11T07:29:31.001Z"
+      "ts": "2026-07-11T12:47:30.122Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-11T07:29:31.029Z"
+      "ts": "2026-07-11T12:47:30.389Z"
     },
     "We Work Remotely Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-11T07:29:31.526Z"
+      "ts": "2026-07-11T12:47:30.889Z"
+    },
+    "Jobicy Remote Jobs": {
+      "count": 50,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-11T12:47:31.110Z"
     },
     "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-07-11T07:29:31.791Z"
+      "ts": "2026-07-11T12:47:31.168Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 27,
       "ok": true,
       "error": null,
-      "ts": "2026-07-11T07:29:32.436Z"
+      "ts": "2026-07-11T12:47:31.328Z"
     },
     "Devfolio Hackathons": {
-      "count": 0,
-      "ok": false,
-      "error": "timeout of 30000ms exceeded",
-      "ts": "2026-07-11T07:30:00.130Z"
+      "count": 41,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-11T12:47:41.099Z"
     }
   }
 }

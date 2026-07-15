@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-07-15T13:05:04.064Z",
-  "totalItems": 8328,
-  "newItems": 92,
+  "updatedAt": "2026-07-15T18:52:47.497Z",
+  "totalItems": 8342,
+  "newItems": 143,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 38,
       "ok": true,
       "error": null,
-      "ts": "2026-07-15T13:04:45.233Z"
+      "ts": "2026-07-15T18:51:23.714Z"
     },
     "Arbeitnow Job Board": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-15T13:04:45.340Z"
+      "ts": "2026-07-15T18:51:23.853Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-07-15T13:04:45.522Z"
+      "ts": "2026-07-15T18:51:23.997Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-07-15T13:04:45.953Z"
-    },
-    "RemoteOK Jobs": {
-      "count": 100,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-15T13:04:46.125Z"
-    },
-    "We Work Remotely Jobs": {
-      "count": 100,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-15T13:04:46.796Z"
-    },
-    "Authentic Jobs": {
-      "count": 10,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-15T13:04:47.160Z"
+      "ts": "2026-07-15T18:51:24.574Z"
     },
     "Jobicy Remote Jobs": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-07-15T13:04:47.164Z"
+      "ts": "2026-07-15T18:51:25.853Z"
+    },
+    "We Work Remotely Jobs": {
+      "count": 100,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-15T18:51:26.385Z"
+    },
+    "Authentic Jobs": {
+      "count": 10,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-15T18:51:27.122Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 27,
       "ok": true,
       "error": null,
-      "ts": "2026-07-15T13:04:47.686Z"
+      "ts": "2026-07-15T18:51:27.600Z"
     },
     "Devfolio Hackathons": {
       "count": 40,
       "ok": true,
       "error": null,
-      "ts": "2026-07-15T13:04:57.545Z"
+      "ts": "2026-07-15T18:51:36.870Z"
+    },
+    "RemoteOK Jobs": {
+      "count": 0,
+      "ok": false,
+      "error": "aborted",
+      "ts": "2026-07-15T18:51:41.573Z"
     }
   }
 }

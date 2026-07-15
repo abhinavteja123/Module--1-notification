@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-07-15T07:46:55.619Z",
-  "totalItems": 8325,
-  "newItems": 25,
+  "updatedAt": "2026-07-15T13:05:04.064Z",
+  "totalItems": 8328,
+  "newItems": 92,
   "sources": {
     "Remotive Remote Jobs": {
-      "count": 39,
+      "count": 38,
       "ok": true,
       "error": null,
-      "ts": "2026-07-15T07:46:41.423Z"
+      "ts": "2026-07-15T13:04:45.233Z"
     },
     "Arbeitnow Job Board": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-15T07:46:41.481Z"
+      "ts": "2026-07-15T13:04:45.340Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-07-15T07:46:41.713Z"
+      "ts": "2026-07-15T13:04:45.522Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-07-15T07:46:42.079Z"
-    },
-    "Jobicy Remote Jobs": {
-      "count": 50,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-15T07:46:42.136Z"
+      "ts": "2026-07-15T13:04:45.953Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-15T07:46:42.317Z"
-    },
-    "Authentic Jobs": {
-      "count": 10,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-15T07:46:42.614Z"
+      "ts": "2026-07-15T13:04:46.125Z"
     },
     "We Work Remotely Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-15T07:46:42.676Z"
+      "ts": "2026-07-15T13:04:46.796Z"
+    },
+    "Authentic Jobs": {
+      "count": 10,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-15T13:04:47.160Z"
+    },
+    "Jobicy Remote Jobs": {
+      "count": 50,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-15T13:04:47.164Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 27,
       "ok": true,
       "error": null,
-      "ts": "2026-07-15T07:46:43.324Z"
+      "ts": "2026-07-15T13:04:47.686Z"
     },
     "Devfolio Hackathons": {
-      "count": 0,
-      "ok": false,
-      "error": "Request failed with status code 504",
-      "ts": "2026-07-15T07:46:52.334Z"
+      "count": 40,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-15T13:04:57.545Z"
     }
   }
 }

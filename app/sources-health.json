@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-07-17T12:58:48.567Z",
-  "totalItems": 8370,
-  "newItems": 109,
+  "updatedAt": "2026-07-17T18:50:21.925Z",
+  "totalItems": 8332,
+  "newItems": 147,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 41,
       "ok": true,
       "error": null,
-      "ts": "2026-07-17T12:58:26.746Z"
+      "ts": "2026-07-17T18:49:47.028Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-07-17T12:58:26.846Z"
+      "ts": "2026-07-17T18:49:47.088Z"
     },
     "Arbeitnow Job Board": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-17T12:58:26.946Z"
+      "ts": "2026-07-17T18:49:47.144Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-07-17T12:58:27.221Z"
+      "ts": "2026-07-17T18:49:47.393Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-17T12:58:27.306Z"
+      "ts": "2026-07-17T18:49:47.629Z"
     },
     "We Work Remotely Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-17T12:58:27.884Z"
+      "ts": "2026-07-17T18:49:48.173Z"
     },
     "Jobicy Remote Jobs": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-07-17T12:58:28.246Z"
-    },
-    "Authentic Jobs": {
-      "count": 10,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-17T12:58:28.252Z"
+      "ts": "2026-07-17T18:49:48.437Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 27,
       "ok": true,
       "error": null,
-      "ts": "2026-07-17T12:58:28.630Z"
+      "ts": "2026-07-17T18:49:48.829Z"
+    },
+    "Authentic Jobs": {
+      "count": 10,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-17T18:49:50.717Z"
     },
     "Devfolio Hackathons": {
       "count": 42,
       "ok": true,
       "error": null,
-      "ts": "2026-07-17T12:58:43.603Z"
+      "ts": "2026-07-17T18:49:59.932Z"
     }
   }
 }

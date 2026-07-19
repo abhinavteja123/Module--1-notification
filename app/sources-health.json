@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-07-18T18:43:07.069Z",
-  "totalItems": 8341,
-  "newItems": 21,
+  "updatedAt": "2026-07-19T01:22:26.702Z",
+  "totalItems": 8339,
+  "newItems": 8,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 42,
       "ok": true,
       "error": null,
-      "ts": "2026-07-18T18:42:50.287Z"
-    },
-    "Arbeitnow Job Board": {
-      "count": 100,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-18T18:42:50.378Z"
+      "ts": "2026-07-19T01:22:10.499Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-07-18T18:42:50.425Z"
+      "ts": "2026-07-19T01:22:10.512Z"
     },
-    "RemoteOK Jobs": {
+    "Arbeitnow Job Board": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-18T18:42:50.784Z"
+      "ts": "2026-07-19T01:22:10.632Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-07-18T18:42:50.829Z"
+      "ts": "2026-07-19T01:22:10.903Z"
     },
-    "Jobicy Remote Jobs": {
-      "count": 50,
+    "RemoteOK Jobs": {
+      "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-18T18:42:51.744Z"
+      "ts": "2026-07-19T01:22:10.911Z"
     },
     "We Work Remotely Jobs": {
-      "count": 97,
+      "count": 96,
       "ok": true,
       "error": null,
-      "ts": "2026-07-18T18:42:51.920Z"
-    },
-    "YC Startup Jobs (HN)": {
-      "count": 27,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-18T18:42:52.141Z"
+      "ts": "2026-07-19T01:22:11.393Z"
     },
     "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-07-18T18:42:54.447Z"
+      "ts": "2026-07-19T01:22:11.706Z"
+    },
+    "Jobicy Remote Jobs": {
+      "count": 50,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-19T01:22:11.751Z"
+    },
+    "YC Startup Jobs (HN)": {
+      "count": 27,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-19T01:22:12.062Z"
     },
     "Devfolio Hackathons": {
       "count": 42,
       "ok": true,
       "error": null,
-      "ts": "2026-07-18T18:43:03.425Z"
+      "ts": "2026-07-19T01:22:23.513Z"
     }
   }
 }

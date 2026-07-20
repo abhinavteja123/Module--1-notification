@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-07-20T08:34:30.085Z",
-  "totalItems": 8343,
-  "newItems": 15,
+  "updatedAt": "2026-07-20T13:43:43.805Z",
+  "totalItems": 8350,
+  "newItems": 83,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 42,
       "ok": true,
       "error": null,
-      "ts": "2026-07-20T08:34:04.374Z"
-    },
-    "Devpost Hackathons": {
-      "count": 9,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-20T08:34:04.413Z"
+      "ts": "2026-07-20T13:43:21.593Z"
     },
     "Arbeitnow Job Board": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-20T08:34:04.433Z"
+      "ts": "2026-07-20T13:43:21.708Z"
+    },
+    "Devpost Hackathons": {
+      "count": 9,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-20T13:43:21.893Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-07-20T08:34:04.662Z"
+      "ts": "2026-07-20T13:43:22.170Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-20T08:34:04.832Z"
+      "ts": "2026-07-20T13:43:22.587Z"
     },
     "We Work Remotely Jobs": {
-      "count": 94,
+      "count": 96,
       "ok": true,
       "error": null,
-      "ts": "2026-07-20T08:34:05.516Z"
+      "ts": "2026-07-20T13:43:23.425Z"
     },
     "Jobicy Remote Jobs": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-07-20T08:34:05.645Z"
+      "ts": "2026-07-20T13:43:23.533Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 27,
       "ok": true,
       "error": null,
-      "ts": "2026-07-20T08:34:05.877Z"
+      "ts": "2026-07-20T13:43:24.052Z"
     },
     "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-07-20T08:34:06.211Z"
+      "ts": "2026-07-20T13:43:24.436Z"
     },
     "Devfolio Hackathons": {
       "count": 45,
       "ok": true,
       "error": null,
-      "ts": "2026-07-20T08:34:24.032Z"
+      "ts": "2026-07-20T13:43:35.535Z"
     }
   }
 }

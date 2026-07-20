@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-07-19T18:45:30.637Z",
-  "totalItems": 8338,
-  "newItems": 7,
+  "updatedAt": "2026-07-20T01:25:50.067Z",
+  "totalItems": 8336,
+  "newItems": 13,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 42,
       "ok": true,
       "error": null,
-      "ts": "2026-07-19T18:45:08.829Z"
-    },
-    "Devpost Hackathons": {
-      "count": 9,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-19T18:45:08.959Z"
+      "ts": "2026-07-20T01:25:34.851Z"
     },
     "Arbeitnow Job Board": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-19T18:45:09.047Z"
+      "ts": "2026-07-20T01:25:34.893Z"
+    },
+    "Devpost Hackathons": {
+      "count": 9,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-20T01:25:34.924Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-07-19T18:45:09.412Z"
+      "ts": "2026-07-20T01:25:35.227Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-19T18:45:09.478Z"
-    },
-    "Jobicy Remote Jobs": {
-      "count": 50,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-19T18:45:10.458Z"
-    },
-    "Authentic Jobs": {
-      "count": 10,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-19T18:45:11.021Z"
-    },
-    "YC Startup Jobs (HN)": {
-      "count": 27,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-19T18:45:11.390Z"
+      "ts": "2026-07-20T01:25:35.333Z"
     },
     "We Work Remotely Jobs": {
       "count": 94,
       "ok": true,
       "error": null,
-      "ts": "2026-07-19T18:45:12.115Z"
+      "ts": "2026-07-20T01:25:35.889Z"
     },
-    "Devfolio Hackathons": {
-      "count": 44,
+    "Jobicy Remote Jobs": {
+      "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-07-19T18:45:20.065Z"
+      "ts": "2026-07-20T01:25:36.103Z"
+    },
+    "Authentic Jobs": {
+      "count": 10,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-20T01:25:36.396Z"
+    },
+    "YC Startup Jobs (HN)": {
+      "count": 27,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-20T01:25:36.490Z"
+    },
+    "Devfolio Hackathons": {
+      "count": 45,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-20T01:25:46.821Z"
     }
   }
 }

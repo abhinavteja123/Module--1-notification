@@ -1,139 +1,67 @@
 {
-  "updatedAt": "2026-07-28T05:14:33.339Z",
-  "totalItems": 8525,
-  "newItems": 49,
+  "updatedAt": "2026-07-28T08:11:04.519Z",
+  "totalItems": 8537,
+  "newItems": 70,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 36,
       "ok": true,
       "error": null,
-      "ts": "2026-07-28T05:13:25.213Z"
+      "ts": "2026-07-28T08:10:46.856Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-07-28T05:13:25.283Z"
+      "ts": "2026-07-28T08:10:46.973Z"
     },
     "Arbeitnow Job Board": {
       "count": 110,
       "ok": true,
       "error": null,
-      "ts": "2026-07-28T05:13:25.535Z"
+      "ts": "2026-07-28T08:10:47.024Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-07-28T05:13:25.855Z"
+      "ts": "2026-07-28T08:10:47.330Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-28T05:13:25.906Z"
+      "ts": "2026-07-28T08:10:47.552Z"
     },
     "We Work Remotely Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-28T05:13:26.469Z"
+      "ts": "2026-07-28T08:10:48.258Z"
     },
     "Jobicy Remote Jobs": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-07-28T05:13:26.856Z"
-    },
-    "YC Startup Jobs (HN)": {
-      "count": 26,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-28T05:13:27.181Z"
+      "ts": "2026-07-28T08:10:48.414Z"
     },
     "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-07-28T05:13:27.356Z"
+      "ts": "2026-07-28T08:10:48.598Z"
+    },
+    "YC Startup Jobs (HN)": {
+      "count": 26,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-28T08:10:48.806Z"
     },
     "Devfolio Hackathons": {
       "count": 44,
       "ok": true,
       "error": null,
-      "ts": "2026-07-28T05:13:37.002Z"
-    },
-    "Naukri Fresher Jobs": {
-      "count": 10,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-28T05:13:43.719Z"
-    },
-    "Unstop Open Source & Research": {
-      "count": 18,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-28T05:13:44.160Z"
-    },
-    "Internshala Internships": {
-      "count": 10,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-28T05:13:51.750Z"
-    },
-    "Season of Docs": {
-      "count": 44,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-28T05:14:07.162Z"
-    },
-    "MLH Fellowship": {
-      "count": 0,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-28T05:14:08.485Z"
-    },
-    "Unstop Hackathons": {
-      "count": 18,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-28T05:14:13.656Z"
-    },
-    "Unstop Internships": {
-      "count": 0,
-      "ok": false,
-      "error": "Groq HTTP 401: {\"error\":{\"message\":\"Invalid API Key\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\"}}\n",
-      "ts": "2026-07-28T05:14:15.150Z"
-    },
-    "GSoC Organizations": {
-      "count": 50,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-28T05:14:17.729Z"
-    },
-    "Unstop Jobs": {
-      "count": 0,
-      "ok": false,
-      "error": "Groq HTTP 401: {\"error\":{\"message\":\"Invalid API Key\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\"}}\n",
-      "ts": "2026-07-28T05:14:19.011Z"
-    },
-    "Internshala Data Science Internships": {
-      "count": 0,
-      "ok": false,
-      "error": "Groq HTTP 401: {\"error\":{\"message\":\"Invalid API Key\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\"}}\n",
-      "ts": "2026-07-28T05:14:23.352Z"
-    },
-    "Internshala Design Internships": {
-      "count": 0,
-      "ok": false,
-      "error": "Groq HTTP 401: {\"error\":{\"message\":\"Invalid API Key\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\"}}\n",
-      "ts": "2026-07-28T05:14:26.444Z"
-    },
-    "Internshala Marketing Internships": {
-      "count": 0,
-      "ok": false,
-      "error": "Groq HTTP 401: {\"error\":{\"message\":\"Invalid API Key\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\"}}\n",
-      "ts": "2026-07-28T05:14:29.536Z"
+      "ts": "2026-07-28T08:11:00.147Z"
     }
   }
 }

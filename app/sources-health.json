@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-07-30T13:22:15.249Z",
-  "totalItems": 8571,
-  "newItems": 150,
+  "updatedAt": "2026-07-30T19:06:17.604Z",
+  "totalItems": 8599,
+  "newItems": 219,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 35,
       "ok": true,
       "error": null,
-      "ts": "2026-07-30T13:21:52.228Z"
-    },
-    "Arbeitnow Job Board": {
-      "count": 175,
-      "ok": true,
-      "error": null,
-      "ts": "2026-07-30T13:21:52.346Z"
+      "ts": "2026-07-30T19:05:42.670Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-07-30T13:21:52.537Z"
+      "ts": "2026-07-30T19:05:42.805Z"
     },
-    "RemoteOK Jobs": {
-      "count": 100,
+    "Arbeitnow Job Board": {
+      "count": 175,
       "ok": true,
       "error": null,
-      "ts": "2026-07-30T13:21:52.918Z"
+      "ts": "2026-07-30T19:05:42.832Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-07-30T13:21:53.002Z"
+      "ts": "2026-07-30T19:05:43.074Z"
     },
-    "We Work Remotely Jobs": {
+    "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-30T13:21:53.647Z"
+      "ts": "2026-07-30T19:05:43.354Z"
     },
     "Jobicy Remote Jobs": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-07-30T13:21:54.054Z"
+      "ts": "2026-07-30T19:05:43.997Z"
     },
-    "Authentic Jobs": {
-      "count": 10,
+    "We Work Remotely Jobs": {
+      "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-07-30T13:21:54.365Z"
+      "ts": "2026-07-30T19:05:44.181Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 26,
       "ok": true,
       "error": null,
-      "ts": "2026-07-30T13:21:54.647Z"
+      "ts": "2026-07-30T19:05:44.407Z"
+    },
+    "Authentic Jobs": {
+      "count": 10,
+      "ok": true,
+      "error": null,
+      "ts": "2026-07-30T19:05:44.628Z"
     },
     "Devfolio Hackathons": {
       "count": 44,
       "ok": true,
       "error": null,
-      "ts": "2026-07-30T13:22:02.439Z"
+      "ts": "2026-07-30T19:05:57.057Z"
     }
   }
 }

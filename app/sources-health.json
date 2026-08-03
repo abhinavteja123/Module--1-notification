@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-08-03T14:11:00.924Z",
-  "totalItems": 8611,
-  "newItems": 212,
+  "updatedAt": "2026-08-03T19:15:21.286Z",
+  "totalItems": 8600,
+  "newItems": 238,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 31,
       "ok": true,
       "error": null,
-      "ts": "2026-08-03T14:10:17.482Z"
+      "ts": "2026-08-03T19:15:01.752Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-08-03T14:10:17.564Z"
+      "ts": "2026-08-03T19:15:01.793Z"
     },
     "Arbeitnow Job Board": {
       "count": 175,
       "ok": true,
       "error": null,
-      "ts": "2026-08-03T14:10:17.655Z"
+      "ts": "2026-08-03T19:15:01.915Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-08-03T14:10:18.066Z"
+      "ts": "2026-08-03T19:15:02.235Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-08-03T14:10:18.344Z"
+      "ts": "2026-08-03T19:15:02.324Z"
     },
     "We Work Remotely Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-08-03T14:10:19.030Z"
-    },
-    "Jobicy Remote Jobs": {
-      "count": 50,
-      "ok": true,
-      "error": null,
-      "ts": "2026-08-03T14:10:19.162Z"
+      "ts": "2026-08-03T19:15:02.934Z"
     },
     "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-08-03T14:10:19.502Z"
+      "ts": "2026-08-03T19:15:03.182Z"
+    },
+    "Jobicy Remote Jobs": {
+      "count": 50,
+      "ok": true,
+      "error": null,
+      "ts": "2026-08-03T19:15:03.259Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 27,
       "ok": true,
       "error": null,
-      "ts": "2026-08-03T14:10:19.699Z"
+      "ts": "2026-08-03T19:15:03.454Z"
     },
     "Devfolio Hackathons": {
-      "count": 47,
+      "count": 46,
       "ok": true,
       "error": null,
-      "ts": "2026-08-03T14:10:34.154Z"
+      "ts": "2026-08-03T19:15:16.740Z"
     }
   }
 }

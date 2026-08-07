@@ -1,139 +1,67 @@
 {
-  "updatedAt": "2026-08-07T04:24:44.976Z",
-  "totalItems": 8751,
-  "newItems": 95,
+  "updatedAt": "2026-08-07T06:57:18.174Z",
+  "totalItems": 8750,
+  "newItems": 42,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 34,
       "ok": true,
       "error": null,
-      "ts": "2026-08-07T04:23:44.854Z"
+      "ts": "2026-08-07T06:57:03.750Z"
     },
     "Arbeitnow Job Board": {
       "count": 175,
       "ok": true,
       "error": null,
-      "ts": "2026-08-07T04:23:44.945Z"
+      "ts": "2026-08-07T06:57:03.849Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-08-07T04:23:45.162Z"
+      "ts": "2026-08-07T06:57:03.942Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-08-07T04:23:45.543Z"
+      "ts": "2026-08-07T06:57:04.137Z"
     },
     "Jobicy Remote Jobs": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-08-07T04:23:45.612Z"
+      "ts": "2026-08-07T06:57:04.272Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-08-07T04:23:45.752Z"
-    },
-    "Authentic Jobs": {
-      "count": 10,
-      "ok": true,
-      "error": null,
-      "ts": "2026-08-07T04:23:45.960Z"
+      "ts": "2026-08-07T06:57:04.369Z"
     },
     "We Work Remotely Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-08-07T04:23:46.215Z"
+      "ts": "2026-08-07T06:57:04.835Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 28,
       "ok": true,
       "error": null,
-      "ts": "2026-08-07T04:23:46.643Z"
+      "ts": "2026-08-07T06:57:05.129Z"
     },
-    "Naukri Fresher Jobs": {
+    "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-08-07T04:23:54.938Z"
-    },
-    "Internshala Internships": {
-      "count": 10,
-      "ok": true,
-      "error": null,
-      "ts": "2026-08-07T04:23:58.412Z"
+      "ts": "2026-08-07T06:57:07.199Z"
     },
     "Devfolio Hackathons": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-08-07T04:24:01.913Z"
-    },
-    "Unstop Open Source & Research": {
-      "count": 18,
-      "ok": true,
-      "error": null,
-      "ts": "2026-08-07T04:24:02.757Z"
-    },
-    "MLH Fellowship": {
-      "count": 0,
-      "ok": true,
-      "error": null,
-      "ts": "2026-08-07T04:24:04.004Z"
-    },
-    "Unstop Hackathons": {
-      "count": 18,
-      "ok": true,
-      "error": null,
-      "ts": "2026-08-07T04:24:10.476Z"
-    },
-    "Unstop Internships": {
-      "count": 0,
-      "ok": false,
-      "error": "Groq HTTP 401: {\"error\":{\"message\":\"Invalid API Key\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\"}}\n",
-      "ts": "2026-08-07T04:24:14.982Z"
-    },
-    "Unstop Jobs": {
-      "count": 0,
-      "ok": false,
-      "error": "Groq HTTP 401: {\"error\":{\"message\":\"Invalid API Key\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\"}}\n",
-      "ts": "2026-08-07T04:24:20.557Z"
-    },
-    "GSoC Organizations": {
-      "count": 50,
-      "ok": true,
-      "error": null,
-      "ts": "2026-08-07T04:24:22.708Z"
-    },
-    "Internshala Design Internships": {
-      "count": 0,
-      "ok": false,
-      "error": "Groq HTTP 401: {\"error\":{\"message\":\"Invalid API Key\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\"}}\n",
-      "ts": "2026-08-07T04:24:27.634Z"
-    },
-    "Internshala Data Science Internships": {
-      "count": 0,
-      "ok": false,
-      "error": "Groq HTTP 401: {\"error\":{\"message\":\"Invalid API Key\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\"}}\n",
-      "ts": "2026-08-07T04:24:30.675Z"
-    },
-    "Internshala Marketing Internships": {
-      "count": 0,
-      "ok": false,
-      "error": "Groq HTTP 401: {\"error\":{\"message\":\"Invalid API Key\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\"}}\n",
-      "ts": "2026-08-07T04:24:33.720Z"
-    },
-    "Season of Docs": {
-      "count": 80,
-      "ok": true,
-      "error": null,
-      "ts": "2026-08-07T04:24:38.465Z"
+      "ts": "2026-08-07T06:57:14.739Z"
     }
   }
 }

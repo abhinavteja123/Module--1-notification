@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-08-10T07:04:25.462Z",
-  "totalItems": 8587,
-  "newItems": 59,
+  "updatedAt": "2026-08-10T12:39:41.908Z",
+  "totalItems": 8561,
+  "newItems": 115,
   "sources": {
     "Remotive Remote Jobs": {
-      "count": 19,
+      "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-08-10T07:04:08.875Z"
-    },
-    "Arbeitnow Job Board": {
-      "count": 176,
-      "ok": true,
-      "error": null,
-      "ts": "2026-08-10T07:04:09.024Z"
+      "ts": "2026-08-10T12:39:15.457Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-08-10T07:04:09.087Z"
+      "ts": "2026-08-10T12:39:15.544Z"
+    },
+    "Arbeitnow Job Board": {
+      "count": 176,
+      "ok": true,
+      "error": null,
+      "ts": "2026-08-10T12:39:15.556Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-08-10T07:04:09.338Z"
-    },
-    "RemoteOK Jobs": {
-      "count": 100,
-      "ok": true,
-      "error": null,
-      "ts": "2026-08-10T07:04:09.649Z"
-    },
-    "We Work Remotely Jobs": {
-      "count": 100,
-      "ok": true,
-      "error": null,
-      "ts": "2026-08-10T07:04:10.250Z"
+      "ts": "2026-08-10T12:39:15.826Z"
     },
     "Jobicy Remote Jobs": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-08-10T07:04:10.422Z"
+      "ts": "2026-08-10T12:39:15.969Z"
+    },
+    "We Work Remotely Jobs": {
+      "count": 100,
+      "ok": true,
+      "error": null,
+      "ts": "2026-08-10T12:39:16.650Z"
     },
     "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-08-10T07:04:10.768Z"
+      "ts": "2026-08-10T12:39:17.039Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 28,
       "ok": true,
       "error": null,
-      "ts": "2026-08-10T07:04:10.921Z"
+      "ts": "2026-08-10T12:39:17.433Z"
+    },
+    "RemoteOK Jobs": {
+      "count": 0,
+      "ok": false,
+      "error": "timeout of 15000ms exceeded",
+      "ts": "2026-08-10T12:39:30.553Z"
     },
     "Devfolio Hackathons": {
       "count": 45,
       "ok": true,
       "error": null,
-      "ts": "2026-08-10T07:04:20.621Z"
+      "ts": "2026-08-10T12:39:38.116Z"
     }
   }
 }

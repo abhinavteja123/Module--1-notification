@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-08-19T06:22:08.458Z",
-  "totalItems": 8429,
-  "newItems": 119,
+  "updatedAt": "2026-08-19T12:19:27.373Z",
+  "totalItems": 8431,
+  "newItems": 152,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 17,
       "ok": true,
       "error": null,
-      "ts": "2026-08-19T06:21:47.179Z"
-    },
-    "Devpost Hackathons": {
-      "count": 9,
-      "ok": true,
-      "error": null,
-      "ts": "2026-08-19T06:21:47.277Z"
+      "ts": "2026-08-19T12:19:06.158Z"
     },
     "Arbeitnow Job Board": {
       "count": 175,
       "ok": true,
       "error": null,
-      "ts": "2026-08-19T06:21:47.306Z"
+      "ts": "2026-08-19T12:19:06.285Z"
+    },
+    "Devpost Hackathons": {
+      "count": 9,
+      "ok": true,
+      "error": null,
+      "ts": "2026-08-19T12:19:06.425Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-08-19T06:21:47.583Z"
+      "ts": "2026-08-19T12:19:06.680Z"
     },
     "Jobicy Remote Jobs": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-08-19T06:21:47.727Z"
+      "ts": "2026-08-19T12:19:06.819Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-08-19T06:21:47.900Z"
+      "ts": "2026-08-19T12:19:06.914Z"
     },
     "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-08-19T06:21:48.554Z"
+      "ts": "2026-08-19T12:19:07.213Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 29,
       "ok": true,
       "error": null,
-      "ts": "2026-08-19T06:21:48.902Z"
+      "ts": "2026-08-19T12:19:07.685Z"
     },
     "We Work Remotely Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-08-19T06:21:49.061Z"
+      "ts": "2026-08-19T12:19:08.037Z"
     },
     "Devfolio Hackathons": {
       "count": 53,
       "ok": true,
       "error": null,
-      "ts": "2026-08-19T06:21:57.753Z"
+      "ts": "2026-08-19T12:19:17.064Z"
     }
   }
 }

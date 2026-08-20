@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-08-20T06:22:51.705Z",
-  "totalItems": 8455,
-  "newItems": 57,
+  "updatedAt": "2026-08-20T12:21:24.734Z",
+  "totalItems": 8450,
+  "newItems": 141,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 17,
       "ok": true,
       "error": null,
-      "ts": "2026-08-20T06:22:40.099Z"
+      "ts": "2026-08-20T12:21:07.138Z"
     },
     "Arbeitnow Job Board": {
       "count": 175,
       "ok": true,
       "error": null,
-      "ts": "2026-08-20T06:22:40.201Z"
+      "ts": "2026-08-20T12:21:07.320Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-08-20T06:22:40.492Z"
-    },
-    "RemoteOK Jobs": {
-      "count": 100,
-      "ok": true,
-      "error": null,
-      "ts": "2026-08-20T06:22:40.727Z"
+      "ts": "2026-08-20T12:21:07.330Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-08-20T06:22:40.944Z"
+      "ts": "2026-08-20T12:21:07.590Z"
+    },
+    "RemoteOK Jobs": {
+      "count": 100,
+      "ok": true,
+      "error": null,
+      "ts": "2026-08-20T12:21:08.105Z"
     },
     "We Work Remotely Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-08-20T06:22:41.655Z"
+      "ts": "2026-08-20T12:21:08.649Z"
     },
     "Jobicy Remote Jobs": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-08-20T06:22:41.884Z"
+      "ts": "2026-08-20T12:21:08.735Z"
     },
     "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-08-20T06:22:42.229Z"
+      "ts": "2026-08-20T12:21:08.988Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 29,
       "ok": true,
       "error": null,
-      "ts": "2026-08-20T06:22:42.512Z"
+      "ts": "2026-08-20T12:21:09.177Z"
     },
     "Devfolio Hackathons": {
       "count": 52,
       "ok": true,
       "error": null,
-      "ts": "2026-08-20T06:22:49.176Z"
+      "ts": "2026-08-20T12:21:15.942Z"
     }
   }
 }

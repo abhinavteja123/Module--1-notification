@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-08-22T12:14:29.671Z",
-  "totalItems": 8545,
-  "newItems": 98,
+  "updatedAt": "2026-08-22T18:12:05.442Z",
+  "totalItems": 8546,
+  "newItems": 79,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-08-22T12:14:07.908Z"
+      "ts": "2026-08-22T18:11:48.275Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-08-22T12:14:08.041Z"
+      "ts": "2026-08-22T18:11:48.333Z"
     },
     "Arbeitnow Job Board": {
       "count": 175,
       "ok": true,
       "error": null,
-      "ts": "2026-08-22T12:14:08.068Z"
+      "ts": "2026-08-22T18:11:48.358Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-08-22T12:14:08.380Z"
+      "ts": "2026-08-22T18:11:48.583Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-08-22T12:14:08.560Z"
+      "ts": "2026-08-22T18:11:48.777Z"
     },
     "We Work Remotely Jobs": {
       "count": 93,
       "ok": true,
       "error": null,
-      "ts": "2026-08-22T12:14:09.013Z"
+      "ts": "2026-08-22T18:11:49.275Z"
     },
     "Jobicy Remote Jobs": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-08-22T12:14:09.310Z"
-    },
-    "YC Startup Jobs (HN)": {
-      "count": 29,
-      "ok": true,
-      "error": null,
-      "ts": "2026-08-22T12:14:09.513Z"
+      "ts": "2026-08-22T18:11:49.440Z"
     },
     "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-08-22T12:14:09.840Z"
+      "ts": "2026-08-22T18:11:49.570Z"
     },
-    "Devfolio Hackathons": {
-      "count": 50,
+    "YC Startup Jobs (HN)": {
+      "count": 29,
       "ok": true,
       "error": null,
-      "ts": "2026-08-22T12:14:24.246Z"
+      "ts": "2026-08-22T18:11:49.835Z"
+    },
+    "Devfolio Hackathons": {
+      "count": 51,
+      "ok": true,
+      "error": null,
+      "ts": "2026-08-22T18:12:01.944Z"
     }
   }
 }

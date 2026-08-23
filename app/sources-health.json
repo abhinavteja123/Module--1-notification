@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-08-22T18:12:05.442Z",
-  "totalItems": 8546,
-  "newItems": 79,
+  "updatedAt": "2026-08-23T00:33:52.941Z",
+  "totalItems": 8544,
+  "newItems": 65,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-08-22T18:11:48.275Z"
+      "ts": "2026-08-23T00:33:35.096Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-08-22T18:11:48.333Z"
+      "ts": "2026-08-23T00:33:35.188Z"
     },
     "Arbeitnow Job Board": {
       "count": 175,
       "ok": true,
       "error": null,
-      "ts": "2026-08-22T18:11:48.358Z"
+      "ts": "2026-08-23T00:33:35.240Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-08-22T18:11:48.583Z"
+      "ts": "2026-08-23T00:33:35.482Z"
     },
     "RemoteOK Jobs": {
-      "count": 100,
+      "count": 99,
       "ok": true,
       "error": null,
-      "ts": "2026-08-22T18:11:48.777Z"
+      "ts": "2026-08-23T00:33:35.704Z"
     },
     "We Work Remotely Jobs": {
       "count": 93,
       "ok": true,
       "error": null,
-      "ts": "2026-08-22T18:11:49.275Z"
+      "ts": "2026-08-23T00:33:36.151Z"
     },
     "Jobicy Remote Jobs": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-08-22T18:11:49.440Z"
+      "ts": "2026-08-23T00:33:36.489Z"
     },
     "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-08-22T18:11:49.570Z"
+      "ts": "2026-08-23T00:33:36.639Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 29,
       "ok": true,
       "error": null,
-      "ts": "2026-08-22T18:11:49.835Z"
+      "ts": "2026-08-23T00:33:36.987Z"
     },
     "Devfolio Hackathons": {
       "count": 51,
       "ok": true,
       "error": null,
-      "ts": "2026-08-22T18:12:01.944Z"
+      "ts": "2026-08-23T00:33:49.006Z"
     }
   }
 }

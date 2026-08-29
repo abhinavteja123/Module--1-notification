@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-08-29T15:50:51.782Z",
+  "updatedAt": "2026-08-29T20:04:59.181Z",
   "totalItems": 8608,
-  "newItems": 107,
+  "newItems": 61,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 19,
       "ok": true,
       "error": null,
-      "ts": "2026-08-29T15:50:35.273Z"
+      "ts": "2026-08-29T20:04:43.255Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-08-29T15:50:35.352Z"
+      "ts": "2026-08-29T20:04:43.262Z"
     },
     "Arbeitnow Job Board": {
       "count": 175,
       "ok": true,
       "error": null,
-      "ts": "2026-08-29T15:50:35.382Z"
+      "ts": "2026-08-29T20:04:43.342Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-08-29T15:50:35.766Z"
+      "ts": "2026-08-29T20:04:43.622Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-08-29T15:50:35.879Z"
+      "ts": "2026-08-29T20:04:43.737Z"
     },
     "We Work Remotely Jobs": {
       "count": 90,
       "ok": true,
       "error": null,
-      "ts": "2026-08-29T15:50:36.427Z"
+      "ts": "2026-08-29T20:04:44.203Z"
     },
     "Jobicy Remote Jobs": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-08-29T15:50:36.814Z"
-    },
-    "YC Startup Jobs (HN)": {
-      "count": 30,
-      "ok": true,
-      "error": null,
-      "ts": "2026-08-29T15:50:37.266Z"
+      "ts": "2026-08-29T20:04:44.455Z"
     },
     "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-08-29T15:50:37.752Z"
+      "ts": "2026-08-29T20:04:44.525Z"
+    },
+    "YC Startup Jobs (HN)": {
+      "count": 30,
+      "ok": true,
+      "error": null,
+      "ts": "2026-08-29T20:04:44.921Z"
     },
     "Devfolio Hackathons": {
       "count": 52,
       "ok": true,
       "error": null,
-      "ts": "2026-08-29T15:50:46.836Z"
+      "ts": "2026-08-29T20:04:55.573Z"
     }
   }
 }

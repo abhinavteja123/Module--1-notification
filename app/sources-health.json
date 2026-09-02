@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-09-02T10:04:22.301Z",
-  "totalItems": 8521,
-  "newItems": 71,
+  "updatedAt": "2026-09-02T15:27:47.898Z",
+  "totalItems": 8515,
+  "newItems": 138,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 18,
       "ok": true,
       "error": null,
-      "ts": "2026-09-02T10:04:02.454Z"
+      "ts": "2026-09-02T15:27:26.981Z"
     },
     "Arbeitnow Job Board": {
       "count": 175,
       "ok": true,
       "error": null,
-      "ts": "2026-09-02T10:04:02.622Z"
+      "ts": "2026-09-02T15:27:27.142Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-09-02T10:04:02.663Z"
+      "ts": "2026-09-02T15:27:27.236Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-09-02T10:04:03.216Z"
-    },
-    "Jobicy Remote Jobs": {
-      "count": 50,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-02T10:04:03.406Z"
+      "ts": "2026-09-02T15:27:27.519Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-09-02T10:04:03.477Z"
+      "ts": "2026-09-02T15:27:28.537Z"
+    },
+    "Jobicy Remote Jobs": {
+      "count": 50,
+      "ok": true,
+      "error": null,
+      "ts": "2026-09-02T15:27:28.558Z"
     },
     "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-09-02T10:04:03.874Z"
+      "ts": "2026-09-02T15:27:28.832Z"
     },
     "We Work Remotely Jobs": {
       "count": 92,
       "ok": true,
       "error": null,
-      "ts": "2026-09-02T10:04:04.344Z"
+      "ts": "2026-09-02T15:27:29.319Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 28,
       "ok": true,
       "error": null,
-      "ts": "2026-09-02T10:04:04.346Z"
+      "ts": "2026-09-02T15:27:29.517Z"
     },
     "Devfolio Hackathons": {
-      "count": 50,
+      "count": 51,
       "ok": true,
       "error": null,
-      "ts": "2026-09-02T10:04:16.719Z"
+      "ts": "2026-09-02T15:27:43.138Z"
     }
   }
 }

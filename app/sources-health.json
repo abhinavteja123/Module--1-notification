@@ -1,139 +1,67 @@
 {
-  "updatedAt": "2026-09-03T06:49:45.414Z",
-  "totalItems": 8639,
-  "newItems": 95,
+  "updatedAt": "2026-09-03T10:14:15.745Z",
+  "totalItems": 8537,
+  "newItems": 91,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 18,
       "ok": true,
       "error": null,
-      "ts": "2026-09-03T06:48:41.505Z"
+      "ts": "2026-09-03T10:14:02.557Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-09-03T06:48:41.537Z"
+      "ts": "2026-09-03T10:14:02.567Z"
     },
     "Arbeitnow Job Board": {
       "count": 175,
       "ok": true,
       "error": null,
-      "ts": "2026-09-03T06:48:41.645Z"
+      "ts": "2026-09-03T10:14:02.709Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-09-03T06:48:41.953Z"
+      "ts": "2026-09-03T10:14:02.956Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-09-03T06:48:41.961Z"
+      "ts": "2026-09-03T10:14:02.972Z"
     },
     "Jobicy Remote Jobs": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-09-03T06:48:42.071Z"
+      "ts": "2026-09-03T10:14:03.042Z"
     },
     "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-09-03T06:48:42.327Z"
+      "ts": "2026-09-03T10:14:03.316Z"
     },
     "We Work Remotely Jobs": {
       "count": 92,
       "ok": true,
       "error": null,
-      "ts": "2026-09-03T06:48:42.537Z"
+      "ts": "2026-09-03T10:14:03.472Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 28,
       "ok": true,
       "error": null,
-      "ts": "2026-09-03T06:48:42.764Z"
+      "ts": "2026-09-03T10:14:03.858Z"
     },
     "Devfolio Hackathons": {
-      "count": 51,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-03T06:48:51.069Z"
-    },
-    "Internshala Internships": {
-      "count": 10,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-03T06:48:55.632Z"
-    },
-    "Naukri Fresher Jobs": {
-      "count": 10,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-03T06:48:56.986Z"
-    },
-    "Unstop Open Source & Research": {
-      "count": 18,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-03T06:49:00.443Z"
-    },
-    "MLH Fellowship": {
-      "count": 0,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-03T06:49:01.480Z"
-    },
-    "Unstop Hackathons": {
-      "count": 18,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-03T06:49:08.380Z"
-    },
-    "Unstop Internships": {
-      "count": 0,
-      "ok": false,
-      "error": "Groq HTTP 401: {\"error\":{\"message\":\"Invalid API Key\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\"}}\n",
-      "ts": "2026-09-03T06:49:13.444Z"
-    },
-    "Season of Docs": {
-      "count": 36,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-03T06:49:14.754Z"
-    },
-    "Unstop Jobs": {
-      "count": 0,
-      "ok": false,
-      "error": "Groq HTTP 401: {\"error\":{\"message\":\"Invalid API Key\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\"}}\n",
-      "ts": "2026-09-03T06:49:19.528Z"
-    },
-    "Internshala Design Internships": {
-      "count": 0,
-      "ok": false,
-      "error": "Groq HTTP 401: {\"error\":{\"message\":\"Invalid API Key\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\"}}\n",
-      "ts": "2026-09-03T06:49:22.609Z"
-    },
-    "Internshala Data Science Internships": {
-      "count": 0,
-      "ok": false,
-      "error": "Groq HTTP 401: {\"error\":{\"message\":\"Invalid API Key\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\"}}\n",
-      "ts": "2026-09-03T06:49:27.223Z"
-    },
-    "Internshala Marketing Internships": {
-      "count": 0,
-      "ok": false,
-      "error": "Groq HTTP 401: {\"error\":{\"message\":\"Invalid API Key\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\"}}\n",
-      "ts": "2026-09-03T06:49:30.319Z"
-    },
-    "GSoC Organizations": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-09-03T06:49:41.032Z"
+      "ts": "2026-09-03T10:14:12.273Z"
     }
   }
 }

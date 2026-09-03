@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-09-03T15:21:59.414Z",
-  "totalItems": 8513,
-  "newItems": 140,
+  "updatedAt": "2026-09-03T20:13:19.730Z",
+  "totalItems": 8507,
+  "newItems": 186,
   "sources": {
-    "Devpost Hackathons": {
-      "count": 9,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-03T15:21:44.070Z"
-    },
     "Remotive Remote Jobs": {
       "count": 17,
       "ok": true,
       "error": null,
-      "ts": "2026-09-03T15:21:44.081Z"
+      "ts": "2026-09-03T20:13:02.539Z"
+    },
+    "Devpost Hackathons": {
+      "count": 9,
+      "ok": true,
+      "error": null,
+      "ts": "2026-09-03T20:13:02.578Z"
     },
     "Arbeitnow Job Board": {
       "count": 175,
       "ok": true,
       "error": null,
-      "ts": "2026-09-03T15:21:44.463Z"
+      "ts": "2026-09-03T20:13:03.019Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-09-03T15:21:44.725Z"
+      "ts": "2026-09-03T20:13:03.430Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-09-03T15:21:45.224Z"
+      "ts": "2026-09-03T20:13:03.835Z"
     },
     "Jobicy Remote Jobs": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-09-03T15:21:45.605Z"
+      "ts": "2026-09-03T20:13:04.315Z"
     },
     "We Work Remotely Jobs": {
       "count": 93,
       "ok": true,
       "error": null,
-      "ts": "2026-09-03T15:21:45.907Z"
-    },
-    "Authentic Jobs": {
-      "count": 10,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-03T15:21:46.090Z"
+      "ts": "2026-09-03T20:13:04.465Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 28,
       "ok": true,
       "error": null,
-      "ts": "2026-09-03T15:21:46.314Z"
+      "ts": "2026-09-03T20:13:05.284Z"
+    },
+    "Authentic Jobs": {
+      "count": 10,
+      "ok": true,
+      "error": null,
+      "ts": "2026-09-03T20:13:06.006Z"
     },
     "Devfolio Hackathons": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-09-03T15:21:55.003Z"
+      "ts": "2026-09-03T20:13:14.483Z"
     }
   }
 }

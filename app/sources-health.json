@@ -1,139 +1,67 @@
 {
-  "updatedAt": "2026-09-06T06:50:32.531Z",
-  "totalItems": 8681,
-  "newItems": 138,
+  "updatedAt": "2026-09-06T09:48:02.203Z",
+  "totalItems": 8616,
+  "newItems": 115,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 15,
       "ok": true,
       "error": null,
-      "ts": "2026-09-06T06:48:49.135Z"
-    },
-    "Devpost Hackathons": {
-      "count": 9,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-06T06:48:49.341Z"
+      "ts": "2026-09-06T09:47:44.440Z"
     },
     "Arbeitnow Job Board": {
       "count": 250,
       "ok": true,
       "error": null,
-      "ts": "2026-09-06T06:48:49.401Z"
+      "ts": "2026-09-06T09:47:44.636Z"
     },
-    "The Muse Jobs": {
-      "count": 20,
+    "Devpost Hackathons": {
+      "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-09-06T06:48:49.674Z"
+      "ts": "2026-09-06T09:47:44.722Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-09-06T06:48:50.032Z"
+      "ts": "2026-09-06T09:47:45.147Z"
+    },
+    "The Muse Jobs": {
+      "count": 20,
+      "ok": true,
+      "error": null,
+      "ts": "2026-09-06T09:47:45.236Z"
     },
     "We Work Remotely Jobs": {
       "count": 91,
       "ok": true,
       "error": null,
-      "ts": "2026-09-06T06:48:50.608Z"
-    },
-    "Jobicy Remote Jobs": {
-      "count": 50,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-06T06:48:50.628Z"
-    },
-    "YC Startup Jobs (HN)": {
-      "count": 28,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-06T06:48:51.123Z"
+      "ts": "2026-09-06T09:47:45.987Z"
     },
     "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-09-06T06:48:51.785Z"
+      "ts": "2026-09-06T09:47:46.322Z"
+    },
+    "Jobicy Remote Jobs": {
+      "count": 50,
+      "ok": true,
+      "error": null,
+      "ts": "2026-09-06T09:47:46.551Z"
+    },
+    "YC Startup Jobs (HN)": {
+      "count": 28,
+      "ok": true,
+      "error": null,
+      "ts": "2026-09-06T09:47:46.915Z"
     },
     "Devfolio Hackathons": {
       "count": 44,
       "ok": true,
       "error": null,
-      "ts": "2026-09-06T06:49:04.037Z"
-    },
-    "Naukri Fresher Jobs": {
-      "count": 10,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-06T06:49:04.495Z"
-    },
-    "Internshala Internships": {
-      "count": 11,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-06T06:49:07.653Z"
-    },
-    "MLH Fellowship": {
-      "count": 0,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-06T06:49:12.096Z"
-    },
-    "Unstop Open Source & Research": {
-      "count": 18,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-06T06:49:13.735Z"
-    },
-    "Season of Docs": {
-      "count": 10,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-06T06:49:20.177Z"
-    },
-    "Unstop Hackathons": {
-      "count": 17,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-06T06:49:21.709Z"
-    },
-    "GSoC Organizations": {
-      "count": 50,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-06T06:49:23.320Z"
-    },
-    "Unstop Internships": {
-      "count": 0,
-      "ok": false,
-      "error": "Groq HTTP 401: {\"error\":{\"message\":\"Invalid API Key\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\"}}\n",
-      "ts": "2026-09-06T06:49:25.592Z"
-    },
-    "Unstop Jobs": {
-      "count": 0,
-      "ok": false,
-      "error": "Groq HTTP 401: {\"error\":{\"message\":\"Invalid API Key\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\"}}\n",
-      "ts": "2026-09-06T06:49:28.897Z"
-    },
-    "Internshala Design Internships": {
-      "count": 0,
-      "ok": false,
-      "error": "Groq HTTP 401: {\"error\":{\"message\":\"Invalid API Key\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\"}}\n",
-      "ts": "2026-09-06T06:49:32.005Z"
-    },
-    "Internshala Data Science Internships": {
-      "count": 0,
-      "ok": false,
-      "error": "The operation was aborted due to timeout",
-      "ts": "2026-09-06T06:50:25.593Z"
-    },
-    "Internshala Marketing Internships": {
-      "count": 0,
-      "ok": false,
-      "error": "The operation was aborted due to timeout",
-      "ts": "2026-09-06T06:50:28.898Z"
+      "ts": "2026-09-06T09:47:55.661Z"
     }
   }
 }

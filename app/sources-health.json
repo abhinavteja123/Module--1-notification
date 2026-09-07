@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-09-06T19:41:00.229Z",
+  "updatedAt": "2026-09-07T01:34:10.526Z",
   "totalItems": 8617,
-  "newItems": 92,
+  "newItems": 84,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 18,
       "ok": true,
       "error": null,
-      "ts": "2026-09-06T19:40:45.832Z"
+      "ts": "2026-09-07T01:33:54.345Z"
     },
     "Arbeitnow Job Board": {
       "count": 250,
       "ok": true,
       "error": null,
-      "ts": "2026-09-06T19:40:46.015Z"
+      "ts": "2026-09-07T01:33:54.559Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-09-06T19:40:46.088Z"
+      "ts": "2026-09-07T01:33:54.638Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-09-06T19:40:46.375Z"
-    },
-    "Jobicy Remote Jobs": {
-      "count": 50,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-06T19:40:46.553Z"
+      "ts": "2026-09-07T01:33:55.090Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-09-06T19:40:46.680Z"
+      "ts": "2026-09-07T01:33:55.246Z"
     },
     "We Work Remotely Jobs": {
       "count": 91,
       "ok": true,
       "error": null,
-      "ts": "2026-09-06T19:40:47.214Z"
+      "ts": "2026-09-07T01:33:55.833Z"
+    },
+    "Jobicy Remote Jobs": {
+      "count": 50,
+      "ok": true,
+      "error": null,
+      "ts": "2026-09-07T01:33:56.342Z"
     },
     "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-09-06T19:40:47.771Z"
+      "ts": "2026-09-07T01:33:56.969Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 28,
       "ok": true,
       "error": null,
-      "ts": "2026-09-06T19:40:48.223Z"
+      "ts": "2026-09-07T01:33:57.012Z"
     },
     "Devfolio Hackathons": {
       "count": 45,
       "ok": true,
       "error": null,
-      "ts": "2026-09-06T19:40:56.329Z"
+      "ts": "2026-09-07T01:34:07.594Z"
     }
   }
 }

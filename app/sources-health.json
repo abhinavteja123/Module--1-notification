@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-09-08T20:24:22.968Z",
-  "totalItems": 8533,
-  "newItems": 193,
+  "updatedAt": "2026-09-09T01:51:09.657Z",
+  "totalItems": 8569,
+  "newItems": 159,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 18,
       "ok": true,
       "error": null,
-      "ts": "2026-09-08T20:24:05.402Z"
+      "ts": "2026-09-09T01:50:52.289Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-09-08T20:24:05.521Z"
+      "ts": "2026-09-09T01:50:52.376Z"
     },
     "Arbeitnow Job Board": {
       "count": 250,
       "ok": true,
       "error": null,
-      "ts": "2026-09-08T20:24:05.704Z"
+      "ts": "2026-09-09T01:50:52.695Z"
     },
     "RemoteOK Jobs": {
       "count": 100,
       "ok": true,
       "error": null,
-      "ts": "2026-09-08T20:24:06.089Z"
+      "ts": "2026-09-09T01:50:52.959Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-09-08T20:24:06.092Z"
+      "ts": "2026-09-09T01:50:53.013Z"
     },
     "We Work Remotely Jobs": {
       "count": 91,
       "ok": true,
       "error": null,
-      "ts": "2026-09-08T20:24:06.722Z"
+      "ts": "2026-09-09T01:50:53.704Z"
     },
     "Jobicy Remote Jobs": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-09-08T20:24:07.098Z"
-    },
-    "Authentic Jobs": {
-      "count": 10,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-08T20:24:07.105Z"
+      "ts": "2026-09-09T01:50:53.799Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 28,
       "ok": true,
       "error": null,
-      "ts": "2026-09-08T20:24:07.555Z"
+      "ts": "2026-09-09T01:50:54.451Z"
+    },
+    "Authentic Jobs": {
+      "count": 10,
+      "ok": true,
+      "error": null,
+      "ts": "2026-09-09T01:50:55.803Z"
     },
     "Devfolio Hackathons": {
       "count": 49,
       "ok": true,
       "error": null,
-      "ts": "2026-09-08T20:24:14.326Z"
+      "ts": "2026-09-09T01:51:03.053Z"
     }
   }
 }

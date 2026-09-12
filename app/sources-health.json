@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-09-11T20:08:57.496Z",
-  "totalItems": 8631,
+  "updatedAt": "2026-09-12T01:51:45.118Z",
+  "totalItems": 8645,
   "newItems": 169,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 16,
       "ok": true,
       "error": null,
-      "ts": "2026-09-11T20:08:38.871Z"
+      "ts": "2026-09-12T01:51:23.607Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-09-11T20:08:38.973Z"
+      "ts": "2026-09-12T01:51:23.771Z"
     },
     "Arbeitnow Job Board": {
       "count": 250,
       "ok": true,
       "error": null,
-      "ts": "2026-09-11T20:08:39.071Z"
+      "ts": "2026-09-12T01:51:23.883Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-09-11T20:08:39.423Z"
+      "ts": "2026-09-12T01:51:24.345Z"
     },
     "RemoteOK Jobs": {
       "count": 99,
       "ok": true,
       "error": null,
-      "ts": "2026-09-11T20:08:39.727Z"
+      "ts": "2026-09-12T01:51:24.355Z"
     },
     "We Work Remotely Jobs": {
       "count": 89,
       "ok": true,
       "error": null,
-      "ts": "2026-09-11T20:08:40.136Z"
-    },
-    "Jobicy Remote Jobs": {
-      "count": 50,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-11T20:08:40.461Z"
+      "ts": "2026-09-12T01:51:24.949Z"
     },
     "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-09-11T20:08:40.620Z"
+      "ts": "2026-09-12T01:51:25.554Z"
+    },
+    "Jobicy Remote Jobs": {
+      "count": 50,
+      "ok": true,
+      "error": null,
+      "ts": "2026-09-12T01:51:25.689Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 28,
       "ok": true,
       "error": null,
-      "ts": "2026-09-11T20:08:40.823Z"
+      "ts": "2026-09-12T01:51:26.177Z"
     },
     "Devfolio Hackathons": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-09-11T20:08:52.598Z"
+      "ts": "2026-09-12T01:51:37.531Z"
     }
   }
 }

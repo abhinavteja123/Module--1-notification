@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-09-12T19:46:25.317Z",
+  "updatedAt": "2026-09-13T01:42:48.852Z",
   "totalItems": 8623,
-  "newItems": 118,
+  "newItems": 75,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 16,
       "ok": true,
       "error": null,
-      "ts": "2026-09-12T19:46:02.775Z"
+      "ts": "2026-09-13T01:42:34.273Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-09-12T19:46:02.811Z"
+      "ts": "2026-09-13T01:42:34.411Z"
     },
     "Arbeitnow Job Board": {
       "count": 250,
       "ok": true,
       "error": null,
-      "ts": "2026-09-12T19:46:03.072Z"
+      "ts": "2026-09-13T01:42:34.503Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-09-12T19:46:03.433Z"
+      "ts": "2026-09-13T01:42:34.795Z"
     },
     "RemoteOK Jobs": {
       "count": 99,
       "ok": true,
       "error": null,
-      "ts": "2026-09-12T19:46:03.540Z"
-    },
-    "We Work Remotely Jobs": {
-      "count": 89,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-12T19:46:04.360Z"
+      "ts": "2026-09-13T01:42:34.914Z"
     },
     "Jobicy Remote Jobs": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-09-12T19:46:04.618Z"
+      "ts": "2026-09-13T01:42:34.972Z"
+    },
+    "We Work Remotely Jobs": {
+      "count": 89,
+      "ok": true,
+      "error": null,
+      "ts": "2026-09-13T01:42:35.728Z"
     },
     "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-09-12T19:46:04.768Z"
+      "ts": "2026-09-13T01:42:36.041Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 28,
       "ok": true,
       "error": null,
-      "ts": "2026-09-12T19:46:05.722Z"
+      "ts": "2026-09-13T01:42:36.130Z"
     },
     "Devfolio Hackathons": {
       "count": 47,
       "ok": true,
       "error": null,
-      "ts": "2026-09-12T19:46:13.708Z"
+      "ts": "2026-09-13T01:42:44.616Z"
     }
   }
 }

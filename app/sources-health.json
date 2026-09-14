@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-09-13T19:56:45.402Z",
-  "totalItems": 8634,
-  "newItems": 85,
+  "updatedAt": "2026-09-14T02:01:01.424Z",
+  "totalItems": 8631,
+  "newItems": 86,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 16,
       "ok": true,
       "error": null,
-      "ts": "2026-09-13T19:56:24.212Z"
-    },
-    "Devpost Hackathons": {
-      "count": 9,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-13T19:56:24.281Z"
+      "ts": "2026-09-14T02:00:34.118Z"
     },
     "Arbeitnow Job Board": {
       "count": 250,
       "ok": true,
       "error": null,
-      "ts": "2026-09-13T19:56:24.431Z"
+      "ts": "2026-09-14T02:00:34.267Z"
+    },
+    "Devpost Hackathons": {
+      "count": 9,
+      "ok": true,
+      "error": null,
+      "ts": "2026-09-14T02:00:34.377Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-09-13T19:56:24.677Z"
+      "ts": "2026-09-14T02:00:34.718Z"
     },
     "RemoteOK Jobs": {
       "count": 99,
       "ok": true,
       "error": null,
-      "ts": "2026-09-13T19:56:24.763Z"
+      "ts": "2026-09-14T02:00:34.838Z"
     },
     "Jobicy Remote Jobs": {
       "count": 50,
       "ok": true,
       "error": null,
-      "ts": "2026-09-13T19:56:24.817Z"
+      "ts": "2026-09-14T02:00:35.972Z"
     },
     "We Work Remotely Jobs": {
       "count": 87,
       "ok": true,
       "error": null,
-      "ts": "2026-09-13T19:56:25.152Z"
+      "ts": "2026-09-14T02:00:36.037Z"
     },
     "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-09-13T19:56:25.158Z"
+      "ts": "2026-09-14T02:00:36.531Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 28,
       "ok": true,
       "error": null,
-      "ts": "2026-09-13T19:56:25.559Z"
+      "ts": "2026-09-14T02:00:36.778Z"
     },
     "Devfolio Hackathons": {
       "count": 46,
       "ok": true,
       "error": null,
-      "ts": "2026-09-13T19:56:33.897Z"
+      "ts": "2026-09-14T02:00:49.024Z"
     }
   }
 }

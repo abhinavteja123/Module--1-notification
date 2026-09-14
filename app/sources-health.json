@@ -1,67 +1,67 @@
 {
-  "updatedAt": "2026-09-14T11:06:17.114Z",
-  "totalItems": 8597,
-  "newItems": 85,
+  "updatedAt": "2026-09-14T17:08:18.967Z",
+  "totalItems": 8645,
+  "newItems": 232,
   "sources": {
     "Remotive Remote Jobs": {
       "count": 16,
       "ok": true,
       "error": null,
-      "ts": "2026-09-14T11:05:46.515Z"
+      "ts": "2026-09-14T17:08:04.372Z"
     },
     "Devpost Hackathons": {
       "count": 9,
       "ok": true,
       "error": null,
-      "ts": "2026-09-14T11:05:46.617Z"
+      "ts": "2026-09-14T17:08:04.398Z"
     },
     "Arbeitnow Job Board": {
       "count": 250,
       "ok": true,
       "error": null,
-      "ts": "2026-09-14T11:05:46.658Z"
+      "ts": "2026-09-14T17:08:04.620Z"
     },
     "The Muse Jobs": {
       "count": 20,
       "ok": true,
       "error": null,
-      "ts": "2026-09-14T11:05:47.010Z"
+      "ts": "2026-09-14T17:08:04.908Z"
     },
     "RemoteOK Jobs": {
       "count": 99,
       "ok": true,
       "error": null,
-      "ts": "2026-09-14T11:05:47.056Z"
-    },
-    "Jobicy Remote Jobs": {
-      "count": 50,
-      "ok": true,
-      "error": null,
-      "ts": "2026-09-14T11:05:47.076Z"
+      "ts": "2026-09-14T17:08:04.982Z"
     },
     "We Work Remotely Jobs": {
       "count": 87,
       "ok": true,
       "error": null,
-      "ts": "2026-09-14T11:05:47.552Z"
+      "ts": "2026-09-14T17:08:05.460Z"
+    },
+    "Jobicy Remote Jobs": {
+      "count": 50,
+      "ok": true,
+      "error": null,
+      "ts": "2026-09-14T17:08:05.777Z"
     },
     "Authentic Jobs": {
       "count": 10,
       "ok": true,
       "error": null,
-      "ts": "2026-09-14T11:05:47.727Z"
+      "ts": "2026-09-14T17:08:05.799Z"
     },
     "YC Startup Jobs (HN)": {
       "count": 28,
       "ok": true,
       "error": null,
-      "ts": "2026-09-14T11:05:47.990Z"
+      "ts": "2026-09-14T17:08:06.343Z"
     },
     "Devfolio Hackathons": {
       "count": 46,
       "ok": true,
       "error": null,
-      "ts": "2026-09-14T11:06:01.288Z"
+      "ts": "2026-09-14T17:08:14.446Z"
     }
   }
 }
